@@ -5,8 +5,11 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import lombok.AllArgsConstructor;
 import no.hvl.dat250.voting.Poll;
+import no.hvl.dat250.voting.Vote;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 @AllArgsConstructor
 public class PollDao {
@@ -43,10 +46,19 @@ public class PollDao {
         return query.getResultList();
     }
 
-    public List<Poll> getPollsByUser(Long userId) {
+/*    public List<Poll> getPollsByUser(Long userId) {
         // Get the voes from a user and based on that vote get all the polls
         TypedQuery<Poll> query = em.createQuery("SELECT p FROM Poll p WHERE p.votes = :votes", Poll.class);
         return query.getResultList().stream().filter(poll -> poll.getVotes().stream().anyMatch(vote -> vote.getUser().getId().equals(userId))).toList();
+    }*/
+
+
+    // Did not get the function above to work in the tests.
+
+    public List<Poll> getPollsByUser(Long userId) {
+        TypedQuery<Poll> query = em.createQuery("SELECT p FROM Poll p JOIN p.votes v WHERE v.user.id = :userId", Poll.class);
+        query.setParameter("userId", userId);
+        return query.getResultList();
     }
 
     public List<Integer> getVotesForAndAgainstPoll(Long pollId) {

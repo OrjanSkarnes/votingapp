@@ -6,6 +6,9 @@ import jakarta.persistence.Persistence;
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.Roles;
 import no.hvl.dat250.voting.User;
+import no.hvl.dat250.voting.Vote;
+
+import java.util.Arrays;
 
 public class VotingMain {
 
@@ -42,5 +45,26 @@ public class VotingMain {
         System.out.println(user.toString());
         System.out.println(poll.toString());
         em.persist(poll);
+
+        User voter = new User();
+        voter.setUsername("Ola");
+        voter.setPassword("1234");
+        voter.setRole(Roles.USER);
+
+
+
+
+        Vote vote = new Vote();
+        vote.setUser(voter);
+        vote.setPoll(poll);
+        vote.setChoice(false);
+
+
+        poll.setVotes(Arrays.asList(vote));
+        poll.setUsers(Arrays.asList(voter));
+        voter.setParticipatedPolls(Arrays.asList(poll));
+
+        em.persist(voter);
+        em.persist(vote);
     }
 }
