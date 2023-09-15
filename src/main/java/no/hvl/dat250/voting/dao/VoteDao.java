@@ -4,9 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import lombok.AllArgsConstructor;
-import no.hvl.dat250.voting.Group;
 import no.hvl.dat250.voting.Poll;
-import no.hvl.dat250.voting.User;
 import no.hvl.dat250.voting.Vote;
 
 import java.util.List;
@@ -56,12 +54,5 @@ public class VoteDao {
         TypedQuery<Vote> query = em.createQuery("SELECT v FROM Vote v WHERE v.poll = :poll", Vote.class);
         query.setParameter("poll", poll);
         return query.getResultList().stream().toList();
-    }
-
-    public List<Vote> getVotesByPollByUser(Poll poll, Long userId){
-        TypedQuery<Vote> query = em.createQuery("SELECT v FROM Vote v WHERE v.poll = :poll AND v.user.id = :userId", Vote.class);
-        query.setParameter("poll", poll);
-        query.setParameter("userId", userId);
-        return query.getResultList();
     }
 }

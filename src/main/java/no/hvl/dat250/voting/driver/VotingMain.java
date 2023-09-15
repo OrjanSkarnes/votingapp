@@ -40,19 +40,13 @@ public class VotingMain {
         poll.setDescription("Description");
         poll.setActive(true);
         poll.setCreator(user);
-
-        System.out.println(user.getCreatedPolls().size());
-        System.out.println(user.toString());
-        System.out.println(poll.toString());
+        
         em.persist(poll);
 
         User voter = new User();
         voter.setUsername("Ola");
         voter.setPassword("1234");
         voter.setRole(Roles.USER);
-
-
-
 
         Vote vote = new Vote();
         vote.setUser(voter);

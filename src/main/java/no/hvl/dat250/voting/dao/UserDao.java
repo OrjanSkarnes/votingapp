@@ -21,6 +21,11 @@ public class UserDao {
         return user;
     }
 
+    public List<User> getAllUsers() {
+        return em.createQuery("SELECT u FROM User u", User.class)
+                .getResultList();
+    }
+
     public User findUserById(Long id) {
         return em.find(User.class, id);
     }
