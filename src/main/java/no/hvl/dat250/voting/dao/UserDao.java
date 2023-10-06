@@ -48,4 +48,6 @@ public class UserDao {
                 .setParameter("userId", userId)
                 .getResultList();
     }
+
+
 }
