@@ -6,36 +6,32 @@ import jakarta.persistence.TypedQuery;
 import lombok.AllArgsConstructor;
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.Vote;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @AllArgsConstructor
+@Repository
 public class VoteDao {
 
-    @PersistenceContext(unitName = "votingapp")
+    @PersistenceContext
     private EntityManager em;
 
-    public Vote createGroup(Vote vote) {
-        em.getTransaction().begin();
+    public Vote createVote(Vote vote) {
         em.persist(vote);
-        em.getTransaction().commit();
         return vote;
     }
 
-    public Vote findGroupById(Long id) {
+    public Vote findVoteById(Long id) {
         return em.find(Vote.class, id);
     }
 
-    public void deleteGroup(Vote vote) {
-        em.getTransaction().begin();
+    public void deleteVote(Vote vote) {
         em.remove(vote);
-        em.getTransaction().commit();
     }
 
-    public Vote updateGroup(Vote vote) {
-        em.getTransaction().begin();
+    public Vote updateVote(Vote vote) {
         em.merge(vote);
-        em.getTransaction().commit();
         return vote;
     }
 

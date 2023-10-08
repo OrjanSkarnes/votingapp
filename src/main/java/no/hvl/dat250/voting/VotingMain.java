@@ -1,4 +1,4 @@
-package no.hvl.dat250.voting.driver;
+package no.hvl.dat250.voting;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -11,7 +11,7 @@ import static org.hibernate.cfg.AvailableSettings.PERSISTENCE_UNIT_NAME;
 @SpringBootApplication
 @EnableJpaRepositories
 public class VotingMain {
-    static final String PERSISTENCE_UNIT_NAME = "voting";
+    static final String PERSISTENCE_UNIT_NAME = "votingapp";
 
     public static void main(String[] args) {
         try (EntityManagerFactory factory = Persistence.createEntityManagerFactory(

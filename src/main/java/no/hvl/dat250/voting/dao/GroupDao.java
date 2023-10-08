@@ -7,19 +7,19 @@ import lombok.AllArgsConstructor;
 import no.hvl.dat250.voting.Group;
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.User;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @AllArgsConstructor
+@Repository
 public class GroupDao {
 
-    @PersistenceContext(unitName = "votingapp")
+    @PersistenceContext
     private EntityManager em;
 
     public Group createGroup(Group group) {
-        em.getTransaction().begin();
         em.persist(group);
-        em.getTransaction().commit();
         return group;
     }
 
@@ -28,15 +28,11 @@ public class GroupDao {
     }
 
     public void deleteGroup(Group group) {
-        em.getTransaction().begin();
         em.remove(group);
-        em.getTransaction().commit();
     }
 
     public Group updateGroup(Group group) {
-        em.getTransaction().begin();
         em.merge(group);
-        em.getTransaction().commit();
         return group;
     }
 

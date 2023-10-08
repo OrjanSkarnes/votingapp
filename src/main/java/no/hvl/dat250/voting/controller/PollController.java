@@ -1,7 +1,7 @@
 package no.hvl.dat250.voting.controller;
 
 import no.hvl.dat250.voting.Poll;
-import no.hvl.dat250.voting.dao.PollDao;
+import no.hvl.dat250.voting.service.PollService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,40 +12,35 @@ import java.util.List;
 public class PollController {
 
     @Autowired
-    private PollDao pollDao;
+    private PollService pollService;
 
     @PostMapping
     public Poll createPoll(@RequestBody Poll poll) {
-        return pollDao.createPoll(poll);
+        return pollService.createPoll(poll);
     }
 
     @GetMapping
     public List<Poll> getAllPolls() {
-        return pollDao.getAllPolls();
+        return pollService.getAllPolls();
     }
 
     @GetMapping("/{id}")
     public Poll findPollById(@PathVariable Long id) {
-        return pollDao.findPollById(id);
+        return pollService.findPollById(id);
     }
 
     @DeleteMapping("/{id}")
     public void deletePoll(@PathVariable Long id) {
-        Poll poll = pollDao.findPollById(id);
-        if(poll != null) {
-            pollDao.deletePoll(poll);
-        }
+        pollService.deletePoll(id);
     }
 
     @PutMapping("/{id}")
     public Poll updatePoll(@PathVariable Long id, @RequestBody Poll newPoll) {
-        // Ensure the ID from path variable and poll object are the same
-        // Add additional logic as necessary, for example, to prevent ID mismatch
-        return pollDao.updatePoll(newPoll);
+        return pollService.updatePoll(id, newPoll);
     }
 
     @GetMapping("/user/{userId}")
     public List<Poll> getPollsByUser(@PathVariable Long userId) {
-        return pollDao.getPollsByUser(userId);
+        return pollService.getPollsByUser(userId);
     }
 }
