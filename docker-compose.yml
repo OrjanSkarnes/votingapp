@@ -2,6 +2,7 @@ version: '3'
 services:
   mysql:
     image: mysql:latest
+    container_name: mysql-db
     environment:
       MYSQL_ROOT_PASSWORD: root_password
       MYSQL_DATABASE: votingapp
@@ -9,3 +10,4 @@ services:
       MYSQL_PASSWORD: admin
     ports:
       - "3306:3306"
+    restart: always

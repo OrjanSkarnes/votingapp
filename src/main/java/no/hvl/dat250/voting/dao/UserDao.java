@@ -39,9 +39,10 @@ public class UserDao {
         if (username == null) {
             return null;
         }
-        return em.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class)
+        List<User> users = em.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class)
                 .setParameter("username", username)
-                .getSingleResult();
+                .getResultList();
+        return users.isEmpty() ? null : users.get(0);
     }
 
     public void deleteUser(User user) {
