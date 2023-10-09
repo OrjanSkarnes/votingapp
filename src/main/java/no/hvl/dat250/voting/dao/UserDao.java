@@ -5,19 +5,21 @@ import jakarta.persistence.PersistenceContext;
 import lombok.AllArgsConstructor;
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.User;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @AllArgsConstructor
+@Repository
 public class UserDao {
 
-    @PersistenceContext(unitName = "votingapp")
+    @PersistenceContext
     private EntityManager em;
 
     public User createUser(User user) {
-        em.getTransaction().begin();
+        // error handling if user already exists
         em.persist(user);
-        em.getTransaction().commit();
         return user;
     }
 
@@ -27,19 +29,28 @@ public class UserDao {
     }
 
     public User findUserById(Long id) {
+        if (id == null) {
+            return null;
+        }
         return em.find(User.class, id);
     }
 
+    public User findUserByUserName(String username) {
+        if (username == null) {
+            return null;
+        }
+        List<User> users = em.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class)
+                .setParameter("username", username)
+                .getResultList();
+        return users.isEmpty() ? null : users.get(0);
+    }
+
     public void deleteUser(User user) {
-        em.getTransaction().begin();
         em.remove(user);
-        em.getTransaction().commit();
     }
 
     public User updateUser(User user) {
-        em.getTransaction().begin();
         em.merge(user);
-        em.getTransaction().commit();
         return user;
     }
 
@@ -48,4 +59,6 @@ public class UserDao {
                 .setParameter("userId", userId)
                 .getResultList();
     }
+
+
 }

@@ -3,6 +3,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+.gradle/
+
+## Gradle ##
+build/
+.gradle/**/
+
 ### Java ###
 # Compiled class file
 *.class

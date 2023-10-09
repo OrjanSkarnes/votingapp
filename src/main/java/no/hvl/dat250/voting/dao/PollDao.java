@@ -5,19 +5,19 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import lombok.AllArgsConstructor;
 import no.hvl.dat250.voting.Poll;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @AllArgsConstructor
+@Repository
 public class PollDao {
 
-    @PersistenceContext(unitName = "votingapp")
+    @PersistenceContext
     private EntityManager em;
 
     public Poll createPoll(Poll poll) {
-        em.getTransaction().begin();
         em.persist(poll);
-        em.getTransaction().commit();
         return poll;
     }
 
@@ -26,15 +26,11 @@ public class PollDao {
     }
 
     public void deletePoll(Poll poll) {
-        em.getTransaction().begin();
         em.remove(poll);
-        em.getTransaction().commit();
     }
 
     public Poll updatePoll(Poll poll) {
-        em.getTransaction().begin();
         em.merge(poll);
-        em.getTransaction().commit();
         return poll;
     }
 

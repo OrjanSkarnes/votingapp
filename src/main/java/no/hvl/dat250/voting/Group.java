@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 @Entity
 @NoArgsConstructor
-@Table(name = "Groups") // "Group" is a reserved keyword in SQL
+@Table(name = "user_groups") // "Group" is a reserved keyword in SQL
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
