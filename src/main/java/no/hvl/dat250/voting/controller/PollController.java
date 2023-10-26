@@ -43,4 +43,8 @@ public class PollController {
     public List<Poll> getPollsByUser(@PathVariable Long userId) {
         return pollService.getPollsByUser(userId);
     }
+
+    @GetMapping(value = "/{path:[^\\.]*}")
+    public String redirect() {
+        return "forward:/index.html";    }
 }

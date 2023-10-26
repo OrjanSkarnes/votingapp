@@ -13,13 +13,6 @@ repositories {
     mavenCentral()
 }
 
-dockerCompose {
-    dev {
-        // Start mysql container when starting application
-        useComposeFiles = ["docker-compose.yml"]
-        isRequiredBy(bootRun)
-    }
-}
 
 
 dependencies {

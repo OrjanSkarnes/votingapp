@@ -22,4 +22,6 @@ public class VotingMain {
         }
         SpringApplication.run(VotingMain.class, args);
     }
+
+
 }

@@ -49,4 +49,9 @@ public class VoteController {
     public List<Vote> getVotesByPoll(@PathVariable Long pollId) {
         return voteService.getVotesByPoll(pollId);
     }
+
+    @GetMapping(value = "/{path:[^\\.]*}")
+    public String redirect() {
+        return "forward:/index.html";
+    }
 }

@@ -106,5 +106,4 @@ public class UserControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.username", is(updatedUser.getUsername())));
     }
-
 }

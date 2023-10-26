@@ -51,4 +51,8 @@ public class GroupController {
     public List<Group> getGroupsByPoll(@RequestBody Poll poll) {
         return groupService.getGroupsByPoll(poll);
     }
+
+    @GetMapping(value = "/{path:[^\\.]*}")
+    public String redirect() {
+        return "forward:/index.html";    }
 }

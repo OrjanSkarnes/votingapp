@@ -50,5 +50,9 @@ public class UserController {
         return userService.getPollsByUser(id);
     }
 
+    @GetMapping(value = "/{path:[^\\.]*}")
+    public String redirect() {
+        return "forward:/index.html";
+    }
 
 }
