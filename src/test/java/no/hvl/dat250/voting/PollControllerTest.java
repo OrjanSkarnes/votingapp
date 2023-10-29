@@ -9,6 +9,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Arrays;
@@ -62,7 +63,7 @@ public class PollControllerTest {
         poll.setId(1L);
         poll.setQuestion("testPoll");
 
-        when(pollService.findPollById(1L)).thenReturn(poll);
+        when(pollService.findPollById(1L)).thenReturn(ResponseEntity.ok(poll));
 
         mockMvc.perform(get("/api/polls/1"))
                 .andExpect(status().isOk())

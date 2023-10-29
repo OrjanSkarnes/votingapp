@@ -43,3 +43,9 @@ Welcome to the repository for the `VotingApp` project. This application is part 
 2. Run the application from your IDE.
 
 Either way, the application should be accessible at [http://localhost:8080](http://localhost:8080).
+
+3. Befor running frontend you need to install all dependencies with npm:
+  ```bash
+  npm ci
+  ```
+4. 

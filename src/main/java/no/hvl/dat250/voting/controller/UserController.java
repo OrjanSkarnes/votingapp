@@ -2,28 +2,34 @@ package no.hvl.dat250.voting.controller;
 
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.User;
-import no.hvl.dat250.voting.dao.UserDao;
 import no.hvl.dat250.voting.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/user")
+@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
+    public ResponseEntity<?> createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
 
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<User> loginUser(@RequestBody User user) {
+        return userService.loginUser(user);
     }
 
     @GetMapping("/{id}")

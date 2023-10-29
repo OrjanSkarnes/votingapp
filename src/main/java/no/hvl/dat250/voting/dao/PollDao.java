@@ -44,4 +44,10 @@ public class PollDao {
         query.setParameter("userId", userId);
         return query.getResultList();
     }
+
+    public List<Poll> getPollsBasedOnVotesFromUser(Long userId) {
+        TypedQuery<Poll> query = em.createQuery("SELECT p FROM Poll p JOIN p.votes v WHERE v.user.id = :userId", Poll.class);
+        query.setParameter("userId", userId);
+        return query.getResultList();
+    }
 }

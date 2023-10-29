@@ -4,6 +4,7 @@ target/
 !**/src/test/**/target/
 
 .gradle/
+**/node_modules/
 
 ## Gradle ##
 build/

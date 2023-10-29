@@ -67,7 +67,7 @@ task copyFrontendToBuild(type: Copy) {
     into "$projectDir/src/main/resources/static"
 }
 
-processResources {
-    dependsOn 'copyFrontendToBuild'
-}
+//processResources {
+//    dependsOn 'copyFrontendToBuild'
+//}
 

@@ -36,12 +36,13 @@ public class Poll {
     @OneToMany(mappedBy = "poll", cascade = CascadeType.ALL)
     private List<Vote> votes = new ArrayList<>();
 
+
     @ManyToMany
     private List<Group> groups = new ArrayList<>();
 
     @ManyToMany
     private List<User> users = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     private User creator;
 }
