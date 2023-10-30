@@ -53,7 +53,8 @@ const MyVotes = ({ polls }) => (
         {polls.map(poll => (
             <div className='poll-item' key={poll.id}>
                 <span>{poll.question}</span>
-                <button onClick={() => { /* Voting logic here */ }}>Vote</button>
+                <span>Show voted for</span>
+                <span>Time left</span>
             </div>
         ))}
     </div>

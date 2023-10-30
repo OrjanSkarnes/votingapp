@@ -11,6 +11,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Arrays;
@@ -38,7 +39,8 @@ public class VoteControllerTest {
         Vote newVote = new Vote();
         newVote.setChoice(Boolean.TRUE);
 
-        when(voteService.createVote(any(Vote.class))).thenReturn(VoteDTO.convertToDTO(newVote));
+
+        when(voteService.createVote(any(VoteDTO.class))).thenReturn(ResponseEntity.ok(VoteDTO.convertToDTO(newVote)));
 
         mockMvc.perform(post("/api/votes")
                         .contentType(MediaType.APPLICATION_JSON)

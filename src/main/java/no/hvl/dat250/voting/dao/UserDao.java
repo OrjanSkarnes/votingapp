@@ -8,7 +8,6 @@ import no.hvl.dat250.voting.User;
 import no.hvl.dat250.voting.Vote;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;

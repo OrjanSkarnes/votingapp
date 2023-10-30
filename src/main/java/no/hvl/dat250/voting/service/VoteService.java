@@ -2,10 +2,14 @@ package no.hvl.dat250.voting.service;
 
 import no.hvl.dat250.voting.DTO.VoteDTO;
 import no.hvl.dat250.voting.Poll;
+import no.hvl.dat250.voting.User;
 import no.hvl.dat250.voting.Vote;
 import no.hvl.dat250.voting.dao.PollDao;
+import no.hvl.dat250.voting.dao.UserDao;
 import no.hvl.dat250.voting.dao.VoteDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -22,14 +26,30 @@ public class VoteService {
     @Autowired
     private PollDao pollDao;
 
+    @Autowired
+    private UserDao userDao;
+
     @Transactional
-    public VoteDTO createVote(@RequestBody Vote vote) {
-        // Same user can't vote twice on the same poll
-        LocalDateTime now = LocalDateTime.now();
-        vote.setTimestamp(now);
-        vote.setChoice(vote.getChoice());
-        VoteDTO.convertToDTO(voteDao.createVote(vote));
-        return VoteDTO.convertToDTO(vote);
+
+    public ResponseEntity<VoteDTO> createVote(VoteDTO voteDTO) {
+        User user = userDao.findUserById(voteDTO.getUserId());
+        Poll poll = pollDao.findPollById(voteDTO.getPollId());
+        if (user != null && poll != null) {
+            List<Vote> existingVote = voteDao.getVotesByUserAndPoll(user, poll);
+            if (existingVote.isEmpty()) {
+                Vote vote = new Vote();
+                vote.setUser(user);
+                vote.setPoll(poll);
+                vote.setTimestamp(LocalDateTime.now());
+                vote.setChoice(vote.getChoice());
+                vote.setChoice(voteDTO.getChoice());
+                return new ResponseEntity<>(VoteDTO.convertToDTO(voteDao.createVote(vote)), HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(null, HttpStatus.CONFLICT);
+            }
+        }
+        // Handle anon voting
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @Transactional(readOnly = true)

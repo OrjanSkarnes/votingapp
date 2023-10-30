@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, useNavigation } from 'react-router-dom';
 import fetchWrapper from './helpers/fetchWrapper';
 import { useCountdown } from './helpers/countdown';
 import { getUser } from './helpers/sessionStorage';
 
 function VotingPage() {
     const location = useLocation();
+    const navigate = useNavigate();
     // get id based on the path in the url
     const pollId = location.pathname.split('/').pop();
 
@@ -26,12 +27,10 @@ function VotingPage() {
                 .then(userRes => setPoll({...pollRes.data, creator: userRes.data}))
                 .catch((error) => {
                     setPoll(poll) 
-                    setErrorMessage('Could not find creator')
+                    setErrorMessage('Could not find creator of poll')
                 });
             }
         }).catch((error) => {
-            console.error(error?.data);
-            // Could not find the poll
             setErrorMessage('Poll not found')
         });
 
@@ -45,14 +44,21 @@ function VotingPage() {
     }
     const reqVote = {
         choice: vote,
-        user: getUser(),
-        poll: poll
+        userId: getUser()?.id,
+        pollId: poll.id
     }
-    // Call your Spring REST API to record the vote
-    console.log('Vote submitted:', reqVote);
     fetchWrapper(`/votes`, 'POST', {...reqVote}).then(data => {
-    }).catch(() => {
-        setErrorMessage('Could not submit vote')
+        navigate(`/polls`);
+    }).catch((error) => {
+        if (error?.status === 409) {
+            setErrorMessage('You have already voted on this poll')
+        }
+        if (error?.status === 404) {
+            setErrorMessage('Poll not found')
+        }
+        if (error?.status === 400) {
+            setErrorMessage('You cannot vote on your own poll')
+        }
     });
     };
 
@@ -60,8 +66,7 @@ function VotingPage() {
 
     return (
         <div className='container'>
-            {errorMessage && <div className="error">{errorMessage}</div>}
-             <div className="vote-header">
+            <div className="vote-header">
                 <h1>{poll.question}</h1>
                 <p>Description:{poll.description}</p>
                 <p>Created by: {poll.creator?.username}</p>
@@ -81,6 +86,7 @@ function VotingPage() {
                 </label>
             </div>
             <button onClick={handleSubmit}>Submit vote</button>
+            {errorMessage && <div className="error">{errorMessage}</div>}
         </div>
     );
 }

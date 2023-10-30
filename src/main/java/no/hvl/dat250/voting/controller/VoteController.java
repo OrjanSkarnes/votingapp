@@ -4,6 +4,7 @@ import no.hvl.dat250.voting.DTO.VoteDTO;
 import no.hvl.dat250.voting.Vote;
 import no.hvl.dat250.voting.service.VoteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class VoteController {
     private VoteService voteService;
 
     @PostMapping
-    public VoteDTO createVote(@RequestBody Vote vote) {
+    public ResponseEntity<VoteDTO> createVote(@RequestBody VoteDTO vote) {
         return voteService.createVote(vote);
     }
 
