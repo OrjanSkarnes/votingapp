@@ -1,5 +1,6 @@
 package no.hvl.dat250.voting.service;
 
+import no.hvl.dat250.voting.DTO.VoteDTO;
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.Vote;
 import no.hvl.dat250.voting.dao.PollDao;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -21,18 +23,23 @@ public class VoteService {
     private PollDao pollDao;
 
     @Transactional
-    public Vote createVote(@RequestBody Vote vote) {
-        return voteDao.createVote(vote);
+    public VoteDTO createVote(@RequestBody Vote vote) {
+        // Same user can't vote twice on the same poll
+        LocalDateTime now = LocalDateTime.now();
+        vote.setTimestamp(now);
+        vote.setChoice(vote.getChoice());
+        VoteDTO.convertToDTO(voteDao.createVote(vote));
+        return VoteDTO.convertToDTO(vote);
     }
 
     @Transactional(readOnly = true)
-    public List<Vote> getAllVotes() {
-        return voteDao.getAllVotes();
+    public List<VoteDTO> getAllVotes() {
+        return VoteDTO.convertToListOfDTO(voteDao.getAllVotes());
     }
 
     @Transactional(readOnly = true)
-    public Vote findVoteById(@PathVariable Long id) {
-        return voteDao.findVoteById(id);
+    public VoteDTO findVoteById(@PathVariable Long id) {
+        return VoteDTO.convertToDTO(voteDao.findVoteById(id));
     }
 
     @Transactional
@@ -44,23 +51,23 @@ public class VoteService {
     }
 
     @Transactional
-    public Vote updateVote(@PathVariable Long id, @RequestBody Vote newVote) {
+    public VoteDTO updateVote(@PathVariable Long id, @RequestBody Vote newVote) {
 
         if (!newVote.getVoteId().equals(id)) {
             return null;
         }
         // Additional logic for updating might be placed here
-        return voteDao.updateVote(newVote);
+        return  VoteDTO.convertToDTO(voteDao.updateVote(newVote));
     }
 
     @Transactional
-    public List<Vote> getVotesByUser(@PathVariable Long userId) {
-        return voteDao.getVotesByUser(userId);
+    public List<VoteDTO> getVotesByUser(@PathVariable Long userId) {
+        return VoteDTO.convertToListOfDTO(voteDao.getVotesByUser(userId));
     }
 
     @Transactional
-    public List<Vote> getVotesByPoll(@PathVariable Long pollId) {
+    public List<VoteDTO> getVotesByPoll(@PathVariable Long pollId) {
         Poll poll = pollDao.findPollById(pollId);
-        return voteDao.getVotesByPoll(poll);
+        return VoteDTO.convertToListOfDTO(voteDao.getVotesByPoll(poll));
     }
 }

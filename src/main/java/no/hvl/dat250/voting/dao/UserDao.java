@@ -5,9 +5,12 @@ import jakarta.persistence.PersistenceContext;
 import lombok.AllArgsConstructor;
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.User;
+import no.hvl.dat250.voting.Vote;
+
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -60,6 +63,14 @@ public class UserDao {
         return em.createQuery("SELECT p FROM Poll p WHERE p.creator.id = :userId", Poll.class)
                 .setParameter("userId", userId)
                 .getResultList();
+    }
+
+    public List<Vote> getVotesByUser(Long userId) {
+        User user = findUserById(userId);
+        if(user != null) {
+            return user.getVotes();
+        }
+        return new ArrayList<>();
     }
 
 

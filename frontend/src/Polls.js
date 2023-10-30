@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import fetchWrapper, { getUser } from './helpers/fetchWrapper';
 import { getUserId } from './helpers/sessionStorage';
+import { useCountdown } from './helpers/countdown';
 
 export const PollsPage = () => {
     const navigate = useNavigate();
@@ -17,7 +18,6 @@ export const PollsPage = () => {
         });
 
         fetchWrapper(`/polls/user/${userId}/votes`, 'GET').then(data => {
-            console.log(data);
             setPollsVotedOnByUser(data.data);
         }).catch((error) => {
             console.error(error?.data);
@@ -26,8 +26,6 @@ export const PollsPage = () => {
 
     const handleDelete = async(poll) => {
         // Call your Spring REST API to delete the poll
-        console.log('Poll deleted:', poll);
-
         await fetchWrapper(`/polls/${poll.id}`, 'DELETE').then(data => {
             console.log(data);
             setPolls(polls.filter(p => p.id !== poll.id));
@@ -73,35 +71,8 @@ const ManagePolls = ({ polls, handleDelete }) => {
 }
 
 const PollCard = ({poll, handleDelete}) => {
-    const [timeLeft, setTimeLeft] = useState("");
+    const timeLeft = useCountdown(poll.endDate);
     const navigate = useNavigate();
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            const now = new Date();
-            const endTime = new Date(poll.endTime); // assuming poll.endTime is in a format that can be passed to the Date constructor
-            const diff = endTime - now;
-    
-            if (diff > 0) {
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor(diff / (1000 * 60 * 60));
-                const minutes = Math.floor((diff / (1000 * 60)) % 60);
-                const seconds = Math.floor((diff / 1000) % 60);
-    
-                let timeLeftString = "";
-                if (days !== 0) {
-                    timeLeftString += `${days} ${days > 1 ? "days" : "day"} `;
-                }
-                timeLeftString += `${hours}h ${minutes}m ${seconds}s`;
-                setTimeLeft(timeLeftString);
-            } else {
-                setTimeLeft("Poll ended");
-                clearInterval(intervalId);
-            }
-        }, 1000);
-    
-        return () => clearInterval(intervalId); // cleanup on component unmount
-    }, [poll.endTime]);
 
     return (
         <div className='poll-card' key={poll.id}>

@@ -14,7 +14,7 @@ const fetchWrapper = async (url, method, payload = null, headers = {}) => {
     }
   
     try {
-      const response = await fetch("http://localhost:8080/api" + url, requestOptions);
+      const response = await fetch("http://localhost:8080/api" + url, requestOptions)
       
       const contentType = response.headers.get("content-type");
       
@@ -42,6 +42,6 @@ const fetchWrapper = async (url, method, payload = null, headers = {}) => {
 export default fetchWrapper;
 
 export const getUser = () => {
-    const user = JSON.parse(sessionStorage.getItem('userId'));
+    const user = JSON.parse(sessionStorage.getItem('user'));
     return user;
 }

@@ -1,5 +1,5 @@
 package no.hvl.dat250.voting;
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,6 +33,7 @@ public class Poll {
 
     private boolean privateAccess;
 
+    @JsonManagedReference("poll-vote")
     @OneToMany(mappedBy = "poll", cascade = CascadeType.ALL)
     private List<Vote> votes = new ArrayList<>();
 
@@ -43,6 +44,7 @@ public class Poll {
     @ManyToMany
     private List<User> users = new ArrayList<>();
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne
+    @JoinColumn(name = "creator_id")
     private User creator;
 }

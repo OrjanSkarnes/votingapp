@@ -1,6 +1,7 @@
 package no.hvl.dat250.voting;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import no.hvl.dat250.voting.DTO.VoteDTO;
 import no.hvl.dat250.voting.controller.VoteController;
 import no.hvl.dat250.voting.service.VoteService;
 import org.junit.jupiter.api.BeforeEach;
@@ -37,7 +38,7 @@ public class VoteControllerTest {
         Vote newVote = new Vote();
         newVote.setChoice(Boolean.TRUE);
 
-        when(voteService.createVote(any(Vote.class))).thenReturn(newVote);
+        when(voteService.createVote(any(Vote.class))).thenReturn(VoteDTO.convertToDTO(newVote));
 
         mockMvc.perform(post("/api/votes")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -50,7 +51,7 @@ public class VoteControllerTest {
     public void getAllVotes_ReturnsAllVotes() throws Exception {
         List<Vote> votes = Arrays.asList(new Vote(), new Vote());
 
-        when(voteService.getAllVotes()).thenReturn(votes);
+        when(voteService.getAllVotes()).thenReturn(VoteDTO.convertToListOfDTO(votes));
 
         mockMvc.perform(get("/api/votes"))
                 .andExpect(status().isOk())
@@ -62,7 +63,7 @@ public class VoteControllerTest {
         Vote vote = new Vote();
         vote.setChoice(Boolean.TRUE);
 
-        when(voteService.findVoteById(1L)).thenReturn(vote);
+        when(voteService.findVoteById(1L)).thenReturn(VoteDTO.convertToDTO(vote));
 
         mockMvc.perform(get("/api/votes/1"))
                 .andExpect(status().isOk())

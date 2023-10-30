@@ -1,8 +1,8 @@
 package no.hvl.dat250.voting;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import no.hvl.dat250.voting.DTO.PollDTO;
 import no.hvl.dat250.voting.controller.PollController;
-import no.hvl.dat250.voting.service.PollService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -14,6 +14,8 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -49,8 +51,9 @@ public class PollControllerTest {
     @Test
     public void getAllPolls_ReturnsAllPolls() throws Exception {
         List<Poll> polls = Arrays.asList(new Poll(), new Poll());
+        List<PollDTO> pollDTOs = polls.stream().map(PollDTO::convertToDTO).collect(Collectors.toList());
 
-        when(pollService.getAllPolls()).thenReturn(polls);
+        when(pollService.getAllPolls()).thenReturn(pollDTOs);
 
         mockMvc.perform(get("/api/polls"))
                 .andExpect(status().isOk())
@@ -63,7 +66,9 @@ public class PollControllerTest {
         poll.setId(1L);
         poll.setQuestion("testPoll");
 
-        when(pollService.findPollById(1L)).thenReturn(ResponseEntity.ok(poll));
+        PollDTO pollDTO = PollDTO.convertToDTO(poll);
+
+        when(pollService.findPollById(1L)).thenReturn(ResponseEntity.ok(pollDTO));
 
         mockMvc.perform(get("/api/polls/1"))
                 .andExpect(status().isOk())
@@ -83,7 +88,9 @@ public class PollControllerTest {
         Poll updatedPoll = new Poll();
         updatedPoll.setQuestion("updatedPoll");
 
-        when(pollService.updatePoll(eq(1L), any(Poll.class))).thenReturn(updatedPoll);
+        PollDTO updatedPollDTO = PollDTO.convertToDTO(updatedPoll);
+
+        when(pollService.updatePoll(eq(1L), any(Poll.class))).thenReturn(updatedPollDTO);
 
         mockMvc.perform(put("/api/polls/1")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -94,7 +101,7 @@ public class PollControllerTest {
 
     @Test
     public void getPollsByUser_ReturnsPolls() throws Exception {
-        List<Poll> polls = Arrays.asList(new Poll(), new Poll());
+        List<PollDTO> polls = Stream.of(new Poll(), new Poll()).map(PollDTO::convertToDTO).collect(Collectors.toList());
 
         when(pollService.getPollsByUser(1L)).thenReturn(polls);
 

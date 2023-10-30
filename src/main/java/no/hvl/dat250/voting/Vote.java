@@ -1,5 +1,6 @@
 package no.hvl.dat250.voting;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,7 @@ public class Vote {
     @ManyToOne
     private User user;
 
+    @JsonBackReference("poll-vote")
     @ManyToOne
     private Poll poll;
 }

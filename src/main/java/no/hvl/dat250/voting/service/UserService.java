@@ -2,6 +2,9 @@ package no.hvl.dat250.voting.service;
 
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.User;
+import no.hvl.dat250.voting.Vote;
+import no.hvl.dat250.voting.DTO.PollDTO;
+import no.hvl.dat250.voting.DTO.UserDTO;
 import no.hvl.dat250.voting.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -30,20 +34,19 @@ public class UserService {
         // If the user does not exist, create the user
         userFromDb = userDao.createUser(user);
 
-        return new ResponseEntity<>(userFromDb, HttpStatus.OK);
+        return new ResponseEntity<>(UserDTO.convertToDTO(userFromDb), HttpStatus.OK);
     }
 
     @Transactional
-    public ResponseEntity<User> loginUser(User user) {
+    public ResponseEntity<UserDTO> loginUser(User user) {
         HttpStatus status = HttpStatus.UNAUTHORIZED;
 
         // Attempt to fetch the user
         User userFromDb = userDao.findUserByUserName(user.getUsername());
-
         // Check if user exists and the password is correct
         if (userFromDb != null && userFromDb.getPassword().equals(user.getPassword())) {
             status = HttpStatus.OK;
-            return new ResponseEntity<>(userFromDb, status);
+            return new ResponseEntity<>(UserDTO.convertToDTO(userFromDb), status);
         }
 
         // If only the username is incorrect
@@ -55,30 +58,44 @@ public class UserService {
     }
 
     @Transactional
-    public User findUserById(Long id) {
-        return userDao.findUserById(id);
+    public UserDTO findUserById(Long id) {
+        return UserDTO.convertToDTO(userDao.findUserById(id));
     }
 
     @Transactional
-    public User findUserByUserName(String username) {
-        return userDao.findUserByUserName(username);
+    public UserDTO findUserByUserName(String username) {
+        return UserDTO.convertToDTO(userDao.findUserByUserName(username));
     }
     @Transactional
-    public void deleteUser(User user) {
-        userDao.deleteUser(user);
+    public void deleteUser(Long id) {
+        User user = userDao.findUserById(id);
+        if(user != null) {
+            userDao.deleteUser(user);
+        }
     }
     @Transactional
-    public User updateUser(User user) {
-        return userDao.updateUser(user);
+    public UserDTO updateUser(User user) {
+        return UserDTO.convertToDTO(userDao.updateUser(user));
     }
 
     @Transactional(readOnly = true)
-    public List<User> getAllUsers() {
-        return userDao.getAllUsers();
+    public List<UserDTO> getAllUsers() {
+        List<UserDTO> users = userDao.getAllUsers().stream().map(UserDTO::convertToDTO).collect(Collectors.toList());
+        return users;
     }
 
     @Transactional(readOnly = true)
     public List<Poll> getPollsByUser(Long userId) {
         return userDao.getPollsByUser(userId);
+    }
+
+    @Transactional(readOnly = true)
+    public List<PollDTO> getPollsBasedOnVotesFromUser(Long userId) {
+        List<Vote> votes = userDao.getVotesByUser(userId);
+        return votes.stream()
+                .map(Vote::getPoll)
+                .distinct()
+                .map(PollDTO::convertToDTO)
+                .collect(Collectors.toList());
     }
 }

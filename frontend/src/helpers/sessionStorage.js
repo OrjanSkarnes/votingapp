@@ -4,7 +4,7 @@ export const sessionStorageService = {
     },
     getItem: (key) => {
         const item = sessionStorage.getItem(key);
-        return item ? JSON.parse(item) : null;
+        return !!item ? JSON.parse(item) : null;
     },
     removeItem: (key) => {
         sessionStorage.removeItem(key);

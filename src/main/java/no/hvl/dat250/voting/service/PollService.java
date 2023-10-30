@@ -1,10 +1,8 @@
 package no.hvl.dat250.voting.service;
 
+import no.hvl.dat250.voting.DTO.PollDTO;
 import no.hvl.dat250.voting.Poll;
-import no.hvl.dat250.voting.User;
-import no.hvl.dat250.voting.Vote;
 import no.hvl.dat250.voting.dao.PollDao;
-import no.hvl.dat250.voting.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PollService {
@@ -20,26 +19,25 @@ public class PollService {
     @Autowired
     private PollDao pollDao;
 
-    @Autowired
-    private UserDao userDao;
-
     @Transactional
     public Poll createPoll(Poll poll) {
         return pollDao.createPoll(poll);
     }
 
     @Transactional(readOnly = true)
-    public List<Poll> getAllPolls() {
-        return pollDao.getAllPolls();
+    public List<PollDTO> getAllPolls() {
+        List<Poll> polls = pollDao.getAllPolls();
+        return polls.stream().map(PollDTO::convertToDTO).collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
-    public ResponseEntity<Poll> findPollById(Long id) {
+    public ResponseEntity<PollDTO> findPollById(Long id) {
         HttpStatus status = HttpStatus.OK;
 
         Poll poll = pollDao.findPollById(id);
         if(poll != null) {
-            return new ResponseEntity<>(poll, status);
+            PollDTO pollDTO = PollDTO.convertToDTO(poll);
+            return new ResponseEntity<>(pollDTO, status);
         }
 
         status = HttpStatus.NOT_FOUND;
@@ -55,20 +53,21 @@ public class PollService {
     }
 
     @Transactional
-    public Poll updatePoll(Long id, Poll newPoll) {
+    public PollDTO updatePoll(Long id, Poll newPoll) {
         if (!newPoll.getId().equals(id)) {
             return null;
         }
-        return pollDao.updatePoll(newPoll);
+        return PollDTO.convertToDTO(pollDao.updatePoll(newPoll));
     }
 
     @Transactional(readOnly = true)
-    public List<Poll> getPollsByUser(@PathVariable Long userId) {
-        return pollDao.getPollsByUser(userId);
+    public List<PollDTO> getPollsByUser(@PathVariable Long userId) {
+        return pollDao.getPollsByUser(userId).stream().map(PollDTO::convertToDTO).collect(Collectors.toList());
     }
 
     @Transactional
-    public List<Poll> getPollsBasedOnVotesFromUser(@PathVariable Long userId) {
-        return pollDao.getPollsBasedOnVotesFromUser(userId);
+    public List<PollDTO> getPollsBasedOnVotesFromUser(@PathVariable Long userId) {
+        System.out.println("PollService: " + pollDao.getPollsBasedOnVotesFromUser(userId));
+        return pollDao.getPollsBasedOnVotesFromUser(userId).stream().map(PollDTO::convertToDTO).collect(Collectors.toList());
     }
 }

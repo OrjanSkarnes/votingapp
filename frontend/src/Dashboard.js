@@ -23,8 +23,8 @@ export const Dashboard = (props) => {
             navigate(`/vote/${pollId}`);
             console.log(data);
         }).catch((error) => {
-            console.error(error?.data);
-            if (error?.data?.status === 404) {
+            console.error(error.status);
+            if (error?.status === 404) {
                 // Handle 404 error
                 setPollError('Poll not found')
             }

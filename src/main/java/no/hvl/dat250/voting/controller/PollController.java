@@ -1,7 +1,7 @@
 package no.hvl.dat250.voting.controller;
 
+import no.hvl.dat250.voting.DTO.PollDTO;
 import no.hvl.dat250.voting.Poll;
-import no.hvl.dat250.voting.User;
 import no.hvl.dat250.voting.service.PollService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,12 +23,12 @@ public class PollController {
     }
 
     @GetMapping
-    public List<Poll> getAllPolls() {
+    public List<PollDTO> getAllPolls() {
         return pollService.getAllPolls();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Poll> findPollById(@PathVariable Long id) {
+    public ResponseEntity<PollDTO> findPollById(@PathVariable Long id) {
         return pollService.findPollById(id);
     }
 
@@ -38,17 +38,17 @@ public class PollController {
     }
 
     @PutMapping("/{id}")
-    public Poll updatePoll(@PathVariable Long id, @RequestBody Poll newPoll) {
+    public PollDTO updatePoll(@PathVariable Long id, @RequestBody Poll newPoll) {
         return pollService.updatePoll(id, newPoll);
     }
 
     @GetMapping("/user/{userId}")
-    public List<Poll> getPollsByUser(@PathVariable Long userId) {
+    public List<PollDTO> getPollsByUser(@PathVariable Long userId) {
         return pollService.getPollsByUser(userId);
     }
 
     @GetMapping("/user/{userId}/votes")
-    public List<Poll> getPollsBasedOnVotesFromUser(@PathVariable Long userId) {
+    public List<PollDTO> getPollsBasedOnVotesFromUser(@PathVariable Long userId) {
         return pollService.getPollsBasedOnVotesFromUser(userId);
     }
     //@GetMapping(value = "/{path:[^\\.]*}")

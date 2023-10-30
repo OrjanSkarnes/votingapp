@@ -1,5 +1,5 @@
     package no.hvl.dat250.voting;
-
+    
     import jakarta.persistence.*;
     import lombok.*;
 
@@ -10,7 +10,7 @@
     @Setter
     @Entity
     @NoArgsConstructor
-    @Table(name = "Users") // "User" is a reserved keyword in SQL
+    @Table(name = "Users") 
     public class User {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
