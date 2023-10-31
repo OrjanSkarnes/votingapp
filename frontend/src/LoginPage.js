@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import fetchWrapper from './helpers/fetchWrapper';
 import { useNavigate } from 'react-router-dom';
 import { sessionStorageService } from './helpers/sessionStorage';
+import UserService from './helpers/userService';
 
 export const LoginPage = () => {
     const [username, setUsername] = useState('');
@@ -11,8 +12,6 @@ export const LoginPage = () => {
     const navigate = useNavigate();
 
     const handleSuccess = (data) => {
-        // Set is loggedIn to true on session storage
-        console.log(data);
         sessionStorageService.login(true);
         sessionStorageService.setUser(JSON.stringify(data.data));
         navigate('/')
@@ -23,26 +22,28 @@ export const LoginPage = () => {
     // On success, you can redirect to another page or provide feedback to the user
     const handleLogin = async () => {
         setErrorMessage('');
-        await fetchWrapper('/user/login', 'POST', {username, password}).then(data => {
+
+        UserService.login(username, password).then(data => {
             handleSuccess(data)
         }).catch((error) => {
-            console.log(error.data);
-            if (error.status === 404) {
-                // Handle 404 error
-                setErrorMessage('User not found')
-            } else if (error.status === 401) {
-                // Handle 401 error
-                setErrorMessage('Invalid password')
-            } else {
-                setErrorMessage('Something went wrong')
+            switch (error?.status) {
+                case 404:
+                    setErrorMessage('User not found')
+                    break;
+                case 401:
+                    setErrorMessage('Invalid password')
+                    break;
+                default:
+                    setErrorMessage('Something went wrong')
+                    break;
             }
         });
     }
 
     const handleCreateAccount = async () => {
         setErrorMessage('');
-        await fetchWrapper('/user', 'POST', {username, password}).then(data => {
-            handleSuccess(data.data)
+        UserService.register({username, password}).then(data => {
+            handleSuccess(data)
         }).catch((error) => {
             console.error(error.status);
             if (error?.status === 409) {

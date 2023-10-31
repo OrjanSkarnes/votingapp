@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import fetchWrapper, { getUser } from './helpers/fetchWrapper';
 import { getUserId } from './helpers/sessionStorage';
 import { useCountdown } from './helpers/countdown';
+import PollService from './helpers/pollService';
 
 export const PollsPage = () => {
     const navigate = useNavigate();
@@ -11,28 +11,19 @@ export const PollsPage = () => {
     const [pollsVotedOnByUser, setPollsVotedOnByUser] = useState([]);
 
     useEffect(() => {
-        fetchWrapper('/polls', 'GET').then(data => {
-            setPolls(data.data);
-        }).catch((error) => {
-            console.error(error?.data);
-        });
+        PollService.getAllPolls()
+            .then(data => setPolls(data.data))
+            .catch((error) => console.error(error?.data));
 
-        fetchWrapper(`/polls/user/${userId}/votes`, 'GET').then(data => {
-            setPollsVotedOnByUser(data.data);
-        }).catch((error) => {
-            console.error(error?.data);
-        });
+        PollService.getPollsVotedOnByUser(userId)
+            .then(data => setPollsVotedOnByUser(data.data))
+            .catch((error) => console.error(error?.data));
     }, [userId]);
 
     const handleDelete = async(poll) => {
-        // Call your Spring REST API to delete the poll
-        await fetchWrapper(`/polls/${poll.id}`, 'DELETE').then(data => {
-            console.log(data);
-            setPolls(polls.filter(p => p.id !== poll.id));
-        }).catch((error) => {
-            console.error(error?.data);
-
-        });
+        PollService.deletePoll(poll.id)
+            .then(data => setPolls(polls.filter(p => p.id !== poll.id)))
+            .catch((error) => console.error(error?.data));
     }    
 
     return (
@@ -72,6 +63,7 @@ const ManagePolls = ({ polls, handleDelete }) => {
 }
 
 const PollCard = ({poll, handleDelete}) => {
+    console.log(poll.endDate);
     const timeLeft = useCountdown(poll.endDate);
     const navigate = useNavigate();
 

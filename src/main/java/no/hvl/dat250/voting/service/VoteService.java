@@ -30,7 +30,6 @@ public class VoteService {
     private UserDao userDao;
 
     @Transactional
-
     public ResponseEntity<VoteDTO> createVote(VoteDTO voteDTO) {
         User user = userDao.findUserById(voteDTO.getUserId());
         Poll poll = pollDao.findPollById(voteDTO.getPollId());

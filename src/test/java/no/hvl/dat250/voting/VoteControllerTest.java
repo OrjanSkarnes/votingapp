@@ -34,11 +34,13 @@ public class VoteControllerTest {
     @MockBean
     private VoteService voteService;
 
+    private User testUser = new User();
+
+    private Poll testPoll = new Poll();
+
     @Test
     public void createVote_ReturnsCreatedVote() throws Exception {
-        Vote newVote = new Vote();
-        newVote.setChoice(Boolean.TRUE);
-
+        Vote newVote = voteCreator(true);
 
         when(voteService.createVote(any(VoteDTO.class))).thenReturn(ResponseEntity.ok(VoteDTO.convertToDTO(newVote)));
 
@@ -51,9 +53,12 @@ public class VoteControllerTest {
 
     @Test
     public void getAllVotes_ReturnsAllVotes() throws Exception {
-        List<Vote> votes = Arrays.asList(new Vote(), new Vote());
+        List<Vote> votes = Arrays.asList(voteCreator(true), voteCreator(true));
+
+        System.out.println(voteService.getAllVotes());
 
         when(voteService.getAllVotes()).thenReturn(VoteDTO.convertToListOfDTO(votes));
+
 
         mockMvc.perform(get("/api/votes"))
                 .andExpect(status().isOk())
@@ -62,13 +67,20 @@ public class VoteControllerTest {
 
     @Test
     public void findVoteById_ReturnsVote() throws Exception {
-        Vote vote = new Vote();
-        vote.setChoice(Boolean.TRUE);
+        Vote vote = voteCreator(true);
 
         when(voteService.findVoteById(1L)).thenReturn(VoteDTO.convertToDTO(vote));
 
         mockMvc.perform(get("/api/votes/1"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.choice", is(vote.getChoice())));
+    }
+
+    public Vote voteCreator(Boolean choice) {
+        Vote vote = new Vote();
+        vote.setChoice(choice);
+        vote.setUser(testUser);
+        vote.setPoll(testPoll);
+        return vote;
     }
 }

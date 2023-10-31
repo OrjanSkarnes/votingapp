@@ -22,13 +22,13 @@ public class UserService {
     private UserDao userDao;
 
     @Transactional
-    public ResponseEntity<?> createUser(User user) {
+    public ResponseEntity<UserDTO> createUser(User user) {
         // Attempt to fetch the user
         User userFromDb = userDao.findUserByUserName(user.getUsername());
 
         // If the user already exists, return the userName with message user already exists
         if(userFromDb != null && userFromDb.getUsername().equals(user.getUsername())) {
-            return new ResponseEntity<>("User already exists", HttpStatus.CONFLICT);
+            return new ResponseEntity<>(null, HttpStatus.CONFLICT);
         }
 
         // If the user does not exist, create the user
@@ -80,8 +80,7 @@ public class UserService {
 
     @Transactional(readOnly = true)
     public List<UserDTO> getAllUsers() {
-        List<UserDTO> users = userDao.getAllUsers().stream().map(UserDTO::convertToDTO).collect(Collectors.toList());
-        return users;
+        return userDao.getAllUsers().stream().map(UserDTO::convertToDTO).collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)

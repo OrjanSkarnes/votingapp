@@ -3,9 +3,6 @@ package no.hvl.dat250.voting.DTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import no.hvl.dat250.voting.Group;
-import no.hvl.dat250.voting.Poll;
-import no.hvl.dat250.voting.User;
 import no.hvl.dat250.voting.Vote;
 
 import java.util.List;

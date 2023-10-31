@@ -5,6 +5,8 @@ import no.hvl.dat250.voting.Group;
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.User;
 import no.hvl.dat250.voting.Vote;
+import no.hvl.dat250.voting.dao.PollDao;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
 import java.util.List;

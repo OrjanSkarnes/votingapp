@@ -18,7 +18,7 @@ public class PollController {
     private PollService pollService;
 
     @PostMapping
-    public Poll createPoll(@RequestBody Poll poll) {
+    public PollDTO createPoll(@RequestBody Poll poll) {
         return pollService.createPoll(poll);
     }
 

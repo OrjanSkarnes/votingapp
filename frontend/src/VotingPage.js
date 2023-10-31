@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useNavigation } from 'react-router-dom';
-import fetchWrapper from './helpers/fetchWrapper';
 import { useCountdown } from './helpers/countdown';
 import { getUser } from './helpers/sessionStorage';
+import PollService from './helpers/pollService';
+import UserService from './helpers/userService';
+import VoteService from './helpers/voteService';
 
 function VotingPage() {
     const location = useLocation();
@@ -18,22 +20,14 @@ function VotingPage() {
 
 
     useEffect(() => {
-        // Fetch the poll data from your Spring REST API using the pollId
-        // Then set it to the poll state
-        fetchWrapper(`/polls/${pollId}`, 'GET').then(pollRes => {
-            // Add the creator to the poll
-            if (pollRes.data) {
-                fetchWrapper(`/user/${pollRes.data.creatorId}`, 'GET')
-                .then(userRes => setPoll({...pollRes.data, creator: userRes.data}))
-                .catch((error) => {
-                    setPoll(poll) 
-                    setErrorMessage('Could not find creator of poll')
-                });
-            }
+        PollService.getPollById(pollId).then(data => {
+            setPoll(data.data)
+            UserService.getUserById(data.data.creatorId)
+                .then(userRes => setPoll({...data.data, creator: userRes.data}))
+                .catch((error) => {setErrorMessage('Could not find creator of poll')});
         }).catch((error) => {
             setErrorMessage('Poll not found')
         });
-
     }, [pollId]);
 
 
@@ -47,19 +41,25 @@ function VotingPage() {
         userId: getUser()?.id,
         pollId: poll.id
     }
-    fetchWrapper(`/votes`, 'POST', {...reqVote}).then(data => {
-        navigate(`/polls`);
-    }).catch((error) => {
-        if (error?.status === 409) {
-            setErrorMessage('You have already voted on this poll')
-        }
-        if (error?.status === 404) {
-            setErrorMessage('Poll not found')
-        }
-        if (error?.status === 400) {
-            setErrorMessage('You cannot vote on your own poll')
-        }
-    });
+
+    VoteService.createVote(reqVote)
+        .then(data => navigate(`/polls`))
+        .catch((error) => {
+            switch (error?.status) {
+                case 409:
+                    setErrorMessage('You have already voted on this poll')
+                    break;
+                case 404:
+                    setErrorMessage('Poll not found')
+                    break;
+                case 400:
+                    setErrorMessage('You cannot vote on your own poll')
+                    break;
+                default:
+                    setErrorMessage('Something went wrong')
+                    break;
+            }
+        });
     };
 
     if (!poll) return <div>Loading...</div>;

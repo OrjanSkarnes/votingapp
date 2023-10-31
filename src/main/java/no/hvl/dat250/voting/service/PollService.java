@@ -20,8 +20,9 @@ public class PollService {
     private PollDao pollDao;
 
     @Transactional
-    public Poll createPoll(Poll poll) {
-        return pollDao.createPoll(poll);
+    public PollDTO createPoll(Poll poll) {
+        Poll createPoll = pollDao.createPoll(poll);
+        return PollDTO.convertToDTO(createPoll);
     }
 
     @Transactional(readOnly = true)
@@ -67,7 +68,15 @@ public class PollService {
 
     @Transactional
     public List<PollDTO> getPollsBasedOnVotesFromUser(@PathVariable Long userId) {
-        System.out.println("PollService: " + pollDao.getPollsBasedOnVotesFromUser(userId));
         return pollDao.getPollsBasedOnVotesFromUser(userId).stream().map(PollDTO::convertToDTO).collect(Collectors.toList());
+    }
+
+    @Transactional
+    public void finishPoll(@PathVariable Long id) {
+        Poll poll = pollDao.findPollById(id);
+        if(poll != null) {
+            poll.setActive(false);
+            pollDao.updatePoll(poll);
+        }
     }
 }

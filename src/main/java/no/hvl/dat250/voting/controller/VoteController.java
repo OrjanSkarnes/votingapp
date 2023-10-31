@@ -53,8 +53,6 @@ public class VoteController {
         return voteService.getVotesByPoll(pollId);
     }
 
-    @GetMapping(value = "/{path:[^\\.]*}")
-    public String redirect() {
-        return "forward:/index.html";
-    }
+    //@GetMapping(value = "/{path:[^\\.]*}")
+    //public String redirect() {return "forward:/index.html";}
 }

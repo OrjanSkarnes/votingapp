@@ -36,10 +36,11 @@ public class PollControllerTest {
 
     @Test
     public void createPoll_ReturnsCreatedPoll() throws Exception {
-        Poll newPoll = new Poll();
-        newPoll.setQuestion("newPoll");
+        Poll newPoll = pollCreator("newPoll");
 
-        when(pollService.createPoll(any(Poll.class))).thenReturn(newPoll);
+        PollDTO newPollDTO = PollDTO.convertToDTO(newPoll);
+
+        when(pollService.createPoll(any(Poll.class))).thenReturn(newPollDTO);
 
         mockMvc.perform(post("/api/polls")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -50,7 +51,7 @@ public class PollControllerTest {
 
     @Test
     public void getAllPolls_ReturnsAllPolls() throws Exception {
-        List<Poll> polls = Arrays.asList(new Poll(), new Poll());
+        List<Poll> polls = Arrays.asList(pollCreator("1"), pollCreator("2"));
         List<PollDTO> pollDTOs = polls.stream().map(PollDTO::convertToDTO).collect(Collectors.toList());
 
         when(pollService.getAllPolls()).thenReturn(pollDTOs);
@@ -62,15 +63,14 @@ public class PollControllerTest {
 
     @Test
     public void findPollById_ReturnsPoll() throws Exception {
-        Poll poll = new Poll();
-        poll.setId(1L);
-        poll.setQuestion("testPoll");
+        Poll poll = pollCreator("testPoll");
+        poll.setId(5L);
 
         PollDTO pollDTO = PollDTO.convertToDTO(poll);
 
-        when(pollService.findPollById(1L)).thenReturn(ResponseEntity.ok(pollDTO));
+        when(pollService.findPollById(5L)).thenReturn(ResponseEntity.ok(pollDTO));
 
-        mockMvc.perform(get("/api/polls/1"))
+        mockMvc.perform(get("/api/polls/5"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.question", is(poll.getQuestion())));
     }
@@ -85,8 +85,7 @@ public class PollControllerTest {
 
     @Test
     public void updatePoll_UpdatesPoll() throws Exception {
-        Poll updatedPoll = new Poll();
-        updatedPoll.setQuestion("updatedPoll");
+        Poll updatedPoll = pollCreator("updatedPoll");
 
         PollDTO updatedPollDTO = PollDTO.convertToDTO(updatedPoll);
 
@@ -101,12 +100,20 @@ public class PollControllerTest {
 
     @Test
     public void getPollsByUser_ReturnsPolls() throws Exception {
-        List<PollDTO> polls = Stream.of(new Poll(), new Poll()).map(PollDTO::convertToDTO).collect(Collectors.toList());
+        List<PollDTO> polls = Stream.of(pollCreator("Baking"), pollCreator("Fishing")).map(PollDTO::convertToDTO).collect(Collectors.toList());
 
         when(pollService.getPollsByUser(1L)).thenReturn(polls);
 
         mockMvc.perform(get("/api/polls/user/1"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()", is(polls.size())));
+    }
+
+    public Poll pollCreator(String question) {
+        Poll poll = new Poll();
+        poll.setQuestion(question);
+        User creator = new User();
+        poll.setCreator(creator);
+        return poll;
     }
 }

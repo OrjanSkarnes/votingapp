@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import fetchWrapper from './helpers/fetchWrapper';
 import { getUser } from './helpers/sessionStorage';
+import PollService from './helpers/pollService';
 
 const PollPage = () => {
     const location = useLocation();
@@ -22,14 +22,9 @@ const PollPage = () => {
 
     useEffect(() => {
         if (pollId) {
-            // Call your Spring REST API to get the poll
-            fetchWrapper(`/polls/${pollId}`, 'GET').then(data => {
-                console.log(data);
-                setPoll(data.data);
-            }).catch((error) => {
-                console.error(error?.data);
-                // Could not find the poll
-            });
+            PollService.getPollById(pollId)
+                .then(data => setPoll(data.data))
+                .catch(error => console.error(error?.data))
         }
     }, [pollId]);
 
@@ -37,47 +32,33 @@ const PollPage = () => {
 
   const handleSubmit = async() => {
      // Call your Spring REST API to create the poll
-     console.log('Poll submitted:', poll);
+     console.log('Poll submitted:', getUser());
      const reqPoll = {
         ...poll,
         creator: getUser()
     }
 
-     await fetchWrapper('/polls', 'POST', reqPoll).then(data => {
-        console.log(data);
-        // redirect to the polls view
-        navigate(`/polls`);
-    }).catch((error) => {
-        console.error(error?.data);
-
-    });
+    
+    PollService.createPoll(reqPoll)
+        .then((data) => navigate("/polls"))
+        .catch((error) => console.error(error?.data))
   };
 
     const handleEdit = async() => { 
-        // Call your Spring REST API to edit the poll
-        console.log('Poll edited:', poll);
-
-        await fetchWrapper(`/polls/${poll.id}`, 'PUT', poll).then(data => {
-            console.log(data);
-            navigate(`/polls`);
-        }).catch((error) => {
-            console.error(error?.data);
-
-        });
+        const reqPoll = {
+            ...poll,
+            creator: getUser()
+        }
+        PollService.editPoll(poll.id, reqPoll)
+            .then(() => navigate("/polls"))
+            .catch((error) => console.error(error?.data))
     }
 
     const handleDelete = async() => {
-        // Call your Spring REST API to delete the poll
-        console.log('Poll deleted:', poll);
-
-        await fetchWrapper(`/polls/${poll.id}`, 'DELETE').then(data => {
-            console.log(data);
-            navigate(`/polls`);
-        }).catch((error) => {
-            console.error(error?.data);
-
-        });
-    }
+        PollService.deletePoll(poll.id)
+        .then(data => navigate("/polls"))
+        .catch((error) => console.error(error?.data));
+}
 
     return (
         <div className='container poll-container'>
