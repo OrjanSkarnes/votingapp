@@ -40,7 +40,7 @@ public class PollController {
     }
 
     @PutMapping("/{id}")
-    public PollDTO updatePoll(@PathVariable Long id, @RequestBody Poll newPoll) {
+    public PollDTO updatePoll(@PathVariable Long id, @RequestBody PollDTO newPoll) {
         return pollService.updatePoll(id, newPoll);
     }
 
@@ -50,9 +50,21 @@ public class PollController {
     }
 
     @GetMapping("/user/{userId}/votes")
-    public List<PollDTO> getPollsBasedOnVotesFromUser(@PathVariable Long userId) {
-        return pollService.getPollsBasedOnVotesFromUser(userId);
+    public List<PollDTO> getPollsBasedOnVotesFromUser(@PathVariable(required = false) Long userId, @RequestParam(required = false) Long tempId) {
+        return pollService.getPollsBasedOnVotesFromUser(userId, tempId);
     }
+
+    @GetMapping("/user/{userId}/created")
+    public List<PollDTO> getPollsCreatedByUser(@PathVariable Long userId) {
+        return pollService.getPollsCreatedByUser(userId);
+    }
+
+    @GetMapping("/{id}/votes")
+    public List<VoteDTO> getVotesByPoll(@PathVariable Long id) {
+        return pollService.getVotesByPoll(id);
+    }
+
+
     //@GetMapping(value = "/{path:[^\\.]*}")
     //public String redirect() {
         //return "forward:/index.html";    }

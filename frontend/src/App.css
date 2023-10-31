@@ -7,7 +7,8 @@ html,
 
 input {
   width: 20rem;
-  padding: 10px 5px;
+  padding: 10px;
+  margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -15,15 +16,18 @@ input {
 .container {
   width: 35rem;
   margin: 50px auto;
-  border: 1px solid #000;
+  padding: 30px;
+  border: 1px solid #ddd;
   padding: 30px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-radius: 1.6rem;
+  border-radius: 10px;
+  background-color: #f5f5f5;
 }
 
 button {
   padding: 10px 20px;
   border: none;
+  margin-top: 10px;
   border-radius: 4px;
   cursor: pointer;
   background-color: #007BFF;
@@ -62,6 +66,7 @@ button:hover {
   position: relative;
   padding-left: 35px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .checkbox input {
@@ -80,8 +85,8 @@ button:hover {
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #eee;
   border-radius: 4px;
+  background-color: #ffffff;
 }
 
 .checkbox input:checked ~ .checkmark {
@@ -106,6 +111,27 @@ button:hover {
   border: solid white;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, .my-votes td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th {
+  padding-block: 10px;
+  text-align: left;
+  background-color: #2196F3;
+  color: white;
 }
 
 @import "LoginPage.css";

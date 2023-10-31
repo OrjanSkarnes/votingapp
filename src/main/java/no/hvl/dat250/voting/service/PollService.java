@@ -1,9 +1,9 @@
 package no.hvl.dat250.voting.service;
 
 import no.hvl.dat250.voting.DTO.PollDTO;
+import no.hvl.dat250.voting.DTO.VoteDTO;
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.dao.PollDao;
-import no.hvl.dat250.voting.dao.VoteDao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -56,21 +56,34 @@ public class PollService {
     }
 
     @Transactional
-    public PollDTO updatePoll(Long id, Poll newPoll) {
+    public PollDTO updatePoll(Long id, PollDTO newPoll) {
         if (!newPoll.getId().equals(id)) {
             return null;
         }
-        return PollDTO.convertToDTO(pollDao.updatePoll(newPoll));
+        Poll poll = pollDao.findPollById(id);
+        // Update poll with new values
+        poll.setQuestion(newPoll.getQuestion());
+        poll.setDescription(newPoll.getDescription());
+        poll.setStartTime(newPoll.getStartTime());
+        poll.setEndTime(newPoll.getEndTime());
+        poll.setActive(newPoll.isActive());
+        poll.setPrivateAccess(newPoll.isPrivateAccess());
+        return PollDTO.convertToDTO(pollDao.updatePoll(poll));
     }
 
     @Transactional(readOnly = true)
     public List<PollDTO> getPollsByUser(@PathVariable Long userId) {
-        return pollDao.getPollsByUser(userId).stream().map(PollDTO::convertToDTO).collect(Collectors.toList());
+        return pollDao.getPollsByUser(userId).stream().map(PollDTO::converteToDTOwithVotes).collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public List<PollDTO> getPollsCreatedByUser(@PathVariable Long userId) {
+        return pollDao.getPollsCreatedByUser(userId).stream().map(PollDTO::converteToDTOwithVotes).collect(Collectors.toList());
     }
 
     @Transactional
-    public List<PollDTO> getPollsBasedOnVotesFromUser(@PathVariable Long userId) {
-        return pollDao.getPollsBasedOnVotesFromUser(userId).stream().map(PollDTO::convertToDTO).collect(Collectors.toList());
+    public List<PollDTO> getPollsBasedOnVotesFromUser(@PathVariable Long userId, Long tempId) {
+        return pollDao.getPollsBasedOnVotesFromUser(userId, tempId).stream().map(PollDTO::converteToDTOwithVotes).collect(Collectors.toList());
     }
 
     @Transactional
@@ -80,5 +93,10 @@ public class PollService {
             poll.setActive(false);
             pollDao.updatePoll(poll);
         }
+    }
+
+    @Transactional
+    public List<VoteDTO> getVotesByPoll(@PathVariable Long id) {
+        return pollDao.findPollById(id).getVotes().stream().map(VoteDTO::convertToDTO).collect(Collectors.toList());
     }
 }

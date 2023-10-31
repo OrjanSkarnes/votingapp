@@ -16,13 +16,24 @@ public class VoteDTO {
     private Boolean choice;
     private Long userId;
     private Long pollId;
+    private UserDTO user;
+    private PollDTO poll;
 
     public static VoteDTO convertToDTO(Vote vote) {
         VoteDTO dto = new VoteDTO();
         dto.setVoteId(vote.getVoteId());
         dto.setChoice(vote.getChoice());
         dto.setUserId(vote.getUser() != null ? vote.getUser().getId() : null);
-        dto.setPollId(vote.getPoll().getId());
+        dto.setPollId(vote.getPoll() != null ? vote.getPoll().getId() : null);
+        return dto;
+    }
+
+    public static VoteDTO converteToDTOwithObjects(Vote vote) {
+        VoteDTO dto = new VoteDTO();
+        dto.setVoteId(vote.getVoteId());
+        dto.setChoice(vote.getChoice());
+        dto.setUser(vote.getUser() != null ? UserDTO.convertToDTO(vote.getUser()) : null);
+        dto.setPoll(vote.getPoll() != null ? PollDTO.converteToDTOwithVotes(vote.getPoll()) : null);
         return dto;
     }
 

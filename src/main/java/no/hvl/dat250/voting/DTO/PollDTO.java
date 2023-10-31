@@ -23,6 +23,7 @@ public class PollDTO {
     private LocalDateTime endTime;
     private boolean active;
     private boolean privateAccess;
+    private List<VoteDTO> votes;
     private List<Long> voteIds;
     private List<Long> groupId;
     private List<Long> userIds;
@@ -44,6 +45,21 @@ public class PollDTO {
                 .build();
     }
 
+    public static PollDTO converteToDTOwithVotes(Poll poll) {
+        return PollDTO.builder()
+                .id(poll.getId())
+                .question(poll.getQuestion())
+                .description(poll.getDescription())
+                .startTime(poll.getStartTime())
+                .endTime(poll.getEndTime())
+                .active(poll.isActive())
+                .privateAccess(poll.isPrivateAccess())
+                .votes(poll.getVotes().stream().map(VoteDTO::convertToDTO).collect(Collectors.toList()))
+                .groupId(poll.getGroups().stream().map(Group::getGroupId).collect(Collectors.toList()))
+                .userIds(poll.getUsers().stream().map(User::getId).collect(Collectors.toList()))
+                .creatorId(poll.getCreator().getId())
+                .build();
+    }
     public static List<PollDTO> convertToListOfDTO(List<Poll> polls) {
         return polls.stream().map(PollDTO::convertToDTO).collect(Collectors.toList());
     }

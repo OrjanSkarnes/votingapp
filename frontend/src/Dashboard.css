@@ -1,12 +1,33 @@
 .poll {
     display: flex;
     flex-direction: column;
+    padding: 20px;
     margin-bottom: 20px;
-    gap: 10px;
+    gap: 12px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
 
-    > * {
-        width: 100%;
-    }
+
+.search-field {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    padding: 12px;
+    gap: 10px;
+    background-color: #e0dfdf; 
+    border-radius: 4px;
+}
+
+.search-field input {
+    flex: 4;
+}
+
+.search-field button {
+    flex: 1;
+    margin: 0;
 }
 
 .logged-in-buttons {

@@ -2,6 +2,7 @@ package no.hvl.dat250.voting.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 import lombok.AllArgsConstructor;
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.User;
@@ -19,9 +20,10 @@ public class UserDao {
     @PersistenceContext
     private EntityManager em;
 
-    public User createUser(User user) {
+    public User createUser(User user, Long tempId) {
         // error handling if user already exists
         em.persist(user);
+        updateVotesWithTempId(user, tempId);
         return user;
     }
 
@@ -72,5 +74,15 @@ public class UserDao {
         return new ArrayList<>();
     }
 
+    // WHen a user is registered it should map the user id to the anon votes
+    public void updateVotesWithTempId(User user, Long tempId) {
+        TypedQuery<Vote> query = em.createQuery("SELECT v FROM Vote v WHERE v.tempId = :tempId", Vote.class);
+        query.setParameter("tempId", tempId);
+        List<Vote> votes = query.getResultList();
+        for (Vote vote : votes) {
+            vote.setUser(user);
+            em.merge(vote);
+        }
+    }
 
 }

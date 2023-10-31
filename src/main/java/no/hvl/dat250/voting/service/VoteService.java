@@ -51,10 +51,10 @@ public class VoteService {
             }
             Vote vote = new Vote();
             vote.setUser(user);
-            vote.setTempId(tempId != null ? tempId : null);
+            vote.setTempId(tempId);
             vote.setPoll(poll);
             vote.setTimestamp(LocalDateTime.now());
-            vote.setChoice(vote.getChoice());
+            vote.setChoice(voteDTO.getChoice() != null ? voteDTO.getChoice() : false);
             return new ResponseEntity<>(VoteDTO.convertToDTO(voteDao.createVote(vote)), HttpStatus.OK);
         }
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
@@ -67,7 +67,7 @@ public class VoteService {
 
     @Transactional(readOnly = true)
     public VoteDTO findVoteById(@PathVariable Long id) {
-        return VoteDTO.convertToDTO(voteDao.findVoteById(id));
+        return VoteDTO.converteToDTOwithObjects(voteDao.findVoteById(id));
     }
 
     @Transactional

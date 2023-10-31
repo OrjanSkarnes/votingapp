@@ -22,7 +22,7 @@ public class UserService {
     private UserDao userDao;
 
     @Transactional
-    public ResponseEntity<UserDTO> createUser(User user) {
+    public ResponseEntity<UserDTO> createUser(User user, Long tempId) {
         // Attempt to fetch the user
         User userFromDb = userDao.findUserByUserName(user.getUsername());
 
@@ -31,7 +31,7 @@ public class UserService {
             return new ResponseEntity<>(null, HttpStatus.CONFLICT);
         }
 
-        userFromDb = userDao.createUser(user);
+        userFromDb = userDao.createUser(user, tempId);
 
         return new ResponseEntity<>(UserDTO.convertToDTO(userFromDb), HttpStatus.OK);
     }

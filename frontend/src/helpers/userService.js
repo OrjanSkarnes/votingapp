@@ -7,7 +7,8 @@ class UserService {
     }
 
     static async register(user) {
-        return fetchWrapper(`/user`, 'POST', user);
+        const tempId = getTempId();
+        return fetchWrapper(`/user?tempId=${tempId}`, 'POST', user);
     }
 
     static async getAllUsers() {

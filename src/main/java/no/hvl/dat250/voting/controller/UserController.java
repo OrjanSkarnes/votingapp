@@ -20,8 +20,8 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<?> createUser(@RequestBody User user) {
-        return userService.createUser(user);
+    public ResponseEntity<?> createUser(@RequestBody User user,@RequestParam(required = false) Long tempId) {
+        return userService.createUser(user, tempId);
     }
 
     @GetMapping

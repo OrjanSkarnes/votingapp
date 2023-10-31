@@ -63,7 +63,7 @@ public class UserControllerTest {
 
         UserDTO newUserDTO = UserDTO.convertToDTO(newUser);
 
-        when(userService.createUser(any(User.class))).thenReturn(ResponseEntity.ok(newUserDTO));
+        when(userService.createUser(any(User.class), any())).thenReturn(ResponseEntity.ok(newUserDTO));
 
         mockMvc.perform(post("/api/user")
                         .contentType(MediaType.APPLICATION_JSON)

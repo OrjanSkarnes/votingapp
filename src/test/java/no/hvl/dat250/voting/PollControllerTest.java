@@ -89,7 +89,7 @@ public class PollControllerTest {
 
         PollDTO updatedPollDTO = PollDTO.convertToDTO(updatedPoll);
 
-        when(pollService.updatePoll(eq(1L), any(Poll.class))).thenReturn(updatedPollDTO);
+        when(pollService.updatePoll(eq(1L), any(PollDTO.class))).thenReturn(updatedPollDTO);
 
         mockMvc.perform(put("/api/polls/1")
                         .contentType(MediaType.APPLICATION_JSON)

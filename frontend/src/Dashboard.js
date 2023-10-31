@@ -36,11 +36,11 @@ export const Dashboard = (props) => {
     return (
         <div className='container'>
             <h1>Welcome to SimplePoll</h1>
-            <div className='poll'>
+            <div className='search-field'>
                 <input type="text" placeholder="Enter Poll ID" id="pollIdInput" onChange={e => setPollId(e.target.value)}/>
                 <button onClick={() => handleJoinPoll()}>Vote on poll</button>
-                {pollError && <div className="error">{pollError}</div>}
             </div>
+            {pollError && <div className="error">{pollError}</div>}
             {!isLoggedIn ?
             <button onClick={() => navigate('/login')}>Login / Register</button> :
                 (

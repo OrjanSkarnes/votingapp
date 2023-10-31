@@ -34,14 +34,15 @@ const PollPage = () => {
     }, [pollId]);
 
     useEffect(() => {
-        // check if user is the creator of the poll
-        if (poll.creatorId !== user?.id) {
+        if(create) return;
+        if (poll.creatorId === user?.id) {
+            setIsCrator(true);
+            setErrorMessage(null);
+        } else {
             setErrorMessage('You are not the creator of this poll');
             setIsCrator(false);
-        } else {
-            setIsCrator(true);
         }
-    }, [poll, user]);
+    }, [poll, user, create]);
 
 
 
@@ -100,8 +101,8 @@ const PollPage = () => {
                 { create ? 
                 <button onClick={() => handleSubmit()}>Create poll</button> : 
                 (<>
-                    <button onClick={() => handleEdit()} disabled={isCreator}>Save changes</button>
-                    <button className='delete-button' onClick={() => handleDelete()} disabled={isCreator}>Delete poll</button>
+                    <button onClick={() => handleEdit()} disabled={!isCreator}>Save changes</button>
+                    <button className='delete-button' onClick={() => handleDelete()} disabled={!isCreator}>Delete poll</button>
                 </>)
                 }
                 {errorMessage && <div className="error">{errorMessage}</div>}

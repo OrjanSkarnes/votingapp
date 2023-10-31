@@ -9,6 +9,7 @@ import './App.css';
 import PollPage from './Poll';
 import { PollsPage } from './Polls';
 import { getTempId } from './helpers/sessionStorage';
+import PollResultsPage from './Result';
 
 export const App = () => {
     // assign a temporary id to the user if they don't have one
@@ -24,6 +25,7 @@ export const App = () => {
                 <Route path="/vote/:pollId" element={<VotingPage/>} />
                 <Route path="/poll" element={<PollPage/>} />
                 <Route path="/polls" element={<PollsPage/>} />
+                <Route path="/result" element={<PollResultsPage/>} />
                 {/* ... other routes ... */}
             </Routes>
         </Router>
