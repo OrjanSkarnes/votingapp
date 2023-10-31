@@ -59,4 +59,11 @@ public class VoteDao {
             .setParameter("poll", poll)
             .getResultList();
     }
+
+    public List<Vote> getVotesByTempIdAndPoll(Long tempId, Poll poll) {
+        return em.createQuery("SELECT v FROM Vote v WHERE v.tempId = :tempId AND v.poll = :poll", Vote.class)
+            .setParameter("tempId", tempId)
+            .setParameter("poll", poll)
+            .getResultList();
+    }
 }

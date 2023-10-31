@@ -18,8 +18,8 @@ public class VoteController {
     private VoteService voteService;
 
     @PostMapping
-    public ResponseEntity<VoteDTO> createVote(@RequestBody VoteDTO vote) {
-        return voteService.createVote(vote);
+    public ResponseEntity<VoteDTO> createVote(@RequestBody VoteDTO vote, @RequestParam(required = false) Long tempId) {
+        return voteService.createVote(vote, tempId);
     }
 
     @GetMapping

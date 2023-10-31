@@ -21,7 +21,7 @@ public class VoteDTO {
         VoteDTO dto = new VoteDTO();
         dto.setVoteId(vote.getVoteId());
         dto.setChoice(vote.getChoice());
-        dto.setUserId(vote.getUser().getId());
+        dto.setUserId(vote.getUser() != null ? vote.getUser().getId() : null);
         dto.setPollId(vote.getPoll().getId());
         return dto;
     }

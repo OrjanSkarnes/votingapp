@@ -21,7 +21,7 @@ function VotingPage() {
 
     useEffect(() => {
         PollService.getPollById(pollId).then(data => {
-            setPoll(data.data)
+            setPoll(data.data);
             UserService.getUserById(data.data.creatorId)
                 .then(userRes => setPoll({...data.data, creator: userRes.data}))
                 .catch((error) => {setErrorMessage('Could not find creator of poll')});
@@ -55,6 +55,9 @@ function VotingPage() {
                 case 400:
                     setErrorMessage('You cannot vote on your own poll')
                     break;
+                case 401:
+                    setErrorMessage('You must be logged in to vote')
+                    break;
                 default:
                     setErrorMessage('Something went wrong')
                     break;
@@ -70,7 +73,7 @@ function VotingPage() {
                 <h1>{poll.question}</h1>
                 <p>Description:{poll.description}</p>
                 <p>Created by: {poll.creator?.username}</p>
-                <p>Votes: {poll.votes?.length} </p>
+                <p>Votes: {poll.voteIds?.length} </p>
                 <span>Time left: {timeLeft}</span>
             </div>
             <br></br>

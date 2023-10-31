@@ -4,7 +4,6 @@ target/
 !**/src/test/**/target/
 
 .gradle/
-**/node_modules/
 
 ## Gradle ##
 build/
@@ -13,6 +12,13 @@ build/
 ### Java ###
 # Compiled class file
 *.class
+
+# react app inside frontend folder
+frontend/node_modules/
+frontend/build/
+
+#ignore everything in node modules folder
+**/node_modules/**
 
 # Log file
 *.log

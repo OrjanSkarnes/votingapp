@@ -3,6 +3,8 @@ package no.hvl.dat250.voting.service;
 import no.hvl.dat250.voting.DTO.PollDTO;
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.dao.PollDao;
+import no.hvl.dat250.voting.dao.VoteDao;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

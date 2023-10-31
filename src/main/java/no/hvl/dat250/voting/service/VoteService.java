@@ -30,24 +30,33 @@ public class VoteService {
     private UserDao userDao;
 
     @Transactional
-    public ResponseEntity<VoteDTO> createVote(VoteDTO voteDTO) {
+    public ResponseEntity<VoteDTO> createVote(VoteDTO voteDTO, Long tempId) {
         User user = userDao.findUserById(voteDTO.getUserId());
         Poll poll = pollDao.findPollById(voteDTO.getPollId());
-        if (user != null && poll != null) {
-            List<Vote> existingVote = voteDao.getVotesByUserAndPoll(user, poll);
-            if (existingVote.isEmpty()) {
-                Vote vote = new Vote();
-                vote.setUser(user);
-                vote.setPoll(poll);
-                vote.setTimestamp(LocalDateTime.now());
-                vote.setChoice(vote.getChoice());
-                vote.setChoice(voteDTO.getChoice());
-                return new ResponseEntity<>(VoteDTO.convertToDTO(voteDao.createVote(vote)), HttpStatus.OK);
-            } else {
-                return new ResponseEntity<>(null, HttpStatus.CONFLICT);
+        if (poll != null) {
+            if (poll.isPrivateAccess() && user == null) {
+                return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
             }
+            if (user != null)  {
+                List<Vote> existingVote = voteDao.getVotesByUserAndPoll(user, poll);
+                if (!existingVote.isEmpty()) {
+                    return new ResponseEntity<>(null, HttpStatus.CONFLICT);
+                }
+            }
+            if (tempId != null) {
+                List<Vote> existingVote = voteDao.getVotesByTempIdAndPoll(tempId, poll);
+                if (!existingVote.isEmpty()) {
+                    return new ResponseEntity<>(null, HttpStatus.CONFLICT);
+                }
+            }
+            Vote vote = new Vote();
+            vote.setUser(user);
+            vote.setTempId(tempId != null ? tempId : null);
+            vote.setPoll(poll);
+            vote.setTimestamp(LocalDateTime.now());
+            vote.setChoice(vote.getChoice());
+            return new ResponseEntity<>(VoteDTO.convertToDTO(voteDao.createVote(vote)), HttpStatus.OK);
         }
-        // Handle anon voting
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 

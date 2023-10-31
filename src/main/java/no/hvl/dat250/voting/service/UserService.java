@@ -31,7 +31,6 @@ public class UserService {
             return new ResponseEntity<>(null, HttpStatus.CONFLICT);
         }
 
-        // If the user does not exist, create the user
         userFromDb = userDao.createUser(user);
 
         return new ResponseEntity<>(UserDTO.convertToDTO(userFromDb), HttpStatus.OK);

@@ -24,6 +24,8 @@ public class Vote {
     @ManyToOne
     private User user;
 
+    private Long tempId;
+
     @JsonBackReference("poll-vote")
     @ManyToOne
     private Poll poll;

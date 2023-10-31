@@ -11,6 +11,11 @@ const PollPage = () => {
     const pollId = queryParams.get('pollId');
     const create = queryParams.get('create');
 
+    const [errorMessage, setErrorMessage] = useState(null); 
+    const [isCreator, setIsCrator] = useState(false);
+
+    const user = getUser();
+
     const [poll , setPoll] = useState({
         question: '',
         description: '',
@@ -28,6 +33,16 @@ const PollPage = () => {
         }
     }, [pollId]);
 
+    useEffect(() => {
+        // check if user is the creator of the poll
+        if (poll.creatorId !== user?.id) {
+            setErrorMessage('You are not the creator of this poll');
+            setIsCrator(false);
+        } else {
+            setIsCrator(true);
+        }
+    }, [poll, user]);
+
 
 
   const handleSubmit = async() => {
@@ -35,7 +50,7 @@ const PollPage = () => {
      console.log('Poll submitted:', getUser());
      const reqPoll = {
         ...poll,
-        creator: getUser()
+        creator: user
     }
 
     
@@ -45,9 +60,10 @@ const PollPage = () => {
   };
 
     const handleEdit = async() => { 
+        if (!isCreator) return;
         const reqPoll = {
             ...poll,
-            creator: getUser()
+            creator: user
         }
         PollService.editPoll(poll.id, reqPoll)
             .then(() => navigate("/polls"))
@@ -55,6 +71,7 @@ const PollPage = () => {
     }
 
     const handleDelete = async() => {
+        if (!isCreator) return;
         PollService.deletePoll(poll.id)
         .then(data => navigate("/polls"))
         .catch((error) => console.error(error?.data));
@@ -83,10 +100,11 @@ const PollPage = () => {
                 { create ? 
                 <button onClick={() => handleSubmit()}>Create poll</button> : 
                 (<>
-                    <button onClick={() => handleEdit()}>Save changes</button>
-                    <button className='delete-button' onClick={() => handleDelete()}>Delete poll</button>
+                    <button onClick={() => handleEdit()} disabled={isCreator}>Save changes</button>
+                    <button className='delete-button' onClick={() => handleDelete()} disabled={isCreator}>Delete poll</button>
                 </>)
                 }
+                {errorMessage && <div className="error">{errorMessage}</div>}
             </div>
         </div>
     );

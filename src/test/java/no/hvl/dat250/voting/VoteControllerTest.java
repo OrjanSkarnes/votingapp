@@ -42,7 +42,7 @@ public class VoteControllerTest {
     public void createVote_ReturnsCreatedVote() throws Exception {
         Vote newVote = voteCreator(true);
 
-        when(voteService.createVote(any(VoteDTO.class))).thenReturn(ResponseEntity.ok(VoteDTO.convertToDTO(newVote)));
+        when(voteService.createVote(any(VoteDTO.class), any())).thenReturn(ResponseEntity.ok(VoteDTO.convertToDTO(newVote)));
 
         mockMvc.perform(post("/api/votes")
                         .contentType(MediaType.APPLICATION_JSON)
