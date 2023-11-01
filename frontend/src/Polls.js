@@ -12,11 +12,11 @@ export const PollsPage = () => {
 
     useEffect(() => {
         PollService.getPollsByUser(userId)
-            .then(data => setPolls(data.data))
+            .then(data => setPolls(data))
             .catch((error) => console.error(error?.data));
 
         PollService.getPollsVotedOnByUser(userId)
-            .then(data => setPollsVotedOnByUser(data.data))
+            .then(data => setPollsVotedOnByUser(data))
             .catch((error) => console.error(error?.data));
     }, [userId]);
 

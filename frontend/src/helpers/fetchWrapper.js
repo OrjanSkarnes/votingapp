@@ -26,7 +26,7 @@ const fetchWrapper = async (url, method, payload = null, headers = {}) => {
       }
   
       if (response.ok) {
-        return Promise.resolve({ response, data });
+        return Promise.resolve(data);
       } else {
         const error = new Error('An error occurred');
         error.status = response.status;

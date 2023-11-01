@@ -34,13 +34,13 @@ function PollResultsPage() {
     const [creator, setCreator] = useState(null);
 
     useEffect(() => {
-        PollService.getPollById(pollId).then(data => setPoll(data.data));
-        PollService.getPollVotes(pollId).then(data => setVotes(data.data));
+        PollService.getPollById(pollId).then(data => setPoll(data));
+        PollService.getPollVotes(pollId).then(data => setVotes(data));
     }, [pollId]);
 
     useEffect(() => {
         if (!poll) return;
-        UserService.getUserById(poll?.creatorId).then(data => setCreator(data.data));
+        UserService.getUserById(poll?.creatorId).then(data => setCreator(data));
     }, [poll]);
 
     if (!poll || !votes) return <div>Loading...</div>;

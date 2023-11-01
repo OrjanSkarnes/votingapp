@@ -28,7 +28,7 @@ const PollPage = () => {
     useEffect(() => {
         if (pollId) {
             PollService.getPollById(pollId)
-                .then(data => setPoll(data.data))
+                .then(data => setPoll(data))
                 .catch(error => console.error(error?.data))
         }
     }, [pollId]);

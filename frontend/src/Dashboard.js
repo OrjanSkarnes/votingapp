@@ -18,14 +18,9 @@ export const Dashboard = (props) => {
         }
         // Call your Spring REST API to check if the poll exists
         fetchWrapper(`/polls/${pollId}`, 'GET').then(data => {
-            // Redirect to the voting page with the given pollId
-            //navigate(`/vote/${pollId}`);
             navigate(`/vote/${pollId}`);
-            console.log(data);
         }).catch((error) => {
-            console.error(error.status);
             if (error?.status === 404) {
-                // Handle 404 error
                 setPollError('Poll not found')
             }
         });
