@@ -9,6 +9,10 @@ const getAllPolls = async () => {
     return fetchWrapper('/polls', 'GET');
 };
 
+const getAllPublicPolls = async () => {
+    return fetchWrapper('/polls/public', 'GET');
+};
+
 const createPoll = async (poll) => {
     return fetchWrapper('/polls', 'POST', poll);
 };
@@ -40,6 +44,7 @@ const getPollResults = async (id) => {
 export {
     getPollById,
     getAllPolls,
+    getAllPublicPolls,
     createPoll,
     getPollsByUser,
     getPollsVotedOnByUser,

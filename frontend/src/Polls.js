@@ -85,7 +85,7 @@ const ManagePolls = ({ polls, handleDelete }) => {
     );
 }
 
-const PollCard = ({poll, handleDelete}) => {
+export const PollCard = ({poll, handleDelete}) => {
     const navigate = useNavigate();
     const isCreator = poll.creatorId === getUserId();
 
