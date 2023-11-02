@@ -29,7 +29,7 @@ public class PollController {
         return pollService.getAllPolls();
     }
 
-    @GetMapping
+    @GetMapping("/public")
     public List<PollDTO> getAllPublicPolls() {
         return pollService.getAllPublicPolls();
     }
