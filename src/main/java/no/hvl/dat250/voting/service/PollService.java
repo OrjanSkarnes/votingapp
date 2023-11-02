@@ -34,6 +34,12 @@ public class PollService {
     }
 
     @Transactional(readOnly = true)
+    public List<PollDTO> getAllPublicPolls() {
+        List<Poll> polls = pollDao.getAllPublicPolls();
+        return polls.stream().map(PollDTO::convertToDTO).collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
     public ResponseEntity<PollDTO> findPollById(Long id) {
         HttpStatus status = HttpStatus.OK;
 

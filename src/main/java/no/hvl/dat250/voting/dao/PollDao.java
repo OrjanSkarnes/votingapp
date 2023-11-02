@@ -39,6 +39,11 @@ public class PollDao {
         return query.getResultList();
     }
 
+    public List<Poll> getAllPublicPolls() {
+        TypedQuery<Poll> query = em.createQuery("SELECT p FROM Poll p WHERE p.privateAccess = false", Poll.class);
+        return query.getResultList();
+    }
+
     public List<Poll> getPollsByUser(Long userId) {
         TypedQuery<Poll> query = em.createQuery("SELECT p FROM Poll p JOIN p.votes v WHERE v.user.id = :userId", Poll.class);
         query.setParameter("userId", userId);

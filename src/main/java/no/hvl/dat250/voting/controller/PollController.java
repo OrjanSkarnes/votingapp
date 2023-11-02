@@ -29,6 +29,11 @@ public class PollController {
         return pollService.getAllPolls();
     }
 
+    @GetMapping
+    public List<PollDTO> getAllPublicPolls() {
+        return pollService.getAllPublicPolls();
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<PollDTO> findPollById(@PathVariable Long id) {
         return pollService.findPollById(id);
