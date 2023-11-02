@@ -5,8 +5,6 @@ import no.hvl.dat250.voting.Group;
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.User;
 import no.hvl.dat250.voting.Vote;
-import no.hvl.dat250.voting.dao.PollDao;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -15,6 +13,8 @@ import java.util.stream.Collectors;
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor // Lombok annotation for no-args constructor
+@AllArgsConstructor 
 public class PollDTO {
     private Long id;
     private String question;
@@ -60,6 +60,7 @@ public class PollDTO {
                 .creatorId(poll.getCreator().getId())
                 .build();
     }
+
     public static List<PollDTO> convertToListOfDTO(List<Poll> polls) {
         return polls.stream().map(PollDTO::convertToDTO).collect(Collectors.toList());
     }

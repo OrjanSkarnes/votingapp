@@ -1,6 +1,8 @@
 package no.hvl.dat250.voting;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -44,6 +46,7 @@ public class Poll {
     @ManyToMany
     private List<User> users = new ArrayList<>();
 
+    @JsonBackReference("user-poll")
     @ManyToOne
     @JoinColumn(name = "creator_id")
     private User creator;

@@ -40,7 +40,7 @@ public class PollControllerTest {
 
         PollDTO newPollDTO = PollDTO.convertToDTO(newPoll);
 
-        when(pollService.createPoll(any(Poll.class))).thenReturn(newPollDTO);
+        when(pollService.createPoll(any(PollDTO.class))).thenReturn(newPollDTO);
 
         mockMvc.perform(post("/api/polls")
                         .contentType(MediaType.APPLICATION_JSON)

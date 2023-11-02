@@ -5,7 +5,6 @@ import no.hvl.dat250.voting.DTO.VoteDTO;
 import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.service.PollService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +19,7 @@ public class PollController {
     private PollService pollService;
 
     @PostMapping
-    public PollDTO createPoll(@RequestBody Poll poll) {
+    public PollDTO createPoll(@RequestBody PollDTO poll) {
         return pollService.createPoll(poll);
     }
 

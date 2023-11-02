@@ -49,7 +49,7 @@ const PollPage = () => {
   const handleSubmit = async() => {
      const reqPoll = {
         ...poll,
-        creator: user
+        creatorId: user.id
     }
     createPoll(reqPoll)
         .then((data) => navigate("/polls"))
