@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import PollService from './helpers/pollService';
+import { getPollById, getPollVotes } from './helpers/pollService';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -12,8 +12,8 @@ import {
   } from 'chart.js';
 
 import { Bar } from "react-chartjs-2";
-import UserService from './helpers/userService';
 import { Countdown } from './Polls';
+import { getUserById } from './helpers/userService';
 
 ChartJS.register(
     CategoryScale,
@@ -34,13 +34,13 @@ function PollResultsPage() {
     const [creator, setCreator] = useState(null);
 
     useEffect(() => {
-        PollService.getPollById(pollId).then(data => setPoll(data));
-        PollService.getPollVotes(pollId).then(data => setVotes(data));
+        getPollById(pollId).then(data => setPoll(data));
+        getPollVotes(pollId).then(data => setVotes(data));
     }, [pollId]);
 
     useEffect(() => {
         if (!poll) return;
-        UserService.getUserById(poll?.creatorId).then(data => setCreator(data));
+        getUserById(poll?.creatorId).then(data => setCreator(data));
     }, [poll]);
 
     if (!poll || !votes) return <div>Loading...</div>;

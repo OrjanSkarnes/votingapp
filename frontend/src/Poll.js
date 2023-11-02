@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getUser } from './helpers/sessionStorage';
-import PollService from './helpers/pollService';
+import { createPoll, deletePoll, editPoll, getPollById } from './helpers/pollService';
 
 const PollPage = () => {
     const location = useLocation();
@@ -27,7 +27,7 @@ const PollPage = () => {
 
     useEffect(() => {
         if (pollId) {
-            PollService.getPollById(pollId)
+            getPollById(pollId)
                 .then(data => setPoll(data))
                 .catch(error => console.error(error?.data))
         }
@@ -47,15 +47,11 @@ const PollPage = () => {
 
 
   const handleSubmit = async() => {
-     // Call your Spring REST API to create the poll
-     console.log('Poll submitted:', getUser());
      const reqPoll = {
         ...poll,
         creator: user
     }
-
-    
-    PollService.createPoll(reqPoll)
+    createPoll(reqPoll)
         .then((data) => navigate("/polls"))
         .catch((error) => console.error(error?.data))
   };
@@ -66,14 +62,14 @@ const PollPage = () => {
             ...poll,
             creator: user
         }
-        PollService.editPoll(poll.id, reqPoll)
+        editPoll(poll.id, reqPoll)
             .then(() => navigate("/polls"))
             .catch((error) => console.error(error?.data))
     }
 
     const handleDelete = async() => {
         if (!isCreator) return;
-        PollService.deletePoll(poll.id)
+        deletePoll(poll.id)
         .then(data => navigate("/polls"))
         .catch((error) => console.error(error?.data));
 }
@@ -87,11 +83,11 @@ const PollPage = () => {
                 <input type="datetime-local" placeholder="Enter Poll start time" value={poll.startTime} onChange={e => setPoll({...poll, startTime: e.target.value})}/>
                 <input type="datetime-local" placeholder="Enter Poll end time" value={poll.endTime} onChange={e => setPoll({...poll, endTime: e.target.value})}/>
 
-                <div className='checkbox'>
+                {/* <div className='checkbox'>
                     <label htmlFor="pollActiveInput">Active</label>
                     <input type="checkbox" id="pollActiveInput" checked={poll.active} onChange={e => setPoll({...poll, active: e.target.checked})}/>
                     <span className='checkmark'></span>
-                </div>
+                </div> */}
 
                 <div className='checkbox'>
                     <label htmlFor="pollPrivateAccessInput">Private access</label>

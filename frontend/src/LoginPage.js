@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import fetchWrapper from './helpers/fetchWrapper';
 import { useNavigate } from 'react-router-dom';
 import { sessionStorageService } from './helpers/sessionStorage';
-import UserService from './helpers/userService';
+import { login, register } from './helpers/userService';
 
 export const LoginPage = () => {
     const [username, setUsername] = useState('');
@@ -13,7 +12,7 @@ export const LoginPage = () => {
 
     const handleSuccess = (data) => {
         sessionStorageService.login(true);
-        sessionStorageService.setUser(JSON.stringify(data.data));
+        sessionStorageService.setUser(JSON.stringify(data));
         navigate('/')
         window.location.reload();
     }
@@ -23,7 +22,7 @@ export const LoginPage = () => {
     const handleLogin = async () => {
         setErrorMessage('');
 
-        UserService.login(username, password).then(data => {
+        login(username, password).then(data => {
             handleSuccess(data)
         }).catch((error) => {
             switch (error?.status) {
@@ -42,7 +41,7 @@ export const LoginPage = () => {
 
     const handleCreateAccount = async () => {
         setErrorMessage('');
-        UserService.register({username, password}).then(data => {
+        register({username, password}).then(data => {
             handleSuccess(data)
         }).catch((error) => {
             console.error(error.status);

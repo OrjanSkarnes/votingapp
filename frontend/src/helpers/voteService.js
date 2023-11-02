@@ -1,13 +1,9 @@
 import fetchWrapper from './fetchWrapper';
-import { getTempId } from './sessionStorage';
+import { sessionStorageService } from './sessionStorage';
 
-class VoteService {
-    static async createVote(vote) {
-        const tempId = getTempId();
-        return fetchWrapper(`/votes?tempId=${tempId}`, 'POST', vote);
-    }
+export const createVote = async (vote) => {
+    const tempId = sessionStorageService.getTempId();
+    return fetchWrapper(`/votes?tempId=${tempId}`, 'POST', vote);
+};
 
-    // ... add other vote-related requests as needed
-}
-
-export default VoteService;
+// ... add other vote-related requests as needed

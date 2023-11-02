@@ -1,25 +1,21 @@
 import fetchWrapper from './fetchWrapper';
-import { getTempId } from './sessionStorage';
+import { sessionStorageService } from './sessionStorage';
 
-class UserService {
-    static async login(username, password) {
-        return fetchWrapper('/user/login', 'POST', {username, password});
-    }
+export const login = async (username, password) => {
+    return fetchWrapper('/user/login', 'POST', {username, password});
+};
 
-    static async register(user) {
-        const tempId = getTempId();
-        return fetchWrapper(`/user?tempId=${tempId}`, 'POST', user);
-    }
+export const register = async (user) => {
+    const tempId = sessionStorageService.getTempId();
+    return fetchWrapper(`/user?tempId=${tempId}`, 'POST', user);
+};
 
-    static async getAllUsers() {
-        return fetchWrapper('/user', 'GET');
-    }
+export const getAllUsers = async () => {
+    return fetchWrapper('/user', 'GET');
+};
 
-    static async getUserById(id) {
-        return fetchWrapper(`/user/${id}`, 'GET');
-    }
+export const getUserById = async (id) => {
+    return fetchWrapper(`/user/${id}`, 'GET');
+};
 
-    // ... add other user-related requests as needed
-}
-
-export default UserService;
+// ... add other user-related requests as needed

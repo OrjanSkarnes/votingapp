@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getUserId } from './helpers/sessionStorage';
 import { useCountdown } from './helpers/countdown';
-import PollService from './helpers/pollService';
+import { deletePoll, getPollsByUser, getPollsVotedOnByUser } from './helpers/pollService';
 
 export const PollsPage = () => {
     const navigate = useNavigate();
@@ -11,17 +11,17 @@ export const PollsPage = () => {
     const [pollsVotedOnByUser, setPollsVotedOnByUser] = useState([]);
 
     useEffect(() => {
-        PollService.getPollsByUser(userId)
+        getPollsByUser(userId)
             .then(data => setPolls(data))
             .catch((error) => console.error(error?.data));
 
-        PollService.getPollsVotedOnByUser(userId)
+        getPollsVotedOnByUser(userId)
             .then(data => setPollsVotedOnByUser(data))
             .catch((error) => console.error(error?.data));
     }, [userId]);
 
     const handleDelete = async(poll) => {
-        PollService.deletePoll(poll.id)
+        deletePoll(poll.id)
             .then(data => setPolls(polls.filter(p => p.id !== poll.id)))
             .catch((error) => console.error(error?.data));
     }    

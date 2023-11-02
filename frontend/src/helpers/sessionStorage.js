@@ -1,12 +1,19 @@
-import { v4 as uuidv4 } from 'uuid';
-
 export const sessionStorageService = {
     setItem: (key, value) => {
-        sessionStorage.setItem(key, JSON.stringify(value));
+        try {
+            sessionStorage.setItem(key, JSON.stringify(value));
+        } catch (error) {
+            console.error('Error setting item in session storage:', error);
+        }
     },
     getItem: (key) => {
-        const item = sessionStorage.getItem(key);
-        return !!item ? JSON.parse(item) : null;
+        try {
+            const item = sessionStorage.getItem(key);
+            return item !== "undefined" ? JSON.parse(item) : null;
+        } catch (error) {
+            console.error('Error getting item from session storage:', error);
+            return null;
+        }
     },
     removeItem: (key) => {
         sessionStorage.removeItem(key);
@@ -14,45 +21,46 @@ export const sessionStorageService = {
     clear: () => {
         sessionStorage.clear();
     },
-    login: (isLoggedIn) => {
-        sessionStorage.setItem('user', isLoggedIn);
+    login: (user) => {
+        sessionStorageService.setUser(user);
+    },
+    logout: () => {
+        sessionStorageService.clear();
+        window.location.reload();
+        window.location.href = '/';
     },
     setUserId: (userId) => {
-        sessionStorage.setItem('userId', userId);
+        sessionStorageService.setItem('userId', userId);
     },
     setUser: (user) => {
-        sessionStorage.setItem('user', user);
-        sessionStorageService.setUserId(user.id);
+        sessionStorageService.setItem('user', user);
+        console.log('user', user);
+        if (user && user.id) {
+            sessionStorageService.setUserId(user.id);
+        }
+    },
+    getTempId: () => {
+        const tempId = sessionStorageService.getItem('tempId');
+        if (!tempId) {
+            const newTempId = Date.now();
+            sessionStorageService.setItem('tempId', newTempId);
+            return newTempId;
+        }
+        return tempId;
     },
 };
 
 export const isUserLoggedIn = () => {
-    return !!sessionStorageService.getItem('user');
+    return !!getUser();
 }
 
 export const getUserId = () => {
-    const user = sessionStorageService.getItem('user');
-    return user?.id;
+    const user = getUser()
+    return user?.id || null;
 }
 
 export const getUser = () => {
-    const user = sessionStorageService.getItem('user');
-    return user;
-}
-
-export const logout = () => {
-    sessionStorageService.clear();
-    window.location.reload();
-    window.location.href = '/';
-}
-
-export const getTempId = () => {
-    const tempId = sessionStorageService.getItem('tempId');
-    if (!tempId) {
-        const newTempId = Date.now();
-        sessionStorageService.setItem('tempId', newTempId);
-    }
-    return tempId;
+    return JSON.parse(sessionStorageService.getItem('user'));
 }
 
 export const getUserStatus = () => {

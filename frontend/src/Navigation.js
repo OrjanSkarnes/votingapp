@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { isUserLoggedIn, logout } from './helpers/sessionStorage';
+import { isUserLoggedIn, sessionStorageService } from './helpers/sessionStorage';
 
 export const Navigation = () => {
     const isLoggedIn = isUserLoggedIn();
@@ -9,7 +9,7 @@ export const Navigation = () => {
             <Link to="/" className='link'>Home</Link>
             {isLoggedIn && <Link to="/polls" className='link'>Polls</Link>}
             <Link to="/vote" className='link'>Vote</Link>
-            {!isLoggedIn ?  <Link to="/login" className='link'>Login</Link> : <Link to="/" className='link' onClick={() => logout()}>Logout</Link>}
+            {!isLoggedIn ?  <Link to="/login" className='link'>Login</Link> : <Link to="/" className='link' onClick={() => sessionStorageService.logout()}>Logout</Link>}
             {/* Add more links as needed */}
         </nav>
     );

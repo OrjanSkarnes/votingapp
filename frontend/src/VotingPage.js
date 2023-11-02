@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate, useNavigation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useCountdown } from './helpers/countdown';
 import { getUser, isUserLoggedIn } from './helpers/sessionStorage';
-import PollService from './helpers/pollService';
-import UserService from './helpers/userService';
-import VoteService from './helpers/voteService';
+import { getPollById } from './helpers/pollService';
+import { getUserById } from './helpers/userService';
+import { createVote } from './helpers/voteService';
 
 function VotingPage() {
     const location = useLocation();
@@ -20,8 +20,8 @@ function VotingPage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const pollData = (await PollService.getPollById(pollId));
-                const creatorData = await UserService.getUserById(pollData.creatorId);
+                const pollData = (await getPollById(pollId));
+                const creatorData = await getUserById(pollData.creatorId);
                 setPoll({ ...pollData, creator: creatorData });
             } catch (error) {
                 setErrorMessage('Could not fetch data');
@@ -54,7 +54,7 @@ function VotingPage() {
         }
 
         try {
-            await VoteService.createVote(reqVote);
+            await createVote(reqVote);
             navigate('/polls');
         } catch (error) {
             setErrorMessage(errorMessages[error?.status] || 'Something went wrong');

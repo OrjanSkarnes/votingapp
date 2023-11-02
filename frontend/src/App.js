@@ -8,13 +8,9 @@ import Navigation from "./Navigation";
 import './App.css';
 import PollPage from './Poll';
 import { PollsPage } from './Polls';
-import { getTempId } from './helpers/sessionStorage';
 import PollResultsPage from './Result';
 
 export const App = () => {
-    // assign a temporary id to the user if they don't have one
-    getTempId();
-
     return (
         <Router>
             <Navigation />
