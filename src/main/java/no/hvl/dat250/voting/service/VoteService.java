@@ -1,9 +1,9 @@
 package no.hvl.dat250.voting.service;
 
 import no.hvl.dat250.voting.DTO.VoteDTO;
-import no.hvl.dat250.voting.Poll;
-import no.hvl.dat250.voting.User;
-import no.hvl.dat250.voting.Vote;
+import no.hvl.dat250.voting.models.Poll;
+import no.hvl.dat250.voting.models.User;
+import no.hvl.dat250.voting.models.Vote;
 import no.hvl.dat250.voting.dao.PollDao;
 import no.hvl.dat250.voting.dao.UserDao;
 import no.hvl.dat250.voting.dao.VoteDao;

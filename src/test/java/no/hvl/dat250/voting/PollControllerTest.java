@@ -3,6 +3,8 @@ package no.hvl.dat250.voting;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import no.hvl.dat250.voting.DTO.PollDTO;
 import no.hvl.dat250.voting.controller.PollController;
+import no.hvl.dat250.voting.models.Poll;
+import no.hvl.dat250.voting.models.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

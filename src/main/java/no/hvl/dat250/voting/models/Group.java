@@ -1,4 +1,4 @@
-package no.hvl.dat250.voting;
+package no.hvl.dat250.voting.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;

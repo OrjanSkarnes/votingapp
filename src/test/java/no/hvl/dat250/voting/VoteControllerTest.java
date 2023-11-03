@@ -2,9 +2,10 @@ package no.hvl.dat250.voting;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import no.hvl.dat250.voting.DTO.VoteDTO;
-import no.hvl.dat250.voting.controller.VoteController;
+import no.hvl.dat250.voting.models.Poll;
+import no.hvl.dat250.voting.models.User;
+import no.hvl.dat250.voting.models.Vote;
 import no.hvl.dat250.voting.service.VoteService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -54,8 +55,6 @@ public class VoteControllerTest {
     @Test
     public void getAllVotes_ReturnsAllVotes() throws Exception {
         List<Vote> votes = Arrays.asList(voteCreator(true), voteCreator(true));
-
-        System.out.println(voteService.getAllVotes());
 
         when(voteService.getAllVotes()).thenReturn(VoteDTO.convertToListOfDTO(votes));
 

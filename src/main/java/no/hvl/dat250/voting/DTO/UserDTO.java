@@ -6,11 +6,11 @@ import java.util.stream.Collectors;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import no.hvl.dat250.voting.Group;
-import no.hvl.dat250.voting.Poll;
-import no.hvl.dat250.voting.Roles;
-import no.hvl.dat250.voting.User;
-import no.hvl.dat250.voting.Vote;
+import no.hvl.dat250.voting.models.Group;
+import no.hvl.dat250.voting.models.Poll;
+import no.hvl.dat250.voting.models.Roles;
+import no.hvl.dat250.voting.models.User;
+import no.hvl.dat250.voting.models.Vote;
 
 @Getter
 @Setter

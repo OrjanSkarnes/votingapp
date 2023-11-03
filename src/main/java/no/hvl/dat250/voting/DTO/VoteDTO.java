@@ -3,7 +3,7 @@ package no.hvl.dat250.voting.DTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import no.hvl.dat250.voting.Vote;
+import no.hvl.dat250.voting.models.Vote;
 
 import java.util.List;
 import java.util.stream.Collectors;

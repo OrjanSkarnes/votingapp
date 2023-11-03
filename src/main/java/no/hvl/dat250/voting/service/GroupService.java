@@ -1,8 +1,8 @@
 package no.hvl.dat250.voting.service;
 
-import no.hvl.dat250.voting.Group;
-import no.hvl.dat250.voting.Poll;
-import no.hvl.dat250.voting.User;
+import no.hvl.dat250.voting.models.Group;
+import no.hvl.dat250.voting.models.Poll;
+import no.hvl.dat250.voting.models.User;
 import no.hvl.dat250.voting.dao.GroupDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

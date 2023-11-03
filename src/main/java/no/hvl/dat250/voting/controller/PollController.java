@@ -2,7 +2,6 @@ package no.hvl.dat250.voting.controller;
 
 import no.hvl.dat250.voting.DTO.PollDTO;
 import no.hvl.dat250.voting.DTO.VoteDTO;
-import no.hvl.dat250.voting.Poll;
 import no.hvl.dat250.voting.service.PollService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

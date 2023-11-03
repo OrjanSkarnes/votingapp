@@ -1,4 +1,4 @@
-package no.hvl.dat250.voting;
+package no.hvl.dat250.voting.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;

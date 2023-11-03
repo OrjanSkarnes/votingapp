@@ -2,7 +2,7 @@ package no.hvl.dat250.voting;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import no.hvl.dat250.voting.DTO.UserDTO;
-import no.hvl.dat250.voting.dao.UserDao;
+import no.hvl.dat250.voting.models.User;
 import no.hvl.dat250.voting.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

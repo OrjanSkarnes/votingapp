@@ -1,10 +1,10 @@
 package no.hvl.dat250.voting.DTO;
 
 import lombok.*;
-import no.hvl.dat250.voting.Group;
-import no.hvl.dat250.voting.Poll;
-import no.hvl.dat250.voting.User;
-import no.hvl.dat250.voting.Vote;
+import no.hvl.dat250.voting.models.Group;
+import no.hvl.dat250.voting.models.Poll;
+import no.hvl.dat250.voting.models.User;
+import no.hvl.dat250.voting.models.Vote;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @Getter
 @Setter
 @Builder
-@NoArgsConstructor // Lombok annotation for no-args constructor
+@NoArgsConstructor
 @AllArgsConstructor 
 public class PollDTO {
     private Long id;

@@ -6,7 +6,6 @@ import jakarta.persistence.Persistence;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import static org.hibernate.cfg.AvailableSettings.PERSISTENCE_UNIT_NAME;
 
 @SpringBootApplication
 @EnableJpaRepositories

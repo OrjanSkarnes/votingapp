@@ -60,9 +60,9 @@ const PollPage = () => {
         if (!isCreator) return;
         const reqPoll = {
             ...poll,
-            creator: user
+            creatorId: user.id
         }
-        editPoll(poll.id, reqPoll)
+        editPoll(poll.id,reqPoll)
             .then(() => navigate("/polls"))
             .catch((error) => console.error(error?.data))
     }

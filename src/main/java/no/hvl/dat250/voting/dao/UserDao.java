@@ -4,14 +4,17 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import lombok.AllArgsConstructor;
-import no.hvl.dat250.voting.Poll;
-import no.hvl.dat250.voting.User;
-import no.hvl.dat250.voting.Vote;
+import no.hvl.dat250.voting.models.Poll;
+import no.hvl.dat250.voting.models.User;
+import no.hvl.dat250.voting.models.Vote;
 
+import no.hvl.dat250.voting.service.LoggerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 @AllArgsConstructor
 @Repository
@@ -19,6 +22,9 @@ public class UserDao {
 
     @PersistenceContext
     private EntityManager em;
+
+    @Autowired
+    private LoggerService loggerService;
 
     public User createUser(User user, Long tempId) {
         // error handling if user already exists
@@ -34,6 +40,7 @@ public class UserDao {
 
     public User findUserById(Long id) {
         if (id == null) {
+            loggerService.logError("User id is null");
             return null;
         }
         return em.find(User.class, id);
