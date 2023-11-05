@@ -46,6 +46,16 @@ public class UserDao {
         return em.find(User.class, id);
     }
 
+    public List<User> findUsersByIds(List<Long> userIds) {
+        if (userIds == null) {
+            loggerService.logError("User ids is null");
+            return null;
+        }
+        TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.id IN :userIds", User.class);
+        query.setParameter("userIds", userIds);
+        return query.getResultList();
+    }
+
     public User findUserByUserName(String username) {
         if (username == null) {
             return null;

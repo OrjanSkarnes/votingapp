@@ -34,10 +34,15 @@ public class Poll {
 
     private boolean privateAccess;
 
+    @Transient
+    private Long votesFor;
+
+    @Transient
+    private Long votesAgainst;
+
     @JsonManagedReference("poll-vote")
     @OneToMany(mappedBy = "poll", cascade = CascadeType.ALL)
     private List<Vote> votes = new ArrayList<>();
-
 
     @ManyToMany
     private List<Group> groups = new ArrayList<>();

@@ -16,14 +16,12 @@ import org.apache.kafka.streams.processor.api.Record;
 import org.apache.kafka.streams.state.KeyValueIterator;
 import org.apache.kafka.streams.state.KeyValueStore;
 import org.apache.kafka.streams.state.Stores;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Properties;
 // This code is part of a configuration class for a Kafka Streams application in a Spring Boot project.
@@ -72,6 +70,7 @@ public class KafkaStreamsConfig {
 
         // Process the stream using a custom processor and then publish the results to another topic.
         endTimes.process(PollEndTimeProcessor::new, "poll-end-times")
+                // This is the last step in the topology, so the results are published to a topic.
                 .to(finishPollTopic, Produced.with(Serdes.String(), Serdes.String()));
 
         // Building the final topology that defines the flow of data through the Kafka Streams application.
@@ -91,9 +90,6 @@ public class KafkaStreamsConfig {
     private static class PollEndTimeProcessor implements Processor<String, String, String, String> {
         private ProcessorContext context;
         private KeyValueStore<String, Long> store;
-
-        @Autowired
-        private LoggerService loggerService;
 
         @Override
         public void init(ProcessorContext context) {
@@ -126,7 +122,7 @@ public class KafkaStreamsConfig {
                     // If the poll end time is before or at the current time, the poll has ended.
                     if (entry.value <= timestamp) {
                         System.out.println("Poll has ended: " + entry.key);
-
+                        // Forward the poll ID to the next processor in the topology.
                         this.context.forward(new Record<>(entry.key, entry.key ,timestamp));
                         store.delete(entry.key);
                     }

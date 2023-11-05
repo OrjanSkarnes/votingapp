@@ -18,7 +18,7 @@ const createPoll = async (poll) => {
 };
 
 const getPollsByUser = async (userId) => {
-    return fetchWrapper(`/polls/user/${userId}/created`, 'GET');
+    return fetchWrapper(`/polls/user/${userId || ' '}/created`, 'GET');
 };
 
 const getPollsVotedOnByUser = async (userId) => {

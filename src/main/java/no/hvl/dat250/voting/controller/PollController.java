@@ -4,6 +4,7 @@ import no.hvl.dat250.voting.DTO.PollDTO;
 import no.hvl.dat250.voting.DTO.VoteDTO;
 import no.hvl.dat250.voting.service.PollService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +35,15 @@ public class PollController {
 
     @GetMapping("/{id}")
     public ResponseEntity<PollDTO> findPollById(@PathVariable Long id) {
-        return pollService.findPollById(id);
+        HttpStatus status = HttpStatus.OK;
+
+        PollDTO poll = pollService.findPollById(id);
+        if(poll != null) {
+            return new ResponseEntity<>(poll, status);
+        }
+
+        status = HttpStatus.NOT_FOUND;
+        return new ResponseEntity<>(null, status);
     }
 
     @DeleteMapping("/{id}")

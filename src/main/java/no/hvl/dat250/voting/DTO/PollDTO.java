@@ -60,8 +60,4 @@ public class PollDTO {
                 .creatorId(poll.getCreator().getId())
                 .build();
     }
-
-    public static List<PollDTO> convertToListOfDTO(List<Poll> polls) {
-        return polls.stream().map(PollDTO::convertToDTO).collect(Collectors.toList());
-    }
 }

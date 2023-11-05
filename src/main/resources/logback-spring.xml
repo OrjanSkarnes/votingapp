@@ -50,6 +50,18 @@
         <appender-ref ref="ConsoleOutput" />
     </logger>
 
+
+    <logger name="no.hvl.dat250.voting.filter" level="INFO" additivity="false">
+        <appender-ref ref="LogFile" />
+        <appender-ref ref="ConsoleOutput" />
+    </logger>
+
+    <!-- CommonsRequestLoggingFilter  only logging.level.org.springframework.web.filter.CommonsRequestLoggingFilter print the after request-->
+    <logger name="org.springframework.web.filter.CommonsRequestLoggingFilter" level="DEBUG" additivity="false">
+        <appender-ref ref="LogFile" />
+        <appender-ref ref="ConsoleOutput" />
+    </logger>
+
     <!-- Exclude Kafka and StreamThread from logging -->
     <logger name="org.apache.kafka" level="WARN" />
     <logger name="org.apache.kafka.streams" level="WARN" />

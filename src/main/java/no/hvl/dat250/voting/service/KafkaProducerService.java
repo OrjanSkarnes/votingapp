@@ -18,21 +18,16 @@ public class KafkaProducerService {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    public void sendPoll(String topic, Poll poll) {
-        try {
-            String pollJson = mapper.writeValueAsString(poll);
-            kafkaTemplate.send(topic, pollJson);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    @Autowired
+    private LoggerService loggerService;
 
     public void sendObject(String topic, Object obj) {
         try {
             String pollJson = mapper.writeValueAsString(obj);
             kafkaTemplate.send(topic, pollJson);
+            loggerService.log("Object sent to kafka topic: " + topic);
         } catch (Exception e) {
-            e.printStackTrace();
+            loggerService.logError("Error sending object to kafka topic: " + topic, e);
         }
     }
 }
