@@ -29,9 +29,6 @@ dependencies {
     implementation 'com.auth0:java-jwt:4.3.0'
     implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
 
-
-
-
     implementation 'org.springframework.kafka:spring-kafka'
     implementation 'org.apache.kafka:kafka-streams'
     implementation 'org.apache.kafka:kafka-clients'
@@ -51,45 +48,10 @@ dependencies {
     testImplementation 'junit:junit:4.13.1'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-
-
 }
 
-
-
-node {
-    version = '20.6.1'
-    download = true
-    workDir = file("${project.projectDir}/frontend/nodejs")
-    npmWorkDir = file("${project.projectDir}/frontend/npm")
-    nodeModulesDir = file("${project.projectDir}/frontend")
+test {
+    useJUnitPlatform()
 }
 
-
-task npmBuild(type: NpmTask) {
-    dependsOn 'npmInstallDependencies'
-    execOverrides {
-        it.workingDir = 'frontend'
-    }
-    args = ['run', 'build']
-}
-
-task npmInstallDependencies(type: NpmTask) {
-    dependsOn 'npmSetup'
-    execOverrides {
-        it.ignoreExitValue = true
-        it.workingDir = 'frontend'
-    }
-    args = ['install']
-}
-
-task copyFrontendToBuild(type: Copy) {
-    dependsOn 'npmBuild'
-    from "$projectDir/frontend/build"
-    into "$projectDir/src/main/resources/static"
-}
-
-//processResources {
-//    dependsOn 'copyFrontendToBuild'
-//}
 

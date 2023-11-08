@@ -12,7 +12,7 @@ export const LoginPage = () => {
 
     const handleSuccess = (data) => {
         sessionStorageService.login(true);
-        sessionStorageService.setUser(JSON.stringify(data));
+        sessionStorageService.setUser(JSON.stringify(data.user));
         navigate('/')
         window.location.reload();
     }
