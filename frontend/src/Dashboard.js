@@ -71,7 +71,7 @@ const ManagePublicPolls = ({ polls }) => {
     const navigate = useNavigate();
 
     return (
-        <div>
+        <div className="container">
             <h2>Pubic polls</h2>
             {polls.map(poll => (
                 <>

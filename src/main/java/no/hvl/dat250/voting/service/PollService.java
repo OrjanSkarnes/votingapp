@@ -50,7 +50,7 @@ public class PollService {
     @Transactional(readOnly = true)
     public List<PollDTO> getAllPublicPolls() {
         List<Poll> polls = pollDao.getAllPublicPolls();
-        return polls.stream().map(PollDTO::convertToDTO).collect(Collectors.toList());
+        return polls.stream().map(PollDTO::converteToDTOwithVotes).collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)

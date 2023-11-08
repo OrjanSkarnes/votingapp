@@ -38,9 +38,9 @@ public class PollDTO {
                 .endTime(poll.getEndTime())
                 .active(poll.isActive())
                 .privateAccess(poll.isPrivateAccess())
-                .voteIds(poll.getVotes().stream().map(Vote::getVoteId).collect(Collectors.toList()))
-                .groupId(poll.getGroups().stream().map(Group::getGroupId).collect(Collectors.toList()))
-                .userIds(poll.getUsers().stream().map(User::getId).collect(Collectors.toList()))
+                .voteIds(poll.getVotes() != null ?  poll.getVotes().stream().map(Vote::getVoteId).collect(Collectors.toList()): null)
+                .groupId(poll.getGroups() != null ? poll.getGroups().stream().map(Group::getGroupId).collect(Collectors.toList()): null)
+                .userIds(poll.getUsers() != null ? poll.getUsers().stream().map(User::getId).collect(Collectors.toList()) : null)
                 .creatorId(poll.getCreator().getId())
                 .build();
     }

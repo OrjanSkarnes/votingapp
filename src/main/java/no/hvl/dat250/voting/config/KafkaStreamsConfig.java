@@ -1,7 +1,5 @@
 package no.hvl.dat250.voting.config;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import no.hvl.dat250.voting.models.EndTimeInfo;
 import no.hvl.dat250.voting.service.LoggerService;
 import org.apache.kafka.common.serialization.Serdes;
@@ -16,6 +14,8 @@ import org.apache.kafka.streams.processor.api.Record;
 import org.apache.kafka.streams.state.KeyValueIterator;
 import org.apache.kafka.streams.state.KeyValueStore;
 import org.apache.kafka.streams.state.Stores;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,6 +38,8 @@ public class KafkaStreamsConfig {
     @Value("${spring.kafka.streams.application-id}")
     private String applicationId;
 
+    private static final Logger logger = LoggerFactory.getLogger(LoggerService.class);
+
     @Bean
     public KafkaStreams kafkaStreams() {
         final String finishPollTopic = "pollEndTimesFinished";
@@ -52,6 +54,7 @@ public class KafkaStreamsConfig {
         props.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, 4);
         props.put(StreamsConfig.NUM_STANDBY_REPLICAS_CONFIG, 1);
 
+        props.put(StreamsConfig.STATE_CLEANUP_DELAY_MS_CONFIG, "60000");
 
         // StreamsBuilder is used to build the topology (flow) of the Kafka Streams application.
         StreamsBuilder builder = new StreamsBuilder();
@@ -102,8 +105,7 @@ public class KafkaStreamsConfig {
 
         @Override
         public void process(Record<String, String> record) {
-            System.out.println("Received record: " + record.value());
-
+            logger.info("Received record: " + record.value());
             try {
                 // Deserialize JSON string to EndTimeInfo object and store it with the poll ID as the key.
                 EndTimeInfo endTimeInfo = EndTimeInfo.fromJsonString(record.value());
@@ -121,7 +123,7 @@ public class KafkaStreamsConfig {
                     KeyValue<String, Long> entry = it.next();
                     // If the poll end time is before or at the current time, the poll has ended.
                     if (entry.value <= timestamp) {
-                        System.out.println("Poll has ended: " + entry.key);
+                        logger.info("Poll has ended: " + entry.key);
                         // Forward the poll ID to the next processor in the topology.
                         this.context.forward(new Record<>(entry.key, entry.key ,timestamp));
                         store.delete(entry.key);
