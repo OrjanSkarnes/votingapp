@@ -9,6 +9,7 @@ import no.hvl.dat250.voting.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,39 +22,44 @@ public class UserService {
     @Autowired
     private UserDao userDao;
 
-    @Transactional
-    public ResponseEntity<UserDTO> createUser(User user, Long tempId) {
-        // Attempt to fetch the user
-        User userFromDb = userDao.findUserByUserName(user.getUsername());
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
-        // If the user already exists, return the userName with message user already exists
-        if(userFromDb != null && userFromDb.getUsername().equals(user.getUsername())) {
-            return new ResponseEntity<>(null, HttpStatus.CONFLICT);
-        }
-
-        userFromDb = userDao.createUser(user, tempId);
-
-        return new ResponseEntity<>(UserDTO.convertToDTO(userFromDb), HttpStatus.OK);
+    public UserService(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Transactional
-    public ResponseEntity<UserDTO> loginUser(User user) {
-        HttpStatus status = HttpStatus.UNAUTHORIZED;
-
+    public ResponseEntity<UserDTO> createUser(User user, Long tempId) {
         // Attempt to fetch the user
-        User userFromDb = userDao.findUserByUserName(user.getUsername());
-        // Check if user exists and the password is correct
-        if (userFromDb != null && userFromDb.getPassword().equals(user.getPassword())) {
-            status = HttpStatus.OK;
-            return new ResponseEntity<>(UserDTO.convertToDTO(userFromDb), status);
+        User existingUser = userDao.findUserByUserName(user.getUsername());
+
+        // If the user already exists, return a conflict status
+        if (existingUser != null) {
+            return new ResponseEntity<>(null, HttpStatus.CONFLICT);
         }
 
-        // If only the username is incorrect
-        if (userFromDb == null) {
-            status = HttpStatus.NOT_FOUND;
-        }
+        // Encode the password before saving
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-        return new ResponseEntity<>(null, status);
+        // Create the user
+        User createdUser = userDao.createUser(user, tempId);
+
+        // Convert to DTO and return
+        return new ResponseEntity<>(UserDTO.convertToDTO(createdUser), HttpStatus.CREATED);
+    }
+
+    @Transactional
+    public ResponseEntity<UserDTO> loginUser(User loginUser) {
+        User userFromDb = userDao.findUserByUserName(loginUser.getUsername());
+
+        if (userFromDb != null && passwordEncoder.matches(loginUser.getPassword(), userFromDb.getPassword())) {
+            // Authentication successful
+            return new ResponseEntity<>(UserDTO.convertToDTO(userFromDb), HttpStatus.OK);
+        } else {
+            // Authentication failed
+            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
+        }
     }
 
     @Transactional
@@ -95,5 +101,10 @@ public class UserService {
                 .distinct()
                 .map(PollDTO::convertToDTO)
                 .collect(Collectors.toList());
+    }
+
+
+    public UserDTO findUserByUsername(String username) {
+        return UserDTO.convertToDTO(userDao.findUserByUserName(username));
     }
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { getUser } from './helpers/sessionStorage';
+import {getUser, getUserId} from './helpers/sessionStorage';
 import { createPoll, deletePoll, editPoll, getPollById } from './helpers/pollService';
 
 const PollPage = () => {
@@ -51,6 +51,7 @@ const PollPage = () => {
         ...poll,
         creatorId: user.id
     }
+    console.log(getUserId())
     createPoll(reqPoll)
         .then((data) => navigate("/polls"))
         .catch((error) => console.error(error?.data))

@@ -67,6 +67,18 @@ public class UserDao {
         return users.isEmpty() ? null : users.get(0);
     }
 
+    public boolean existsByUsername(String username) {
+        if (username == null) {
+            return false;
+        }
+        List<User> users = em.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class)
+                .setParameter("username", username)
+                .getResultList();
+
+        return !users.isEmpty();
+    }
+
+
 
     public void deleteUser(User user) {
         em.remove(user);
@@ -90,6 +102,7 @@ public class UserDao {
         }
         return new ArrayList<>();
     }
+
 
     // WHen a user is registered it should map the user id to the anon votes
     public void updateVotesWithTempId(User user, Long tempId) {

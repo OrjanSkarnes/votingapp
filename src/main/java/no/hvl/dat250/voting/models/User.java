@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Getter
 @Setter
 @Entity
-@NoArgsConstructor
+
 @Table(name = "Users") 
 public class User {
     @Id
@@ -22,6 +22,7 @@ public class User {
     private String username;
 
     private String password;
+
 
     @Enumerated(EnumType.STRING)
     private Roles role;
@@ -39,5 +40,13 @@ public class User {
 
     @ManyToMany(mappedBy = "members")
     private List<Group> groups = new ArrayList<>();
+
+    public User() {
+    }
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.password = password;
+    }
 }
 

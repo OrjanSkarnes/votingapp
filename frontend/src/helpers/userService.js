@@ -7,7 +7,7 @@ export const login = async (username, password) => {
 
 export const register = async (user) => {
     const tempId = sessionStorageService.getTempId();
-    return fetchWrapper(`/user?tempId=${tempId}`, 'POST', user);
+    return fetchWrapper(`/user/register?tempId=${tempId}`, 'POST', user);
 };
 
 export const getAllUsers = async () => {
