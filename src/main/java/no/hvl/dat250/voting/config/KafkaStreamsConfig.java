@@ -2,6 +2,9 @@ package no.hvl.dat250.voting.config;
 
 import no.hvl.dat250.voting.models.EndTimeInfo;
 import no.hvl.dat250.voting.service.LoggerService;
+import org.apache.kafka.clients.admin.AdminClient;
+import org.apache.kafka.clients.admin.AdminClientConfig;
+import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.*;
 import org.apache.kafka.streams.kstream.Consumed;
@@ -23,6 +26,7 @@ import org.springframework.context.annotation.Configuration;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.ZoneId;
+import java.util.Collections;
 import java.util.Properties;
 // This code is part of a configuration class for a Kafka Streams application in a Spring Boot project.
 @Configuration
@@ -40,6 +44,12 @@ public class KafkaStreamsConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(LoggerService.class);
 
+    // Create a bean thar starts a topic the first time the application is run.
+    @Bean
+    public NewTopic pollEndTimeTopic() {
+        return new NewTopic(pollEndTimeTopic, 1, (short) 1);
+    }
+
     @Bean
     public KafkaStreams kafkaStreams() {
         final String finishPollTopic = "pollEndTimesFinished";
@@ -55,6 +65,15 @@ public class KafkaStreamsConfig {
         props.put(StreamsConfig.NUM_STANDBY_REPLICAS_CONFIG, 1);
 
         props.put(StreamsConfig.STATE_CLEANUP_DELAY_MS_CONFIG, "60000");
+
+        Properties config = new Properties();
+        config.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+        AdminClient admin = AdminClient.create(config);
+
+        NewTopic newTopic = new NewTopic("pollEndTimeTopic", 1, (short) 1); //new NewTopic(topicName, numPartitions, replicationFactor)
+        admin.createTopics(Collections.singletonList(newTopic));
+
+        admin.close();
 
         // StreamsBuilder is used to build the topology (flow) of the Kafka Streams application.
         StreamsBuilder builder = new StreamsBuilder();
