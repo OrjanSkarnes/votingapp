@@ -18,6 +18,7 @@ import no.hvl.dat250.voting.models.Vote;
 public class UserDTO {
     private Long id;
     private String username;
+    private String password;
     private Roles role;
     private List<Long> createdPollsIds;
     private List<Long> participatedPollsIds;

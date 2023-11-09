@@ -1,9 +1,7 @@
 package no.hvl.dat250.voting.controller;
 
 import lombok.extern.log4j.Log4j2;
-import no.hvl.dat250.voting.DTO.LoginDTO;
 import no.hvl.dat250.voting.DTO.PollDTO;
-import no.hvl.dat250.voting.DTO.RegisterDTO;
 import no.hvl.dat250.voting.DTO.UserDTO;
 import no.hvl.dat250.voting.models.Poll;
 import no.hvl.dat250.voting.models.Roles;
@@ -14,7 +12,6 @@ import no.hvl.dat250.voting.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -24,9 +21,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
+
 @Log4j2
 @RestController
 @RequestMapping("/api/user")
@@ -50,12 +46,12 @@ public class UserController {
 
 
     @PostMapping("/register")
-    public ResponseEntity<?> createUser(@RequestBody RegisterDTO registerDto, @RequestParam(required = false) Long tempId) {
-        User user = convertToEntity(registerDto);
+    public ResponseEntity<?> createUser(@RequestBody UserDTO userDTO, @RequestParam(required = false) Long tempId) {
+        User user = convertToEntity(userDTO);
         ResponseEntity<?> userCreationResponse = userService.createUser(user, tempId);
 
-        if (!userCreationResponse.getStatusCode().is2xxSuccessful()) {
-            return userCreationResponse;
+        if (userCreationResponse == null || !userCreationResponse.getStatusCode().is2xxSuccessful()) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("User creation failed");
         }
 
         // Cast the body to UserDTO
@@ -64,6 +60,8 @@ public class UserController {
         // Generate the token with the username and role from UserDTO
         // Assuming that the role is stored as a String in UserDTO
         String token = jwtUtils.generateToken(createdUserDto.getUsername(), createdUserDto.getRole().name());
+
+        log.info("JWT Token generated: {}", token);
 
         // Create a new AuthResponse with the token and UserDTO
         AuthResponse authResponse = new AuthResponse(token, createdUserDto);
@@ -106,7 +104,7 @@ public class UserController {
         }
     }*/
     @PostMapping("/login")
-    public ResponseEntity<?> loginUser(@RequestBody LoginDTO loginDto) {
+    public ResponseEntity<?> loginUser(@RequestBody UserDTO loginDto) {
         log.info("Attempting to log in user: {}", loginDto.getUsername());
         // Perform authentication
         Authentication requestToken = new UsernamePasswordAuthenticationToken(
@@ -140,7 +138,7 @@ public class UserController {
 
 
     // Helper method to convert DTO to entity
-    private User convertToEntity(RegisterDTO registerDto) {
+    private User convertToEntity(UserDTO registerDto) {
         User user = new User();
         user.setUsername(registerDto.getUsername());
         user.setPassword(registerDto.getPassword());

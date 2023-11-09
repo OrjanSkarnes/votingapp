@@ -1,5 +1,6 @@
 package no.hvl.dat250.voting.service;
 
+import lombok.extern.log4j.Log4j2;
 import no.hvl.dat250.voting.models.Poll;
 import no.hvl.dat250.voting.models.User;
 import no.hvl.dat250.voting.models.Vote;
@@ -16,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Log4j2
 @Service
 public class UserService {
 
@@ -31,11 +33,13 @@ public class UserService {
 
     @Transactional
     public ResponseEntity<UserDTO> createUser(User user, Long tempId) {
+        log.info("Attempting to create user: {}", user);
         // Attempt to fetch the user
         User existingUser = userDao.findUserByUserName(user.getUsername());
 
         // If the user already exists, return a conflict status
         if (existingUser != null) {
+            log.error("User already exists: {}", existingUser);
             return new ResponseEntity<>(null, HttpStatus.CONFLICT);
         }
 
@@ -44,6 +48,7 @@ public class UserService {
 
         // Create the user
         User createdUser = userDao.createUser(user, tempId);
+        log.info("Created user: {}", createdUser);
 
         // Convert to DTO and return
         return new ResponseEntity<>(UserDTO.convertToDTO(createdUser), HttpStatus.CREATED);
