@@ -4,39 +4,44 @@ frontend/build/
 
 #ignore everything in node modules folder
 **/node_modules/**
-
-# Gradle
-.gradle/
-gradle/
+.gradle
 build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# IntelliJ IDEA
-.idea/
-*.iml
-*.iws
-*.ipr
-
-# Eclipse
+### STS ###
+.apt_generated
 .classpath
-.project
-.settings/
 .factorypath
-.apt_generated/
+.project
+.settings
 .springBeans
-.sts4-cache/
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
 
-# NetBeans
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-# VS Code
+### VS Code ###
 .vscode/
 
-# Mac OS
-.DS_Store
+### OSX ###
+.DS_STORE
+
+.env
