@@ -4,9 +4,9 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import lombok.AllArgsConstructor;
-import no.hvl.dat250.voting.Group;
-import no.hvl.dat250.voting.Poll;
-import no.hvl.dat250.voting.User;
+import no.hvl.dat250.voting.models.Group;
+import no.hvl.dat250.voting.models.Poll;
+import no.hvl.dat250.voting.models.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

@@ -1,32 +1,49 @@
 package no.hvl.dat250.voting.controller;
 
-import no.hvl.dat250.voting.Poll;
+import no.hvl.dat250.voting.DTO.PollDTO;
+import no.hvl.dat250.voting.DTO.VoteDTO;
 import no.hvl.dat250.voting.service.PollService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/polls")
+@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
 public class PollController {
 
     @Autowired
     private PollService pollService;
 
     @PostMapping
-    public Poll createPoll(@RequestBody Poll poll) {
+    public PollDTO createPoll(@RequestBody PollDTO poll) {
         return pollService.createPoll(poll);
     }
 
     @GetMapping
-    public List<Poll> getAllPolls() {
+    public List<PollDTO> getAllPolls() {
         return pollService.getAllPolls();
     }
 
+    @GetMapping("/public")
+    public List<PollDTO> getAllPublicPolls() {
+        return pollService.getAllPublicPolls();
+    }
+
     @GetMapping("/{id}")
-    public Poll findPollById(@PathVariable Long id) {
-        return pollService.findPollById(id);
+    public ResponseEntity<PollDTO> findPollById(@PathVariable Long id) {
+        HttpStatus status = HttpStatus.OK;
+
+        PollDTO poll = pollService.findPollById(id);
+        if(poll != null) {
+            return new ResponseEntity<>(poll, status);
+        }
+
+        status = HttpStatus.NOT_FOUND;
+        return new ResponseEntity<>(null, status);
     }
 
     @DeleteMapping("/{id}")
@@ -35,12 +52,32 @@ public class PollController {
     }
 
     @PutMapping("/{id}")
-    public Poll updatePoll(@PathVariable Long id, @RequestBody Poll newPoll) {
+    public PollDTO updatePoll(@PathVariable Long id, @RequestBody PollDTO newPoll) {
         return pollService.updatePoll(id, newPoll);
     }
 
     @GetMapping("/user/{userId}")
-    public List<Poll> getPollsByUser(@PathVariable Long userId) {
+    public List<PollDTO> getPollsByUser(@PathVariable Long userId) {
         return pollService.getPollsByUser(userId);
     }
+
+    @GetMapping("/user/{userId}/votes")
+    public List<PollDTO> getPollsBasedOnVotesFromUser(@PathVariable(required = false) Long userId, @RequestParam(required = false) Long tempId) {
+        return pollService.getPollsBasedOnVotesFromUser(userId, tempId);
+    }
+
+    @GetMapping("/user/{userId}/created")
+    public List<PollDTO> getPollsCreatedByUser(@PathVariable Long userId) {
+        return pollService.getPollsCreatedByUser(userId);
+    }
+
+    @GetMapping("/{id}/votes")
+    public List<VoteDTO> getVotesByPoll(@PathVariable Long id) {
+        return pollService.getVotesByPoll(id);
+    }
+
+
+    //@GetMapping(value = "/{path:[^\\.]*}")
+    //public String redirect() {
+        //return "forward:/index.html";    }
 }

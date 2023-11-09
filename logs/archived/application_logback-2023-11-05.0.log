@@ -1,0 +1,1647 @@
+2023-11-05 07:23:28 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 68358 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 07:23:28 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 07:23:29 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 07:23:29 [main] INFO  : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-11-05 07:23:29 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 07:23:29 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:23:29 [main] INFO  : Starting service [Tomcat]
+2023-11-05 07:23:29 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 07:23:29 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 07:23:29 [main] INFO  : Root WebApplicationContext: initialization completed in 613 ms
+2023-11-05 07:23:29 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 07:23:29 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 07:23:29 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:23:29 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 07:23:29 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 07:23:29 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3cae4518
+2023-11-05 07:23:29 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 07:23:29 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 07:23:29 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:23:29 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 07:23:30 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:23:30 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 07:23:30 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 07:23:30 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 07:23:30 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:23:30 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 07:23:30 [main] INFO  : Started VotingMain in 1.807 seconds (process running for 3.804)
+2023-11-05 07:23:31 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 07:23:31 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 07:23:31 [RMI TCP Connection(2)-172.20.10.4] INFO  : Completed initialization in 0 ms
+2023-11-05 07:23:33 [votingapp-streams-ace0c8a2-c545-4fa7-8c3c-96c2fbc48d89-StreamThread-3] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 07:23:37 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls/19, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:23:37 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls/19, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:23:37 [http-nio-8080-exec-2] DEBUG : Before request [DELETE /api/polls/19, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:23:37 [http-nio-8080-exec-2] DEBUG : After request [DELETE /api/polls/19, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:24:24 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:24:24 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 07:24:24 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 07:24:26 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 68418 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 07:24:26 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 07:24:27 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 07:24:27 [main] INFO  : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2023-11-05 07:24:27 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 07:24:27 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:24:27 [main] INFO  : Starting service [Tomcat]
+2023-11-05 07:24:27 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 07:24:27 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 07:24:27 [main] INFO  : Root WebApplicationContext: initialization completed in 829 ms
+2023-11-05 07:24:27 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 07:24:27 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 07:24:27 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:24:27 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 07:24:27 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 07:24:27 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59ec5a0b
+2023-11-05 07:24:27 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 07:24:27 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 07:24:27 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:24:28 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 07:24:28 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:24:28 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 07:24:28 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 07:24:28 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 07:24:28 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:24:28 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 07:24:28 [main] INFO  : Started VotingMain in 2.118 seconds (process running for 3.302)
+2023-11-05 07:24:28 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 07:24:28 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 07:24:28 [RMI TCP Connection(2)-172.20.10.4] INFO  : Completed initialization in 1 ms
+2023-11-05 07:24:34 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:24:34 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:24:34 [http-nio-8080-exec-2] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:24:34 [http-nio-8080-exec-2] ERROR : User ids is null
+2023-11-05 07:24:34 [http-nio-8080-exec-2] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 07:24:34 [http-nio-8080-exec-2] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"333","description":"","startTime":"","endTime":"2023-11-05T07:25","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 07:24:34 [http-nio-8080-exec-2] ERROR : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "no.hvl.dat250.voting.models.Poll.getUsers()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "no.hvl.dat250.voting.models.Poll.getUsers()" is null
+	at no.hvl.dat250.voting.service.PollService.convertToDTO(PollService.java:121)
+	at no.hvl.dat250.voting.service.PollService.createPoll(PollService.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at no.hvl.dat250.voting.service.PollService$$SpringCGLIB$$0.createPoll(<generated>)
+	at no.hvl.dat250.voting.controller.PollController.createPoll(PollController.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-05 07:24:35 [http-nio-8080-exec-3] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:24:35 [http-nio-8080-exec-3] ERROR : User ids is null
+2023-11-05 07:24:35 [http-nio-8080-exec-3] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 07:24:35 [http-nio-8080-exec-3] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"333","description":"","startTime":"","endTime":"2023-11-05T07:25","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 07:24:35 [http-nio-8080-exec-3] ERROR : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "no.hvl.dat250.voting.models.Poll.getUsers()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "no.hvl.dat250.voting.models.Poll.getUsers()" is null
+	at no.hvl.dat250.voting.service.PollService.convertToDTO(PollService.java:121)
+	at no.hvl.dat250.voting.service.PollService.createPoll(PollService.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at no.hvl.dat250.voting.service.PollService$$SpringCGLIB$$0.createPoll(<generated>)
+	at no.hvl.dat250.voting.controller.PollController.createPoll(PollController.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-05 07:25:06 [votingapp-streams-529ee840-416e-4c2c-a511-d5c4fae87500-StreamThread-1] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 07:25:35 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:25:35 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 07:25:35 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 07:25:37 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 68503 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 07:25:37 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 07:25:37 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 07:25:37 [main] INFO  : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2023-11-05 07:25:38 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 07:25:38 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:25:38 [main] INFO  : Starting service [Tomcat]
+2023-11-05 07:25:38 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 07:25:38 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 07:25:38 [main] INFO  : Root WebApplicationContext: initialization completed in 550 ms
+2023-11-05 07:25:38 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 07:25:38 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 07:25:38 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:25:38 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 07:25:38 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 07:25:38 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f1ffc18
+2023-11-05 07:25:38 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 07:25:38 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 07:25:38 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:25:38 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 07:25:38 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:25:38 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 07:25:38 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 07:25:38 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 07:25:39 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:25:39 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 07:25:39 [main] INFO  : Started VotingMain in 1.649 seconds (process running for 2.424)
+2023-11-05 07:25:39 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 07:25:39 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 07:25:39 [RMI TCP Connection(2)-172.20.10.4] INFO  : Completed initialization in 1 ms
+2023-11-05 07:25:41 [http-nio-8080-exec-1] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:25:41 [http-nio-8080-exec-1] ERROR : User ids is null
+2023-11-05 07:25:41 [http-nio-8080-exec-1] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 07:25:41 [http-nio-8080-exec-1] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"333","description":"","startTime":"","endTime":"2023-11-05T07:25","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 07:25:41 [http-nio-8080-exec-2] DEBUG : Before request [OPTIONS /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:25:41 [http-nio-8080-exec-2] DEBUG : After request [OPTIONS /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:25:41 [http-nio-8080-exec-3] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:25:41 [http-nio-8080-exec-4] DEBUG : Before request [OPTIONS /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:25:41 [http-nio-8080-exec-4] DEBUG : After request [OPTIONS /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:25:41 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:25:41 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:25:41 [http-nio-8080-exec-3] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:26:19 [votingapp-streams-e225b6b2-b94d-47ce-9c50-77976f0026c9-StreamThread-3] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 07:26:20 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 07:26:20 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Poll results posted to dweet.io successfully.
+2023-11-05 07:26:56 [http-nio-8080-exec-8] DEBUG : Before request [OPTIONS /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:26:56 [http-nio-8080-exec-8] DEBUG : After request [OPTIONS /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:26:56 [http-nio-8080-exec-9] DEBUG : Before request [GET /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:26:56 [http-nio-8080-exec-9] DEBUG : After request [GET /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:27:06 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:27:06 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:27:06 [http-nio-8080-exec-2] DEBUG : Before request [PUT /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:27:06 [http-nio-8080-exec-2] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 07:27:06 [http-nio-8080-exec-2] DEBUG : After request [PUT /api/polls/22, client=0:0:0:0:0:0:0:1, payload={"id":22,"question":"333","description":"","startTime":"2023-11-05T07:25:41.525054","endTime":"2023-11-05T07:25:00","active":false,"privateAccess":false,"votes":null,"voteIds":[],"groupId":[],"userIds":[],"creatorId":1}]
+2023-11-05 07:27:06 [http-nio-8080-exec-4] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:27:06 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:27:06 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:27:06 [http-nio-8080-exec-4] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:27:07 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 07:27:07 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Poll results posted to dweet.io successfully.
+2023-11-05 07:33:52 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:33:52 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 07:33:52 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 07:33:54 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 69049 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 07:33:54 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 07:33:54 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 07:33:54 [main] INFO  : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-11-05 07:33:55 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 07:33:55 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:33:55 [main] INFO  : Starting service [Tomcat]
+2023-11-05 07:33:55 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 07:33:55 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 07:33:55 [main] INFO  : Root WebApplicationContext: initialization completed in 586 ms
+2023-11-05 07:33:55 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 07:33:55 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 07:33:55 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:33:55 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 07:33:55 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 07:33:55 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f1ffc18
+2023-11-05 07:33:55 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 07:33:55 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 07:33:55 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:33:55 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 07:33:55 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:33:55 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 07:33:56 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 07:33:56 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 07:33:56 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:33:56 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 07:33:56 [main] INFO  : Started VotingMain in 1.75 seconds (process running for 2.654)
+2023-11-05 07:33:56 [RMI TCP Connection(3)-172.20.10.4] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 07:33:56 [RMI TCP Connection(3)-172.20.10.4] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 07:33:56 [RMI TCP Connection(3)-172.20.10.4] INFO  : Completed initialization in 0 ms
+2023-11-05 07:34:03 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:34:03 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:34:11 [http-nio-8080-exec-3] DEBUG : Before request [PUT /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:34:11 [http-nio-8080-exec-3] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 07:34:11 [http-nio-8080-exec-3] DEBUG : After request [PUT /api/polls/22, client=0:0:0:0:0:0:0:1, payload={"id":22,"question":"333","description":"","startTime":"2023-11-05T07:25:41.525054","endTime":"2023-11-05T07:35","active":false,"privateAccess":false,"votes":null,"voteIds":[],"groupId":null,"userIds":null,"creatorId":1}]
+2023-11-05 07:34:11 [http-nio-8080-exec-4] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:34:11 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:34:11 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:34:11 [http-nio-8080-exec-4] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:34:36 [votingapp-streams-185eba8b-9226-4836-bbfc-c263270c6253-StreamThread-4] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 07:35:00 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 07:35:00 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] ERROR : Error posting poll results to dweet.io.
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Java 8 date/time type `java.time.LocalDateTime` not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" to enable handling
+ at [Source: (String)"{"id":22,"question":"333","description":"","startTime":"2023-11-05T07:25:41.525054","endTime":"2023-11-05T07:35:00","timeLimit":0,"active":false,"privateAccess":false,"votes":[],"groups":[],"users":[]}"; line: 1, column: 56] (through reference chain: no.hvl.dat250.voting.models.Poll["startTime"])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1915)
+	at com.fasterxml.jackson.databind.deser.impl.UnsupportedTypeDeserializer.deserialize(UnsupportedTypeDeserializer.java:48)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:314)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4825)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3772)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3740)
+	at no.hvl.dat250.voting.service.KafkaConsumerService.consume(KafkaConsumerService.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56)
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:366)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2924)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2904)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.lambda$doInvokeRecordListener$58(KafkaMessageListenerContainer.java:2822)
+	at io.micrometer.observation.Observation.lambda$observe$4(Observation.java:544)
+	at io.micrometer.observation.Observation.observeWithContext(Observation.java:603)
+	at io.micrometer.observation.Observation.observe(Observation.java:544)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2820)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2672)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2558)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:2200)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1555)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1519)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1394)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-05 07:36:05 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:36:05 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 07:36:05 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 07:36:08 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 69167 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 07:36:08 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 07:36:08 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 07:36:08 [main] INFO  : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-11-05 07:36:08 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 07:36:08 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:36:08 [main] INFO  : Starting service [Tomcat]
+2023-11-05 07:36:08 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 07:36:08 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 07:36:08 [main] INFO  : Root WebApplicationContext: initialization completed in 804 ms
+2023-11-05 07:36:08 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 07:36:09 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 07:36:09 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:36:09 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 07:36:09 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 07:36:09 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1bbc1b90
+2023-11-05 07:36:09 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 07:36:09 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 07:36:09 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:36:09 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 07:36:09 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:36:09 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 07:36:09 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 07:36:09 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 07:36:09 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:36:09 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 07:36:10 [main] INFO  : Started VotingMain in 2.069 seconds (process running for 2.844)
+2023-11-05 07:36:10 [RMI TCP Connection(5)-172.20.10.4] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 07:36:10 [RMI TCP Connection(5)-172.20.10.4] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 07:36:10 [RMI TCP Connection(5)-172.20.10.4] INFO  : Completed initialization in 1 ms
+2023-11-05 07:36:17 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 69189 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 07:36:17 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 07:36:17 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 07:36:17 [main] INFO  : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-11-05 07:36:17 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 07:36:17 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:36:17 [main] INFO  : Starting service [Tomcat]
+2023-11-05 07:36:17 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 07:36:17 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 07:36:17 [main] INFO  : Root WebApplicationContext: initialization completed in 565 ms
+2023-11-05 07:36:17 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 07:36:17 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 07:36:17 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:36:17 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 07:36:17 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 07:36:17 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7146c6ea
+2023-11-05 07:36:17 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 07:36:17 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 07:36:17 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:36:18 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 07:36:18 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:36:18 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 07:36:18 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 07:36:18 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 07:36:18 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:36:18 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 07:36:18 [main] INFO  : Started VotingMain in 1.797 seconds (process running for 2.564)
+2023-11-05 07:36:18 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 07:36:18 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 07:36:18 [RMI TCP Connection(2)-172.20.10.4] INFO  : Completed initialization in 0 ms
+2023-11-05 07:36:20 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:36:20 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:36:20 [http-nio-8080-exec-2] DEBUG : Before request [GET /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:36:20 [http-nio-8080-exec-2] DEBUG : After request [GET /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:36:23 [http-nio-8080-exec-4] DEBUG : Before request [OPTIONS /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:36:23 [http-nio-8080-exec-4] DEBUG : After request [OPTIONS /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:36:23 [http-nio-8080-exec-5] DEBUG : Before request [PUT /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:36:23 [http-nio-8080-exec-5] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 07:36:23 [http-nio-8080-exec-5] DEBUG : After request [PUT /api/polls/22, client=0:0:0:0:0:0:0:1, payload={"id":22,"question":"333","description":"","startTime":"2023-11-05T07:25:41.525054","endTime":"2023-11-05T07:37","active":false,"privateAccess":false,"votes":null,"voteIds":[],"groupId":null,"userIds":null,"creatorId":1}]
+2023-11-05 07:36:23 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:36:23 [http-nio-8080-exec-7] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:36:23 [http-nio-8080-exec-7] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:36:23 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:37:18 [http-nio-8080-exec-10] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:37:18 [http-nio-8080-exec-10] ERROR : User ids is null
+2023-11-05 07:37:18 [http-nio-8080-exec-10] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 07:37:18 [http-nio-8080-exec-10] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"","description":"","startTime":"","endTime":"2023-11-05T07:38","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 07:37:18 [http-nio-8080-exec-10] ERROR : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.util.List.isEmpty()" because the return value of "no.hvl.dat250.voting.models.Poll.getUsers()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "java.util.List.isEmpty()" because the return value of "no.hvl.dat250.voting.models.Poll.getUsers()" is null
+	at no.hvl.dat250.voting.service.PollService.convertToDTO(PollService.java:121)
+	at no.hvl.dat250.voting.service.PollService.createPoll(PollService.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at no.hvl.dat250.voting.service.PollService$$SpringCGLIB$$0.createPoll(<generated>)
+	at no.hvl.dat250.voting.controller.PollController.createPoll(PollController.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-05 07:37:18 [http-nio-8080-exec-1] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:37:18 [http-nio-8080-exec-1] ERROR : User ids is null
+2023-11-05 07:37:18 [http-nio-8080-exec-1] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 07:37:18 [http-nio-8080-exec-1] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"","description":"","startTime":"","endTime":"2023-11-05T07:38","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 07:37:18 [http-nio-8080-exec-1] ERROR : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.util.List.isEmpty()" because the return value of "no.hvl.dat250.voting.models.Poll.getUsers()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "java.util.List.isEmpty()" because the return value of "no.hvl.dat250.voting.models.Poll.getUsers()" is null
+	at no.hvl.dat250.voting.service.PollService.convertToDTO(PollService.java:121)
+	at no.hvl.dat250.voting.service.PollService.createPoll(PollService.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at no.hvl.dat250.voting.service.PollService$$SpringCGLIB$$0.createPoll(<generated>)
+	at no.hvl.dat250.voting.controller.PollController.createPoll(PollController.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-05 07:37:20 [http-nio-8080-exec-2] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:37:20 [http-nio-8080-exec-2] ERROR : User ids is null
+2023-11-05 07:37:20 [http-nio-8080-exec-2] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 07:37:20 [http-nio-8080-exec-2] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"1233","description":"","startTime":"","endTime":"2023-11-05T07:38","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 07:37:20 [http-nio-8080-exec-2] ERROR : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.util.List.isEmpty()" because the return value of "no.hvl.dat250.voting.models.Poll.getUsers()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "java.util.List.isEmpty()" because the return value of "no.hvl.dat250.voting.models.Poll.getUsers()" is null
+	at no.hvl.dat250.voting.service.PollService.convertToDTO(PollService.java:121)
+	at no.hvl.dat250.voting.service.PollService.createPoll(PollService.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at no.hvl.dat250.voting.service.PollService$$SpringCGLIB$$0.createPoll(<generated>)
+	at no.hvl.dat250.voting.controller.PollController.createPoll(PollController.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-05 07:37:34 [votingapp-streams-c26090be-b08d-4dba-804a-0874ef52c2e4-StreamThread-3] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 07:37:36 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 07:37:36 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io...
+2023-11-05 07:39:35 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:39:35 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 07:39:35 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 07:39:38 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 69369 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 07:39:38 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 07:39:39 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 07:39:39 [main] INFO  : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-11-05 07:39:39 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 07:39:39 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:39:39 [main] INFO  : Starting service [Tomcat]
+2023-11-05 07:39:39 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 07:39:39 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 07:39:39 [main] INFO  : Root WebApplicationContext: initialization completed in 656 ms
+2023-11-05 07:39:39 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 07:39:39 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 07:39:39 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:39:39 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 07:39:39 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 07:39:39 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7146c6ea
+2023-11-05 07:39:39 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 07:39:39 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 07:39:39 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:39:39 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 07:39:40 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:39:40 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 07:39:40 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 07:39:40 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 07:39:40 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:39:40 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 07:39:40 [main] INFO  : Started VotingMain in 1.9 seconds (process running for 3.13)
+2023-11-05 07:39:40 [RMI TCP Connection(3)-172.20.10.4] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 07:39:40 [RMI TCP Connection(3)-172.20.10.4] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 07:39:40 [RMI TCP Connection(3)-172.20.10.4] INFO  : Completed initialization in 1 ms
+2023-11-05 07:40:20 [votingapp-streams-47b3721a-f62d-400a-96f3-c7968870910f-StreamThread-3] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 07:41:19 [http-nio-8080-exec-1] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:41:19 [http-nio-8080-exec-1] ERROR : User ids is null
+2023-11-05 07:41:19 [http-nio-8080-exec-1] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 07:41:19 [http-nio-8080-exec-1] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"1233","description":"222","startTime":"","endTime":"2023-11-05T07:39","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 07:41:19 [http-nio-8080-exec-2] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:41:19 [http-nio-8080-exec-3] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:41:20 [http-nio-8080-exec-3] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:41:20 [http-nio-8080-exec-2] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:41:20 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 07:41:20 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io: https://dweet.io/dweet/for/poll-results-26
+2023-11-05 07:45:22 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:45:22 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 07:45:22 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 07:45:27 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 69696 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 07:45:27 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 07:45:27 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 07:45:27 [main] INFO  : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-11-05 07:45:28 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 07:45:28 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:45:28 [main] INFO  : Starting service [Tomcat]
+2023-11-05 07:45:28 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 07:45:28 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 07:45:28 [main] INFO  : Root WebApplicationContext: initialization completed in 667 ms
+2023-11-05 07:45:28 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 07:45:28 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 07:45:28 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:45:28 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 07:45:28 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 07:45:28 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a5d23c9
+2023-11-05 07:45:28 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 07:45:28 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 07:45:28 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:45:28 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 07:45:28 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:45:28 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 07:45:28 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 07:45:28 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 07:45:29 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:45:29 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 07:45:29 [main] INFO  : Started VotingMain in 1.865 seconds (process running for 3.136)
+2023-11-05 07:45:29 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 07:45:29 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 07:45:29 [RMI TCP Connection(2)-172.20.10.4] INFO  : Completed initialization in 0 ms
+2023-11-05 07:45:36 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:45:36 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:45:41 [http-nio-8080-exec-3] DEBUG : Before request [PUT /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:45:41 [http-nio-8080-exec-3] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 07:45:41 [http-nio-8080-exec-3] DEBUG : After request [PUT /api/polls/22, client=0:0:0:0:0:0:0:1, payload={"id":22,"question":"333","description":"","startTime":"2023-11-05T07:25:41.525054","endTime":"2023-11-05T07:46","active":false,"privateAccess":false,"votes":null,"voteIds":[],"groupId":[],"userIds":[],"creatorId":1}]
+2023-11-05 07:45:41 [http-nio-8080-exec-4] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:45:41 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:45:41 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:45:41 [http-nio-8080-exec-4] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:46:06 [votingapp-streams-6d71c6eb-4c21-4f9b-83d1-bff115d818ca-StreamThread-1] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 07:46:07 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 07:46:07 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io: https://dweet.io/dweet/for/poll-results-22
+2023-11-05 07:46:07 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Results: {"id":22,"question":"333","description":"","startTime":"2023-11-05T07:25:41.525054","endTime":"2023-11-05T07:46:00","timeLimit":0,"active":false,"privateAccess":false,"votes":[],"groups":[],"users":[]}
+2023-11-05 07:50:21 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:50:21 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 07:50:21 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 07:50:23 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 70191 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 07:50:23 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 07:50:23 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 07:50:23 [main] INFO  : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-11-05 07:50:24 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 07:50:24 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:50:24 [main] INFO  : Starting service [Tomcat]
+2023-11-05 07:50:24 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 07:50:24 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 07:50:24 [main] INFO  : Root WebApplicationContext: initialization completed in 596 ms
+2023-11-05 07:50:24 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 07:50:24 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 07:50:24 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:50:24 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 07:50:24 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 07:50:24 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a5d23c9
+2023-11-05 07:50:24 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 07:50:24 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 07:50:24 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 07:50:24 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 07:50:24 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 07:50:24 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 07:50:24 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 07:50:25 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 07:50:25 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 07:50:25 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 07:50:25 [main] INFO  : Started VotingMain in 1.761 seconds (process running for 2.634)
+2023-11-05 07:50:25 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 07:50:25 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 07:50:25 [RMI TCP Connection(2)-172.20.10.4] INFO  : Completed initialization in 0 ms
+2023-11-05 07:50:25 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:50:25 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:50:28 [http-nio-8080-exec-3] DEBUG : Before request [PUT /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:50:28 [http-nio-8080-exec-3] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 07:50:28 [http-nio-8080-exec-3] DEBUG : After request [PUT /api/polls/22, client=0:0:0:0:0:0:0:1, payload={"id":22,"question":"333","description":"","startTime":"2023-11-05T07:25:41.525054","endTime":"2023-11-05T07:51","active":false,"privateAccess":false,"votes":null,"voteIds":[],"groupId":[],"userIds":[],"creatorId":1}]
+2023-11-05 07:50:29 [http-nio-8080-exec-4] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:50:29 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:50:29 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:50:29 [http-nio-8080-exec-4] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:50:30 [http-nio-8080-exec-6] DEBUG : Before request [OPTIONS /api/polls/26, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:50:30 [http-nio-8080-exec-6] DEBUG : After request [OPTIONS /api/polls/26, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:50:30 [http-nio-8080-exec-7] DEBUG : Before request [DELETE /api/polls/26, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:50:31 [http-nio-8080-exec-7] DEBUG : After request [DELETE /api/polls/26, client=0:0:0:0:0:0:0:1]
+2023-11-05 07:51:05 [votingapp-streams-80f0cbac-b211-4e3d-b8e2-7391d2b82a2c-StreamThread-2] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 07:51:06 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 07:51:06 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io: https://dweet.io/dweet/for/poll-results-22
+2023-11-05 08:00:06 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:00:06 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 08:00:06 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 08:00:10 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 70881 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 08:00:10 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 08:00:10 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 08:00:10 [main] INFO  : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2023-11-05 08:00:11 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 08:00:11 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:00:11 [main] INFO  : Starting service [Tomcat]
+2023-11-05 08:00:11 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 08:00:11 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 08:00:11 [main] INFO  : Root WebApplicationContext: initialization completed in 585 ms
+2023-11-05 08:00:11 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 08:00:11 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 08:00:11 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:00:11 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 08:00:11 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 08:00:11 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6244afc4
+2023-11-05 08:00:11 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 08:00:11 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 08:00:11 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:00:11 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 08:00:11 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:00:11 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 08:00:11 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 08:00:12 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 08:00:12 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:00:12 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 08:00:12 [main] INFO  : Started VotingMain in 1.778 seconds (process running for 2.843)
+2023-11-05 08:00:12 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 08:00:12 [RMI TCP Connection(2)-172.20.10.4] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 08:00:12 [RMI TCP Connection(2)-172.20.10.4] INFO  : Completed initialization in 0 ms
+2023-11-05 08:00:51 [votingapp-streams-8d4e92ab-3e1d-43a7-a70b-5d5cb3f82173-StreamThread-2] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 08:00:51 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:00:51 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 08:00:51 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 08:00:53 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 70931 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 08:00:53 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 08:00:54 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 08:00:54 [main] INFO  : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-11-05 08:00:54 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 08:00:54 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:00:54 [main] INFO  : Starting service [Tomcat]
+2023-11-05 08:00:54 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 08:00:54 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 08:00:54 [main] INFO  : Root WebApplicationContext: initialization completed in 642 ms
+2023-11-05 08:00:54 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 08:00:54 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 08:00:54 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:00:54 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 08:00:54 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 08:00:54 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@534d0cfa
+2023-11-05 08:00:54 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 08:00:54 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 08:00:54 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:00:54 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 08:00:54 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:00:55 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 08:00:55 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 08:00:55 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 08:00:55 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:00:55 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 08:00:55 [main] INFO  : Started VotingMain in 1.922 seconds (process running for 2.822)
+2023-11-05 08:00:55 [RMI TCP Connection(3)-172.20.10.4] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 08:00:55 [RMI TCP Connection(3)-172.20.10.4] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 08:00:55 [RMI TCP Connection(3)-172.20.10.4] INFO  : Completed initialization in 1 ms
+2023-11-05 08:00:55 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:00:55 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:00:55 [http-nio-8080-exec-2] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:00:56 [http-nio-8080-exec-2] ERROR : User ids is null
+2023-11-05 08:00:56 [http-nio-8080-exec-2] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 08:00:56 [http-nio-8080-exec-2] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"2222","description":"","startTime":"","endTime":"2023-11-05T08:01","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 08:00:56 [http-nio-8080-exec-3] DEBUG : Before request [OPTIONS /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:00:56 [http-nio-8080-exec-3] DEBUG : After request [OPTIONS /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:00:56 [http-nio-8080-exec-4] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:00:56 [http-nio-8080-exec-5] DEBUG : Before request [OPTIONS /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:00:56 [http-nio-8080-exec-5] DEBUG : After request [OPTIONS /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:00:56 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:00:56 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:00:56 [http-nio-8080-exec-4] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:01:36 [votingapp-streams-d0d68a7a-0411-4b0c-a345-063e701bfebf-StreamThread-2] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 08:01:37 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 08:01:37 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io: https://dweet.io/dweet/for/poll-results-27
+2023-11-05 08:04:41 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:04:41 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 08:04:41 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 08:04:43 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 71211 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 08:04:43 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 08:04:44 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 08:04:44 [main] INFO  : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2023-11-05 08:04:44 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 08:04:44 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:04:44 [main] INFO  : Starting service [Tomcat]
+2023-11-05 08:04:44 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 08:04:44 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 08:04:44 [main] INFO  : Root WebApplicationContext: initialization completed in 562 ms
+2023-11-05 08:04:44 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 08:04:44 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 08:04:44 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:04:44 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 08:04:44 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 08:04:44 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7146c6ea
+2023-11-05 08:04:44 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 08:04:44 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 08:04:44 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:04:44 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 08:04:44 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:04:45 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 08:04:45 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 08:04:45 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 08:04:45 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:04:45 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 08:04:45 [main] INFO  : Started VotingMain in 1.735 seconds (process running for 2.512)
+2023-11-05 08:04:45 [RMI TCP Connection(3)-172.20.10.4] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 08:04:45 [RMI TCP Connection(3)-172.20.10.4] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 08:04:45 [RMI TCP Connection(3)-172.20.10.4] INFO  : Completed initialization in 1 ms
+2023-11-05 08:04:50 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:04:50 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:04:50 [http-nio-8080-exec-2] DEBUG : Before request [DELETE /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:04:50 [http-nio-8080-exec-2] DEBUG : After request [DELETE /api/polls/22, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:04:50 [http-nio-8080-exec-3] DEBUG : Before request [OPTIONS /api/polls/27, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:04:50 [http-nio-8080-exec-3] DEBUG : After request [OPTIONS /api/polls/27, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:04:50 [http-nio-8080-exec-4] DEBUG : Before request [DELETE /api/polls/27, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:04:51 [http-nio-8080-exec-4] DEBUG : After request [DELETE /api/polls/27, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:04:57 [http-nio-8080-exec-6] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:04:57 [http-nio-8080-exec-6] ERROR : User ids is null
+2023-11-05 08:04:57 [http-nio-8080-exec-6] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 08:04:57 [http-nio-8080-exec-6] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"12222","description":"","startTime":"","endTime":"2023-11-05T08:05","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 08:04:57 [http-nio-8080-exec-7] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:04:57 [http-nio-8080-exec-8] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:04:57 [http-nio-8080-exec-8] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:04:57 [http-nio-8080-exec-7] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:05:26 [votingapp-streams-27b6b6d9-b98f-4164-9fba-7e0e11e39f55-StreamThread-3] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 08:05:27 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 08:05:27 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io: https://dweet.io/dweet/for/poll-results-28
+2023-11-05 08:13:06 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m22s95ms).
+2023-11-05 08:14:31 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:14:31 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 08:14:31 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 08:14:33 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 71681 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 08:14:33 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 08:14:33 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 08:14:33 [main] INFO  : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-11-05 08:14:33 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 08:14:33 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:14:33 [main] INFO  : Starting service [Tomcat]
+2023-11-05 08:14:33 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 08:14:33 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 08:14:33 [main] INFO  : Root WebApplicationContext: initialization completed in 570 ms
+2023-11-05 08:14:34 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 08:14:34 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 08:14:34 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:14:34 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 08:14:34 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 08:14:34 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d7a8d23
+2023-11-05 08:14:34 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 08:14:34 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 08:14:34 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:14:34 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 08:14:34 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:14:34 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 08:14:34 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 08:14:34 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 08:14:34 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:14:34 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 08:14:34 [main] INFO  : Started VotingMain in 1.689 seconds (process running for 2.444)
+2023-11-05 08:14:35 [RMI TCP Connection(1)-192.168.1.135] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 08:14:35 [RMI TCP Connection(1)-192.168.1.135] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 08:14:35 [RMI TCP Connection(1)-192.168.1.135] INFO  : Completed initialization in 1 ms
+2023-11-05 08:14:39 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls/28, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:14:39 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls/28, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:14:39 [http-nio-8080-exec-2] DEBUG : Before request [DELETE /api/polls/28, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:14:39 [http-nio-8080-exec-2] DEBUG : After request [DELETE /api/polls/28, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:14:53 [http-nio-8080-exec-4] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:14:53 [http-nio-8080-exec-4] ERROR : User ids is null
+2023-11-05 08:14:53 [http-nio-8080-exec-4] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 08:14:53 [http-nio-8080-exec-4] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"122222","description":"BOats","startTime":"","endTime":"2023-11-05T08:15","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 08:14:53 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:14:53 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:14:53 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:14:53 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:15:02 [http-nio-8080-exec-9] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:15:02 [http-nio-8080-exec-9] ERROR : User ids is null
+2023-11-05 08:15:02 [http-nio-8080-exec-9] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 08:15:02 [http-nio-8080-exec-9] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"Krikets","description":"","startTime":"","endTime":"2023-11-05T08:16","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 08:15:02 [http-nio-8080-exec-10] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:15:02 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:15:02 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:15:02 [http-nio-8080-exec-10] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:15:16 [votingapp-streams-3b88c847-af9a-44ef-bb89-21f6b410af45-StreamThread-1] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 08:15:17 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 08:15:17 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io: https://dweet.io/dweet/for/poll-results-29
+2023-11-05 08:16:00 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 08:16:00 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io: https://dweet.io/dweet/for/poll-results-30
+2023-11-05 08:26:46 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:26:46 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 08:26:46 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 08:26:48 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 72311 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 08:26:48 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 08:26:48 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 08:26:48 [main] INFO  : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2023-11-05 08:26:48 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 08:26:48 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:26:48 [main] INFO  : Starting service [Tomcat]
+2023-11-05 08:26:48 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 08:26:48 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 08:26:48 [main] INFO  : Root WebApplicationContext: initialization completed in 545 ms
+2023-11-05 08:26:48 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 08:26:49 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 08:26:49 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:26:49 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 08:26:49 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 08:26:49 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@26a202ae
+2023-11-05 08:26:49 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 08:26:49 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 08:26:49 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:26:49 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 08:26:49 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:26:49 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 08:26:49 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 08:26:49 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 08:26:49 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:26:49 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 08:26:49 [main] INFO  : Started VotingMain in 1.643 seconds (process running for 2.374)
+2023-11-05 08:26:50 [RMI TCP Connection(2)-192.168.1.135] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 08:26:50 [RMI TCP Connection(2)-192.168.1.135] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 08:26:50 [RMI TCP Connection(2)-192.168.1.135] INFO  : Completed initialization in 1 ms
+2023-11-05 08:27:14 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls/29, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:27:14 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls/29, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:27:14 [http-nio-8080-exec-2] DEBUG : Before request [DELETE /api/polls/29, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:27:14 [http-nio-8080-exec-2] DEBUG : After request [DELETE /api/polls/29, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:27:14 [http-nio-8080-exec-3] DEBUG : Before request [OPTIONS /api/polls/30, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:27:14 [http-nio-8080-exec-3] DEBUG : After request [OPTIONS /api/polls/30, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:27:14 [http-nio-8080-exec-4] DEBUG : Before request [DELETE /api/polls/30, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:27:14 [http-nio-8080-exec-4] DEBUG : After request [DELETE /api/polls/30, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:27:19 [http-nio-8080-exec-6] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:27:19 [http-nio-8080-exec-6] ERROR : User ids is null
+2023-11-05 08:27:19 [http-nio-8080-exec-6] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 08:27:19 [http-nio-8080-exec-6] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"1221","description":"","startTime":"","endTime":"2023-11-05T08:28","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 08:27:19 [http-nio-8080-exec-7] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:27:19 [http-nio-8080-exec-8] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:27:19 [http-nio-8080-exec-8] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:27:19 [http-nio-8080-exec-7] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:27:31 [votingapp-streams-04cfbcf8-958d-4358-9f07-72dcceca8c3f-StreamThread-2] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 08:28:00 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 08:28:00 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Poll results received from kafka topic: <{"id":31,"question":"1221","description":"","startTime":"2023-11-05T08:27:19.541496","endTime":"2023-11-05T08:28:00","timeLimit":0,"active":false,"privateAccess":false,"votesFor":null,"votesAgainst":null,"votes":[],"groups":[],"users":[]},[Content-Type:"application/json"]>
+2023-11-05 08:28:00 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io: https://dweet.io/dweet/for/votingapp-poll-results-31
+2023-11-05 08:29:55 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:29:55 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 08:29:55 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 08:29:58 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 72482 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 08:29:58 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 08:29:59 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 08:29:59 [main] INFO  : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2023-11-05 08:29:59 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 08:29:59 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:29:59 [main] INFO  : Starting service [Tomcat]
+2023-11-05 08:29:59 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 08:29:59 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 08:29:59 [main] INFO  : Root WebApplicationContext: initialization completed in 594 ms
+2023-11-05 08:29:59 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 08:29:59 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 08:29:59 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:29:59 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 08:29:59 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 08:29:59 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@49de1505
+2023-11-05 08:29:59 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 08:29:59 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 08:29:59 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:29:59 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 08:30:00 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:30:00 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 08:30:00 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 08:30:00 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 08:30:00 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:30:00 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 08:30:00 [main] INFO  : Started VotingMain in 1.735 seconds (process running for 2.591)
+2023-11-05 08:30:01 [RMI TCP Connection(3)-192.168.1.135] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 08:30:01 [RMI TCP Connection(3)-192.168.1.135] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 08:30:01 [RMI TCP Connection(3)-192.168.1.135] INFO  : Completed initialization in 1 ms
+2023-11-05 08:30:05 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls/31, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:05 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls/31, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:05 [http-nio-8080-exec-2] DEBUG : Before request [DELETE /api/polls/31, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:05 [http-nio-8080-exec-2] DEBUG : After request [DELETE /api/polls/31, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:09 [http-nio-8080-exec-4] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:09 [http-nio-8080-exec-4] ERROR : User ids is null
+2023-11-05 08:30:09 [http-nio-8080-exec-4] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 08:30:09 [http-nio-8080-exec-4] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"","description":"","startTime":"","endTime":"2023-11-05T08:32","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 08:30:09 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:09 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:09 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:09 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:22 [http-nio-8080-exec-9] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:22 [http-nio-8080-exec-9] ERROR : User ids is null
+2023-11-05 08:30:22 [http-nio-8080-exec-9] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 08:30:22 [http-nio-8080-exec-9] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"@@","description":"","startTime":"","endTime":"2023-11-05T08:31","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 08:30:22 [http-nio-8080-exec-10] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:22 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:22 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:22 [http-nio-8080-exec-10] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:30:40 [votingapp-streams-fc3a5d1a-657d-4913-9d95-4fa869f19ff6-StreamThread-3] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 08:31:00 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 08:31:00 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Poll results received from kafka topic: <{"id":33,"question":"@@","description":"","startTime":"2023-11-05T08:30:22.141996","endTime":"2023-11-05T08:31:00","timeLimit":0,"active":false,"privateAccess":false,"votesFor":null,"votesAgainst":null,"votes":[],"groups":[],"users":[]},[Content-Type:"application/json"]>
+2023-11-05 08:31:00 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io: https://dweet.io/dweet/for/votingapp-poll-results-33
+2023-11-05 08:31:01 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Response from dweet.io: {"this":"succeeded","by":"dweeting","the":"dweet","with":{"thing":"votingapp-poll-results-33","created":"2023-11-05T07:31:01.110Z","content":{"id":33,"question":"@@","description":"","startTime":"2023-11-05T08:30:22.141996","endTime":"2023-11-05T08:31:00","timeLimit":0,"active":false,"privateAccess":false,"votesFor":null,"votesAgainst":null,"votes":[],"groups":[],"users":[]},"transaction":"4886dcef-2ed0-4d78-86a1-9111d0af3e05"}}
+2023-11-05 08:32:00 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 08:32:00 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Poll results received from kafka topic: <{"id":32,"question":"","description":"","startTime":"2023-11-05T08:30:09.708402","endTime":"2023-11-05T08:32:00","timeLimit":0,"active":false,"privateAccess":false,"votesFor":null,"votesAgainst":null,"votes":[],"groups":[],"users":[]},[Content-Type:"application/json"]>
+2023-11-05 08:32:00 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io: https://dweet.io/dweet/for/votingapp-poll-results-32
+2023-11-05 08:32:00 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Response from dweet.io: {"this":"succeeded","by":"dweeting","the":"dweet","with":{"thing":"votingapp-poll-results-32","created":"2023-11-05T07:32:00.856Z","content":{"id":32,"question":"","description":"","startTime":"2023-11-05T08:30:09.708402","endTime":"2023-11-05T08:32:00","timeLimit":0,"active":false,"privateAccess":false,"votesFor":null,"votesAgainst":null,"votes":[],"groups":[],"users":[]},"transaction":"c7b936e0-ac08-4415-a90b-4f245d4138f1"}}
+2023-11-05 08:37:57 [http-nio-8080-exec-4] DEBUG : Before request [OPTIONS /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:37:57 [http-nio-8080-exec-4] DEBUG : After request [OPTIONS /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:37:57 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:37:57 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:37:59 [http-nio-8080-exec-8] DEBUG : Before request [OPTIONS /api/polls/33, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:37:59 [http-nio-8080-exec-8] DEBUG : After request [OPTIONS /api/polls/33, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:37:59 [http-nio-8080-exec-7] DEBUG : Before request [GET /api/polls/33, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:37:59 [http-nio-8080-exec-7] DEBUG : After request [GET /api/polls/33, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:37:59 [http-nio-8080-exec-9] DEBUG : Before request [GET /api/polls/33, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:37:59 [http-nio-8080-exec-9] DEBUG : After request [GET /api/polls/33, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:37:59 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:37:59 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:37:59 [http-nio-8080-exec-10] DEBUG : Before request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:37:59 [http-nio-8080-exec-10] DEBUG : After request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:03 [http-nio-8080-exec-3] DEBUG : Before request [GET /api/polls/33, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:03 [http-nio-8080-exec-2] DEBUG : Before request [OPTIONS /api/polls/33/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:03 [http-nio-8080-exec-2] DEBUG : After request [OPTIONS /api/polls/33/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:03 [http-nio-8080-exec-4] DEBUG : Before request [GET /api/polls/33/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:03 [http-nio-8080-exec-4] DEBUG : After request [GET /api/polls/33/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:03 [http-nio-8080-exec-3] DEBUG : After request [GET /api/polls/33, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:03 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:03 [http-nio-8080-exec-6] DEBUG : After request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:05 [http-nio-8080-exec-7] DEBUG : Before request [OPTIONS /api/polls/vote, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:05 [http-nio-8080-exec-7] DEBUG : After request [OPTIONS /api/polls/vote, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:05 [http-nio-8080-exec-9] DEBUG : Before request [GET /api/polls/vote, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:05 [http-nio-8080-exec-9] WARN  : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "vote"]
+2023-11-05 08:38:05 [http-nio-8080-exec-9] DEBUG : After request [GET /api/polls/vote, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:17 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:17 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:17 [http-nio-8080-exec-10] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:17 [http-nio-8080-exec-10] ERROR : User ids is null
+2023-11-05 08:38:17 [http-nio-8080-exec-10] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 08:38:17 [http-nio-8080-exec-10] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"2333","description":"","startTime":"","endTime":"2023-11-05T08:41","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 08:38:17 [http-nio-8080-exec-2] DEBUG : Before request [OPTIONS /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:17 [http-nio-8080-exec-2] DEBUG : After request [OPTIONS /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:17 [http-nio-8080-exec-4] DEBUG : Before request [OPTIONS /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:17 [http-nio-8080-exec-3] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:17 [http-nio-8080-exec-4] DEBUG : After request [OPTIONS /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:17 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:17 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:17 [http-nio-8080-exec-3] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:21 [http-nio-8080-exec-7] DEBUG : Before request [OPTIONS /api/polls/32, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:21 [http-nio-8080-exec-7] DEBUG : After request [OPTIONS /api/polls/32, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:21 [http-nio-8080-exec-9] DEBUG : Before request [DELETE /api/polls/32, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:21 [http-nio-8080-exec-9] DEBUG : After request [DELETE /api/polls/32, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:22 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls/33, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:22 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls/33, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:22 [http-nio-8080-exec-10] DEBUG : Before request [DELETE /api/polls/33, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:22 [http-nio-8080-exec-10] DEBUG : After request [DELETE /api/polls/33, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:26 [http-nio-8080-exec-4] DEBUG : Before request [OPTIONS /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:26 [http-nio-8080-exec-4] DEBUG : After request [OPTIONS /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:26 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:26 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:27 [http-nio-8080-exec-3] DEBUG : Before request [OPTIONS /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:27 [http-nio-8080-exec-3] DEBUG : After request [OPTIONS /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:27 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:28 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:28 [http-nio-8080-exec-8] DEBUG : Before request [GET /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:28 [http-nio-8080-exec-8] DEBUG : After request [GET /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:28 [http-nio-8080-exec-7] DEBUG : Before request [OPTIONS /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:28 [http-nio-8080-exec-7] DEBUG : After request [OPTIONS /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:28 [http-nio-8080-exec-9] DEBUG : Before request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:28 [http-nio-8080-exec-9] DEBUG : After request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:38:37 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:38:37 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 08:38:37 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 08:39:19 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 72923 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 08:39:19 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 08:39:19 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 08:39:19 [main] INFO  : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-11-05 08:39:20 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 08:39:20 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:39:20 [main] INFO  : Starting service [Tomcat]
+2023-11-05 08:39:20 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 08:39:20 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 08:39:20 [main] INFO  : Root WebApplicationContext: initialization completed in 572 ms
+2023-11-05 08:39:20 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 08:39:20 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 08:39:20 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:39:20 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 08:39:20 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 08:39:20 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6244afc4
+2023-11-05 08:39:20 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 08:39:20 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 08:39:20 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:39:20 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 08:39:20 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:39:21 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 08:39:21 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 08:39:21 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 08:39:21 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:39:21 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 08:39:21 [main] INFO  : Started VotingMain in 1.714 seconds (process running for 3.05)
+2023-11-05 08:39:21 [RMI TCP Connection(2)-192.168.1.135] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 08:39:21 [RMI TCP Connection(2)-192.168.1.135] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 08:39:21 [RMI TCP Connection(2)-192.168.1.135] INFO  : Completed initialization in 1 ms
+2023-11-05 08:39:22 [votingapp-streams-49383a6d-2fc3-4878-a205-fad01d69f506-StreamThread-1] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 08:39:31 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:31 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:31 [http-nio-8080-exec-2] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:32 [http-nio-8080-exec-2] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:33 [http-nio-8080-exec-3] DEBUG : Before request [OPTIONS /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:33 [http-nio-8080-exec-3] DEBUG : After request [OPTIONS /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:33 [http-nio-8080-exec-4] DEBUG : Before request [GET /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:33 [http-nio-8080-exec-4] DEBUG : After request [GET /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:33 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:33 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:33 [http-nio-8080-exec-6] DEBUG : Before request [OPTIONS /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:33 [http-nio-8080-exec-6] DEBUG : After request [OPTIONS /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:33 [http-nio-8080-exec-7] DEBUG : Before request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:33 [http-nio-8080-exec-7] DEBUG : After request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:37 [http-nio-8080-exec-9] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:37 [http-nio-8080-exec-9] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:39 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:39 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:39 [http-nio-8080-exec-2] DEBUG : Before request [DELETE /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:39 [http-nio-8080-exec-2] DEBUG : After request [DELETE /api/polls/34, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:45 [http-nio-8080-exec-4] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:45 [http-nio-8080-exec-4] ERROR : User ids is null
+2023-11-05 08:39:45 [http-nio-8080-exec-4] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 08:39:45 [http-nio-8080-exec-4] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"222","description":"333","startTime":"","endTime":"2023-11-05T08:41","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 08:39:45 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:45 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:45 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:45 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:51 [http-nio-8080-exec-9] DEBUG : Before request [OPTIONS /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:51 [http-nio-8080-exec-9] DEBUG : After request [OPTIONS /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:51 [http-nio-8080-exec-10] DEBUG : Before request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:51 [http-nio-8080-exec-10] DEBUG : After request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:51 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:51 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:51 [http-nio-8080-exec-2] DEBUG : Before request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:51 [http-nio-8080-exec-2] DEBUG : After request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:54 [http-nio-8080-exec-4] DEBUG : Before request [OPTIONS /api/votes?tempId=1699169994006, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:54 [http-nio-8080-exec-4] DEBUG : After request [OPTIONS /api/votes?tempId=1699169994006, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:54 [http-nio-8080-exec-6] DEBUG : Before request [POST /api/votes?tempId=1699169994006, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:54 [http-nio-8080-exec-6] ERROR : User id is null
+2023-11-05 08:39:54 [http-nio-8080-exec-6] DEBUG : After request [POST /api/votes?tempId=1699169994006, client=0:0:0:0:0:0:0:1, payload={"choice":true,"pollId":35}]
+2023-11-05 08:39:54 [http-nio-8080-exec-5] DEBUG : Before request [OPTIONS /api/polls/user/null/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:54 [http-nio-8080-exec-5] DEBUG : After request [OPTIONS /api/polls/user/null/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:54 [http-nio-8080-exec-8] DEBUG : Before request [GET /api/polls/user/null/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:54 [http-nio-8080-exec-7] DEBUG : Before request [OPTIONS /api/polls/user/%20/votes?tempId=1699169994006, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:54 [http-nio-8080-exec-7] DEBUG : After request [OPTIONS /api/polls/user/%20/votes?tempId=1699169994006, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:54 [http-nio-8080-exec-9] DEBUG : Before request [GET /api/polls/user/%20/votes?tempId=1699169994006, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:54 [http-nio-8080-exec-8] WARN  : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+2023-11-05 08:39:54 [http-nio-8080-exec-8] DEBUG : After request [GET /api/polls/user/null/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:54 [http-nio-8080-exec-9] DEBUG : After request [GET /api/polls/user/%20/votes?tempId=1699169994006, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:57 [http-nio-8080-exec-10] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:57 [http-nio-8080-exec-10] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:59 [http-nio-8080-exec-2] DEBUG : Before request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:59 [http-nio-8080-exec-2] DEBUG : After request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:59 [http-nio-8080-exec-3] DEBUG : Before request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:59 [http-nio-8080-exec-3] DEBUG : After request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:59 [http-nio-8080-exec-4] DEBUG : Before request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:39:59 [http-nio-8080-exec-4] DEBUG : After request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:01 [http-nio-8080-exec-6] DEBUG : Before request [OPTIONS /api/votes?tempId=1699170001037, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:01 [http-nio-8080-exec-6] DEBUG : After request [OPTIONS /api/votes?tempId=1699170001037, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:01 [http-nio-8080-exec-5] DEBUG : Before request [POST /api/votes?tempId=1699170001037, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:01 [http-nio-8080-exec-5] ERROR : User id is null
+2023-11-05 08:40:01 [http-nio-8080-exec-5] DEBUG : After request [POST /api/votes?tempId=1699170001037, client=0:0:0:0:0:0:0:1, payload={"choice":false,"pollId":35}]
+2023-11-05 08:40:01 [http-nio-8080-exec-7] DEBUG : Before request [GET /api/polls/user/null/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:01 [http-nio-8080-exec-7] WARN  : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+2023-11-05 08:40:01 [http-nio-8080-exec-7] DEBUG : After request [GET /api/polls/user/null/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:01 [http-nio-8080-exec-8] DEBUG : Before request [OPTIONS /api/polls/user/%20/votes?tempId=1699170001037, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:01 [http-nio-8080-exec-8] DEBUG : After request [OPTIONS /api/polls/user/%20/votes?tempId=1699170001037, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:01 [http-nio-8080-exec-9] DEBUG : Before request [GET /api/polls/user/%20/votes?tempId=1699170001037, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:01 [http-nio-8080-exec-9] DEBUG : After request [GET /api/polls/user/%20/votes?tempId=1699170001037, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:06 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:06 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:10 [http-nio-8080-exec-3] DEBUG : Before request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:10 [http-nio-8080-exec-3] DEBUG : After request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:10 [http-nio-8080-exec-4] DEBUG : Before request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:10 [http-nio-8080-exec-4] DEBUG : After request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:10 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:10 [http-nio-8080-exec-6] DEBUG : After request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:11 [http-nio-8080-exec-5] DEBUG : Before request [OPTIONS /api/votes?tempId=1699170011690, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:11 [http-nio-8080-exec-5] DEBUG : After request [OPTIONS /api/votes?tempId=1699170011690, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:11 [http-nio-8080-exec-7] DEBUG : Before request [POST /api/votes?tempId=1699170011690, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:11 [http-nio-8080-exec-7] ERROR : User id is null
+2023-11-05 08:40:11 [http-nio-8080-exec-7] DEBUG : After request [POST /api/votes?tempId=1699170011690, client=0:0:0:0:0:0:0:1, payload={"choice":true,"pollId":35}]
+2023-11-05 08:40:11 [http-nio-8080-exec-8] DEBUG : Before request [GET /api/polls/user/null/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:11 [http-nio-8080-exec-8] WARN  : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+2023-11-05 08:40:11 [http-nio-8080-exec-8] DEBUG : After request [GET /api/polls/user/null/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:11 [http-nio-8080-exec-9] DEBUG : Before request [OPTIONS /api/polls/user/%20/votes?tempId=1699170011690, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:11 [http-nio-8080-exec-9] DEBUG : After request [OPTIONS /api/polls/user/%20/votes?tempId=1699170011690, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:11 [http-nio-8080-exec-10] DEBUG : Before request [GET /api/polls/user/%20/votes?tempId=1699170011690, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:11 [http-nio-8080-exec-10] DEBUG : After request [GET /api/polls/user/%20/votes?tempId=1699170011690, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:13 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:13 [http-nio-8080-exec-2] DEBUG : Before request [OPTIONS /api/polls/35/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:13 [http-nio-8080-exec-2] DEBUG : After request [OPTIONS /api/polls/35/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:13 [http-nio-8080-exec-3] DEBUG : Before request [GET /api/polls/35/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:13 [http-nio-8080-exec-3] DEBUG : After request [GET /api/polls/35/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:13 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:13 [http-nio-8080-exec-4] DEBUG : Before request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:40:13 [http-nio-8080-exec-4] DEBUG : After request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:41:00 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 08:41:00 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Poll results received from kafka topic: <{"id":35,"question":"222","description":"333","startTime":"2023-11-05T08:39:45.599177","endTime":"2023-11-05T08:41:00","timeLimit":0,"active":false,"privateAccess":false,"votesFor":null,"votesAgainst":null,"votes":[{"voteId":1,"choice":true,"timestamp":"2023-11-05T08:39:54.058192","user":null,"tempId":1699169994006},{"voteId":2,"choice":false,"timestamp":"2023-11-05T08:40:01.064843","user":null,"tempId":1699170001037},{"voteId":3,"choice":true,"timestamp":"2023-11-05T08:40:11.71088","user":null,"tempId":1699170011690}],"groups":[],"users":[]},[Content-Type:"application/json"]>
+2023-11-05 08:41:00 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io: https://dweet.io/dweet/for/votingapp-poll-results-35
+2023-11-05 08:41:01 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Response from dweet.io: {"this":"succeeded","by":"dweeting","the":"dweet","with":{"thing":"votingapp-poll-results-35","created":"2023-11-05T07:41:01.664Z","content":{"id":35,"question":222,"description":333,"startTime":"2023-11-05T08:39:45.599177","endTime":"2023-11-05T08:41:00","timeLimit":0,"active":false,"privateAccess":false,"votesFor":null,"votesAgainst":null,"votes":[{"voteId":1,"choice":true,"timestamp":"2023-11-05T08:39:54.058192","user":null,"tempId":1699169994006},{"voteId":2,"choice":false,"timestamp":"2023-11-05T08:40:01.064843","user":null,"tempId":1699170001037},{"voteId":3,"choice":true,"timestamp":"2023-11-05T08:40:11.71088","user":null,"tempId":1699170011690}],"groups":[],"users":[]},"transaction":"837b1fe8-7116-4fcc-adde-0b50e56ecd4e"}}
+2023-11-05 08:41:45 [http-nio-8080-exec-8] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:41:45 [http-nio-8080-exec-7] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:41:45 [http-nio-8080-exec-8] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:41:45 [http-nio-8080-exec-7] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:19 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:45:19 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 08:45:19 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 08:45:23 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 73270 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 08:45:23 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 08:45:23 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 08:45:23 [main] INFO  : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2023-11-05 08:45:23 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 08:45:23 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:45:23 [main] INFO  : Starting service [Tomcat]
+2023-11-05 08:45:23 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 08:45:23 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 08:45:23 [main] INFO  : Root WebApplicationContext: initialization completed in 605 ms
+2023-11-05 08:45:23 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 08:45:23 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 08:45:23 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:45:23 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 08:45:23 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 08:45:23 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a5d23c9
+2023-11-05 08:45:23 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 08:45:23 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 08:45:23 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:45:24 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 08:45:24 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:45:24 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 08:45:24 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 08:45:24 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 08:45:24 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:45:24 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 08:45:24 [main] INFO  : Started VotingMain in 1.717 seconds (process running for 2.545)
+2023-11-05 08:45:24 [RMI TCP Connection(3)-192.168.1.135] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 08:45:24 [RMI TCP Connection(3)-192.168.1.135] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 08:45:24 [RMI TCP Connection(3)-192.168.1.135] INFO  : Completed initialization in 0 ms
+2023-11-05 08:45:34 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:34 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:34 [http-nio-8080-exec-2] DEBUG : Before request [DELETE /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:34 [http-nio-8080-exec-2] DEBUG : After request [DELETE /api/polls/35, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:40 [http-nio-8080-exec-4] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:40 [http-nio-8080-exec-4] ERROR : User ids is null
+2023-11-05 08:45:41 [http-nio-8080-exec-4] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 08:45:41 [http-nio-8080-exec-4] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"2222","description":"","startTime":"","endTime":"2023-11-05T08:47","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 08:45:41 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:41 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:41 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:41 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:47 [http-nio-8080-exec-9] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:47 [http-nio-8080-exec-9] ERROR : User ids is null
+2023-11-05 08:45:47 [http-nio-8080-exec-9] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 08:45:47 [http-nio-8080-exec-9] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"2222","description":"","startTime":"","endTime":"2023-11-05T08:47","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 08:45:47 [http-nio-8080-exec-10] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:47 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:47 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:47 [http-nio-8080-exec-10] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:51 [http-nio-8080-exec-4] DEBUG : Before request [OPTIONS /api/polls/37, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:51 [http-nio-8080-exec-4] DEBUG : After request [OPTIONS /api/polls/37, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:51 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/37, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:51 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/37, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:55 [http-nio-8080-exec-7] DEBUG : Before request [OPTIONS /api/polls/37, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:55 [http-nio-8080-exec-7] DEBUG : After request [OPTIONS /api/polls/37, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:55 [http-nio-8080-exec-8] DEBUG : Before request [PUT /api/polls/37, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:55 [http-nio-8080-exec-8] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 08:45:55 [http-nio-8080-exec-8] DEBUG : After request [PUT /api/polls/37, client=0:0:0:0:0:0:0:1, payload={"id":37,"question":"12345","description":"","startTime":"2023-11-05T08:45:47.543916","endTime":"2023-11-05T08:47:00","active":true,"privateAccess":false,"votes":null,"voteIds":[],"groupId":[],"userIds":[],"creatorId":1}]
+2023-11-05 08:45:55 [http-nio-8080-exec-9] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:55 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:55 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:45:55 [http-nio-8080-exec-9] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:46:04 [votingapp-streams-1f49e84a-2c19-4170-b491-dfe59b3c43ba-StreamThread-3] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 08:47:00 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 08:47:00 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Poll results received from kafka topic: <{"id":36,"question":"2222","description":"","startTime":"2023-11-05T08:45:40.96974","endTime":"2023-11-05T08:47:00","timeLimit":0,"active":false,"privateAccess":false,"votesFor":null,"votesAgainst":null,"votes":[],"groups":[],"users":[]},[Content-Type:"application/json"]>
+2023-11-05 08:47:00 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io: https://dweet.io/dweet/for/votingapp-poll-results-36
+2023-11-05 08:47:00 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 08:47:01 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Response from dweet.io: {"this":"succeeded","by":"dweeting","the":"dweet","with":{"thing":"votingapp-poll-results-36","created":"2023-11-05T07:47:01.623Z","content":{"id":36,"question":2222,"description":"","startTime":"2023-11-05T08:45:40.96974","endTime":"2023-11-05T08:47:00","timeLimit":0,"active":false,"privateAccess":false,"votesFor":null,"votesAgainst":null,"votes":[],"groups":[],"users":[]},"transaction":"964d17e1-1839-4dce-9cbb-e0b6c4e17701"}}
+2023-11-05 08:47:01 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Poll results received from kafka topic: <{"id":37,"question":"12345","description":"","startTime":"2023-11-05T08:45:47.543916","endTime":"2023-11-05T08:47:00","timeLimit":0,"active":false,"privateAccess":false,"votesFor":null,"votesAgainst":null,"votes":[],"groups":[],"users":[]},[Content-Type:"application/json"]>
+2023-11-05 08:47:01 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Trying to post poll results to dweet.io: https://dweet.io/dweet/for/votingapp-poll-results-37
+2023-11-05 08:47:01 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Response from dweet.io: {"this":"succeeded","by":"dweeting","the":"dweet","with":{"thing":"votingapp-poll-results-37","created":"2023-11-05T07:47:01.967Z","content":{"id":37,"question":12345,"description":"","startTime":"2023-11-05T08:45:47.543916","endTime":"2023-11-05T08:47:00","timeLimit":0,"active":false,"privateAccess":false,"votesFor":null,"votesAgainst":null,"votes":[],"groups":[],"users":[]},"transaction":"fe787f34-df33-4d0e-88f0-06bcdc361166"}}
+2023-11-05 08:54:11 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:54:11 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 08:54:11 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 08:54:13 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 74079 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 08:54:13 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 08:54:13 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 08:54:13 [main] INFO  : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-11-05 08:54:14 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 08:54:14 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:54:14 [main] INFO  : Starting service [Tomcat]
+2023-11-05 08:54:14 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 08:54:14 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 08:54:14 [main] INFO  : Root WebApplicationContext: initialization completed in 656 ms
+2023-11-05 08:54:14 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 08:54:14 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 08:54:14 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:54:14 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 08:54:14 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 08:54:14 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@8636cf4
+2023-11-05 08:54:14 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 08:54:14 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 08:54:14 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 08:54:14 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 08:54:14 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 08:54:14 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 08:54:14 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 08:54:15 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 08:54:15 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 08:54:15 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 08:54:15 [main] INFO  : Started VotingMain in 1.927 seconds (process running for 2.937)
+2023-11-05 08:54:15 [RMI TCP Connection(2)-192.168.1.135] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 08:54:15 [RMI TCP Connection(2)-192.168.1.135] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 08:54:15 [RMI TCP Connection(2)-192.168.1.135] INFO  : Completed initialization in 1 ms
+2023-11-05 08:54:41 [http-nio-8080-exec-1] DEBUG : Before request [POST /api/polls, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:54:41 [http-nio-8080-exec-1] ERROR : User ids is null
+2023-11-05 08:54:41 [http-nio-8080-exec-1] INFO  : Object sent to kafka topic: votingEndTime
+2023-11-05 08:54:41 [http-nio-8080-exec-1] DEBUG : After request [POST /api/polls, client=0:0:0:0:0:0:0:1, payload={"question":"","description":"","startTime":"","endTime":"2023-11-05T08:55","active":false,"privateAccess":false,"creatorId":1}]
+2023-11-05 08:54:41 [http-nio-8080-exec-2] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:54:41 [http-nio-8080-exec-3] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:54:41 [http-nio-8080-exec-3] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:54:41 [http-nio-8080-exec-2] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 08:54:55 [votingapp-streams-59c23bf4-ff38-4666-b523-8c2e8658b2d8-StreamThread-1] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 08:55:00 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  : Object sent to kafka topic: pollResults
+2023-11-05 08:55:01 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  : Successfully posted poll results to dweet.io: Poll ID: 38, Dweet URL: https://dweet.io/get/latest/dweet/for/votingapp-poll-results-38, Response: {"this":"succeeded","by":"dweeting","the":"dweet","with":{"thing":"votingapp-poll-results-38","created":"2023-11-05T07:55:00.948Z","content":{"id":38,"question":"","description":"","startTime":"2023-11-05T08:54:41.515025","endTime":"2023-11-05T08:55:00","timeLimit":0,"active":false,"privateAccess":false,"votesFor":null,"votesAgainst":null,"votes":[],"groups":[],"users":[]},"transaction":"4cf20334-f487-4942-bdf4-657b84573bfd"}}
+2023-11-05 09:09:46 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m32s266ms).
+2023-11-05 09:27:20 [kafka-coordinator-heartbeat-thread | votingapp-streams] WARN  : [Consumer clientId=votingapp-streams-59c23bf4-ff38-4666-b523-8c2e8658b2d8-StreamThread-1-consumer, groupId=votingapp-streams] consumer poll timeout has expired. This means the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time processing messages. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2023-11-05 09:27:20 [votingapp-streams-59c23bf4-ff38-4666-b523-8c2e8658b2d8-StreamThread-1] WARN  : stream-thread [votingapp-streams-59c23bf4-ff38-4666-b523-8c2e8658b2d8-StreamThread-1] Detected that the thread is being fenced. This implies that this thread missed a rebalance and dropped out of the consumer group. Will close out all assigned tasks and rejoin the consumer group.
+org.apache.kafka.streams.errors.TaskMigratedException: Consumer committing offsets failed, indicating the corresponding thread is no longer part of the group; it means all tasks belonging to this thread should be migrated.
+	at org.apache.kafka.streams.processor.internals.TaskExecutor.commitOffsetsOrTransaction(TaskExecutor.java:230)
+	at org.apache.kafka.streams.processor.internals.TaskExecutor.commitTasksAndMaybeUpdateCommittableOffsets(TaskExecutor.java:154)
+	at org.apache.kafka.streams.processor.internals.TaskManager.commitTasksAndMaybeUpdateCommittableOffsets(TaskManager.java:1639)
+	at org.apache.kafka.streams.processor.internals.TaskManager.commit(TaskManager.java:1607)
+	at org.apache.kafka.streams.processor.internals.StreamThread.maybeCommit(StreamThread.java:1109)
+	at org.apache.kafka.streams.processor.internals.StreamThread.runOnce(StreamThread.java:829)
+	at org.apache.kafka.streams.processor.internals.StreamThread.runLoop(StreamThread.java:613)
+	at org.apache.kafka.streams.processor.internals.StreamThread.run(StreamThread.java:575)
+Caused by: org.apache.kafka.clients.consumer.CommitFailedException: Offset commit cannot be completed since the consumer is not part of an active group for auto partition assignment; it is likely that the consumer was kicked out of the group.
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.sendOffsetCommitRequest(ConsumerCoordinator.java:1316)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.commitOffsetsSync(ConsumerCoordinator.java:1173)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.commitSync(KafkaConsumer.java:1502)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.commitSync(KafkaConsumer.java:1449)
+	at org.apache.kafka.streams.processor.internals.TaskManager.consumerCommitSync(TaskManager.java:157)
+	at org.apache.kafka.streams.processor.internals.TaskExecutor.commitOffsetsOrTransaction(TaskExecutor.java:227)
+	... 7 common frames omitted
+2023-11-05 09:27:23 [votingapp-streams-59c23bf4-ff38-4666-b523-8c2e8658b2d8-StreamThread-2] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 09:58:22 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48m5s446ms).
+2023-11-05 10:00:57 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m5s745ms).
+2023-11-05 10:07:06 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m8s925ms).
+2023-11-05 10:09:15 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m38s947ms).
+2023-11-05 10:47:18 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=37m33s103ms).
+2023-11-05 10:58:46 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m27s343ms).
+2023-11-05 11:06:46 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m29s769ms).
+2023-11-05 11:10:38 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m22s633ms).
+2023-11-05 11:33:49 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m11s167ms).
+2023-11-05 12:07:38 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=33m18s527ms).
+2023-11-05 12:24:54 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m46s99ms).
+2023-11-05 12:51:29 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=26m4s697ms).
+2023-11-05 12:52:27 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s270ms).
+2023-11-05 13:05:53 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m56s298ms).
+2023-11-05 13:08:32 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m38s539ms).
+2023-11-05 13:24:57 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m54s986ms).
+2023-11-05 13:30:26 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m59s271ms).
+2023-11-05 13:38:44 [http-nio-8080-exec-6] DEBUG : Before request [OPTIONS /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:38:44 [http-nio-8080-exec-6] DEBUG : After request [OPTIONS /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:38:44 [http-nio-8080-exec-7] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:38:44 [http-nio-8080-exec-7] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:39:56 [http-nio-8080-exec-9] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:39:56 [http-nio-8080-exec-9] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:40:53 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 13:40:53 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-05 13:40:53 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-05 13:41:00 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 76818 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-05 13:41:00 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 13:41:00 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 13:41:00 [main] INFO  : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-11-05 13:41:00 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-05 13:41:00 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-05 13:41:00 [main] INFO  : Starting service [Tomcat]
+2023-11-05 13:41:00 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-05 13:41:00 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-05 13:41:00 [main] INFO  : Root WebApplicationContext: initialization completed in 631 ms
+2023-11-05 13:41:00 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-05 13:41:00 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 13:41:00 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 13:41:00 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 13:41:00 [main] INFO  : HikariPool-1 - Starting...
+2023-11-05 13:41:00 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7146c6ea
+2023-11-05 13:41:00 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-05 13:41:01 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-05 13:41:01 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 13:41:01 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 13:41:01 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 13:41:01 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 13:41:01 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-05 13:41:01 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-05 13:41:01 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-05 13:41:01 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-05 13:41:01 [main] INFO  : Started VotingMain in 1.869 seconds (process running for 3.453)
+2023-11-05 13:41:02 [RMI TCP Connection(2)-192.168.1.135] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 13:41:02 [RMI TCP Connection(2)-192.168.1.135] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-05 13:41:02 [RMI TCP Connection(2)-192.168.1.135] INFO  : Completed initialization in 1 ms
+2023-11-05 13:41:05 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:05 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:15 [http-nio-8080-exec-3] DEBUG : Before request [OPTIONS /api/polls/36, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:15 [http-nio-8080-exec-4] DEBUG : Before request [OPTIONS /api/polls/36/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:15 [http-nio-8080-exec-4] DEBUG : After request [OPTIONS /api/polls/36/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:15 [http-nio-8080-exec-3] DEBUG : After request [OPTIONS /api/polls/36, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:15 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/36, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:15 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/36/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:15 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/36, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:15 [http-nio-8080-exec-7] DEBUG : Before request [OPTIONS /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:15 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/36/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:15 [http-nio-8080-exec-7] DEBUG : After request [OPTIONS /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:15 [http-nio-8080-exec-8] DEBUG : Before request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:15 [http-nio-8080-exec-8] DEBUG : After request [GET /api/user/1, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:17 [http-nio-8080-exec-9] DEBUG : Before request [OPTIONS /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:17 [http-nio-8080-exec-10] DEBUG : Before request [OPTIONS /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:17 [http-nio-8080-exec-9] DEBUG : After request [OPTIONS /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:17 [http-nio-8080-exec-10] DEBUG : After request [OPTIONS /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:17 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:17 [http-nio-8080-exec-2] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:18 [http-nio-8080-exec-2] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:18 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:20 [http-nio-8080-exec-6] DEBUG : Before request [OPTIONS /api/polls/vote, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:20 [http-nio-8080-exec-6] DEBUG : After request [OPTIONS /api/polls/vote, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:20 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/vote, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:20 [http-nio-8080-exec-5] WARN  : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "vote"]
+2023-11-05 13:41:20 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/vote, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:21 [http-nio-8080-exec-7] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:21 [http-nio-8080-exec-8] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:21 [http-nio-8080-exec-8] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:21 [http-nio-8080-exec-7] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:25 [http-nio-8080-exec-2] DEBUG : Before request [GET /api/polls/vote, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:25 [http-nio-8080-exec-2] WARN  : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "vote"]
+2023-11-05 13:41:25 [http-nio-8080-exec-2] DEBUG : After request [GET /api/polls/vote, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:27 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:27 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:31 [http-nio-8080-exec-3] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:31 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:31 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:31 [http-nio-8080-exec-3] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:32 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:32 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:34 [http-nio-8080-exec-10] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:34 [http-nio-8080-exec-9] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:34 [http-nio-8080-exec-9] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:34 [http-nio-8080-exec-10] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:37 [votingapp-streams-93b1ade8-1a67-475e-8505-38b913925330-StreamThread-4] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-05 13:41:37 [http-nio-8080-exec-2] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:37 [http-nio-8080-exec-2] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:39 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:39 [http-nio-8080-exec-3] DEBUG : Before request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:39 [http-nio-8080-exec-3] DEBUG : After request [GET /api/polls/user/1/votes, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:39 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/user/1/created, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:40 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:41:40 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-05 13:59:26 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m54s910ms).
+2023-11-05 14:33:47 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m21s589ms).
+2023-11-05 14:43:02 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m45s194ms).
+2023-11-05 14:59:13 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m10s560ms).
+2023-11-05 15:01:44 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m31s495ms).
+2023-11-05 15:18:39 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m54s944ms).
+2023-11-05 16:23:41 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h4m31s680ms).
+2023-11-05 16:53:07 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=29m25s991ms).
+2023-11-05 17:10:38 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m30s619ms).
+2023-11-05 17:28:41 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m413ms).
+2023-11-05 17:30:08 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m27s199ms).
+2023-11-05 17:32:48 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m39s850ms).
+2023-11-05 17:54:01 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=20m43s4ms).
+2023-11-05 18:09:40 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m38s927ms).
+2023-11-05 18:26:07 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m27s430ms).
+2023-11-05 18:44:13 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m5s773ms).
+2023-11-05 18:47:20 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m6s850ms).
+2023-11-05 18:54:53 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m33s688ms).
+2023-11-05 19:01:58 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m3s224ms).
+2023-11-05 19:19:12 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m6s244ms).
+2023-11-05 19:32:27 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m14s758ms).
+2023-11-05 19:55:47 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m20s339ms).
+2023-11-05 20:41:00 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=44m43s154ms).
+2023-11-05 20:57:02 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s778ms).
+2023-11-05 21:13:25 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m22s889ms).
+2023-11-05 21:25:06 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m40s692ms).
+2023-11-05 21:27:00 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m54s714ms).
+2023-11-05 21:50:21 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=22m50s393ms).
+2023-11-05 21:58:13 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m21s840ms).
+2023-11-05 22:30:13 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m733ms).
+2023-11-05 22:47:02 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m18s253ms).
+2023-11-05 22:58:46 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m43s973ms).
+2023-11-05 23:00:27 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m11s459ms).
+2023-11-05 23:03:48 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m50s913ms).
+2023-11-05 23:20:15 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m27s33ms).
+2023-11-05 23:26:30 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m45s360ms).
+2023-11-05 23:37:02 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m31s676ms).
+2023-11-05 23:55:33 [HikariPool-1 housekeeper] WARN  : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m1s21ms).

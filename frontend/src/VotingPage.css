@@ -1,0 +1,19 @@
+/* VotingPage.css */
+
+.vote-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.vote-option {
+    display: flex;
+    align-items: center;
+}
+
+.vote-option input {
+    margin-right: 10px;
+    width: 10px;
+}

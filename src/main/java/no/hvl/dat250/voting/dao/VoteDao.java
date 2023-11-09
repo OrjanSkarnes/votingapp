@@ -4,8 +4,9 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import lombok.AllArgsConstructor;
-import no.hvl.dat250.voting.Poll;
-import no.hvl.dat250.voting.Vote;
+import no.hvl.dat250.voting.models.Poll;
+import no.hvl.dat250.voting.models.User;
+import no.hvl.dat250.voting.models.Vote;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -50,5 +51,19 @@ public class VoteDao {
         TypedQuery<Vote> query = em.createQuery("SELECT v FROM Vote v WHERE v.poll = :poll", Vote.class);
         query.setParameter("poll", poll);
         return query.getResultList().stream().toList();
+    }
+
+    public List<Vote> getVotesByUserAndPoll(User user, Poll poll) {
+        return em.createQuery("SELECT v FROM Vote v WHERE v.user = :user AND v.poll = :poll", Vote.class)
+            .setParameter("user", user)
+            .setParameter("poll", poll)
+            .getResultList();
+    }
+
+    public List<Vote> getVotesByTempIdAndPoll(Long tempId, Poll poll) {
+        return em.createQuery("SELECT v FROM Vote v WHERE v.tempId = :tempId AND v.poll = :poll", Vote.class)
+            .setParameter("tempId", tempId)
+            .setParameter("poll", poll)
+            .getResultList();
     }
 }

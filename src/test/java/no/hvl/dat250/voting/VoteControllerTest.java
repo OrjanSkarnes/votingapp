@@ -1,15 +1,18 @@
 package no.hvl.dat250.voting;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import no.hvl.dat250.voting.controller.VoteController;
+import no.hvl.dat250.voting.DTO.VoteDTO;
+import no.hvl.dat250.voting.models.Poll;
+import no.hvl.dat250.voting.models.User;
+import no.hvl.dat250.voting.models.Vote;
 import no.hvl.dat250.voting.service.VoteService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Arrays;
@@ -32,12 +35,15 @@ public class VoteControllerTest {
     @MockBean
     private VoteService voteService;
 
+    private User testUser = new User();
+
+    private Poll testPoll = new Poll();
+
     @Test
     public void createVote_ReturnsCreatedVote() throws Exception {
-        Vote newVote = new Vote();
-        newVote.setChoice(Boolean.TRUE);
+        Vote newVote = voteCreator(true);
 
-        when(voteService.createVote(any(Vote.class))).thenReturn(newVote);
+        when(voteService.createVote(any(VoteDTO.class), any())).thenReturn(ResponseEntity.ok(VoteDTO.convertToDTO(newVote)));
 
         mockMvc.perform(post("/api/votes")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -48,9 +54,10 @@ public class VoteControllerTest {
 
     @Test
     public void getAllVotes_ReturnsAllVotes() throws Exception {
-        List<Vote> votes = Arrays.asList(new Vote(), new Vote());
+        List<Vote> votes = Arrays.asList(voteCreator(true), voteCreator(true));
 
-        when(voteService.getAllVotes()).thenReturn(votes);
+        when(voteService.getAllVotes()).thenReturn(VoteDTO.convertToListOfDTO(votes));
+
 
         mockMvc.perform(get("/api/votes"))
                 .andExpect(status().isOk())
@@ -59,13 +66,20 @@ public class VoteControllerTest {
 
     @Test
     public void findVoteById_ReturnsVote() throws Exception {
-        Vote vote = new Vote();
-        vote.setChoice(Boolean.TRUE);
+        Vote vote = voteCreator(true);
 
-        when(voteService.findVoteById(1L)).thenReturn(vote);
+        when(voteService.findVoteById(1L)).thenReturn(VoteDTO.convertToDTO(vote));
 
         mockMvc.perform(get("/api/votes/1"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.choice", is(vote.getChoice())));
+    }
+
+    public Vote voteCreator(Boolean choice) {
+        Vote vote = new Vote();
+        vote.setChoice(choice);
+        vote.setUser(testUser);
+        vote.setPoll(testPoll);
+        return vote;
     }
 }

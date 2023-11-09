@@ -2,6 +2,7 @@ package no.hvl.dat250.voting;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import no.hvl.dat250.voting.controller.GroupController;
+import no.hvl.dat250.voting.models.Group;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

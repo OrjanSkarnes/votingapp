@@ -35,11 +35,21 @@ Welcome to the repository for the `VotingApp` project. This application is part 
 
 ### Manually (For IntelliJ or other IDEs)
 
-1. Manually start the MySQL container with Docker:
+1. Manually start the MySQL, Docker and Zookeeper containers by running the following command in the project root directory:
 
     ```bash
     docker-compose up
     ```
+2. If this failed you should stop all containers and remove them with the following command and try step 1 again:
+
+    ```bash
+    docker-compose down
+    ```
 2. Run the application from your IDE.
 
 Either way, the application should be accessible at [http://localhost:8080](http://localhost:8080).
+
+3. Befor running frontend you need to install all dependencies with npm:
+  ```bash
+  npm ci
+  ```
