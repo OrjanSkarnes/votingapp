@@ -2578,3 +2578,302 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2023-11-09 11:11:32 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-11-09 11:11:32 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
 2023-11-09 11:11:32 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-09 14:44:13 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 81567 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-09 14:44:13 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-09 14:44:13 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-09 14:44:13 [main] INFO  : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2023-11-09 14:44:14 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-09 14:44:14 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-09 14:44:14 [main] INFO  : Starting service [Tomcat]
+2023-11-09 14:44:14 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-09 14:44:14 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-09 14:44:14 [main] INFO  : Root WebApplicationContext: initialization completed in 1005 ms
+2023-11-09 14:44:14 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-09 14:44:14 [main] INFO  : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-11-09 14:44:14 [main] INFO  : HHH000406: Using bytecode reflection optimizer
+2023-11-09 14:44:14 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-09 14:44:14 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-09 14:44:14 [main] INFO  : HikariPool-1 - Starting...
+2023-11-09 14:44:14 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38848217
+2023-11-09 14:44:14 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-09 14:44:14 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-09 14:44:15 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-09 14:44:15 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-09 14:44:15 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-09 14:44:15 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-09 14:44:15 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-09 14:44:16 [main] INFO  : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a02fca5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b3a1151, org.springframework.security.web.context.SecurityContextHolderFilter@7b6e196e, org.springframework.security.web.header.HeaderWriterFilter@6a94bd69, org.springframework.security.web.authentication.logout.LogoutFilter@38320819, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@137a70f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5472c27a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c9234a0, org.springframework.security.web.access.ExceptionTranslationFilter@76ea1cb5, org.springframework.security.web.access.intercept.AuthorizationFilter@8b727cb]
+2023-11-09 14:44:16 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-09 14:44:16 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-09 14:44:16 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-09 14:44:16 [main] WARN  : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2023-11-09 14:44:19 [votingapp-streams-58d97de8-d7b2-44cc-8e6c-cca51285880c-StreamThread-2] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-09 14:44:19 [main] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-09 14:44:19 [main] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-09 14:44:19 [main] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-09 14:44:19 [main] INFO  : Pausing ProtocolHandler ["http-nio-8080"]
+2023-11-09 14:44:19 [main] INFO  : Stopping service [Tomcat]
+2023-11-09 14:44:19 [main] INFO  : Stopping ProtocolHandler ["http-nio-8080"]
+2023-11-09 14:44:19 [main] INFO  : Destroying ProtocolHandler ["http-nio-8080"]
+2023-11-09 14:44:19 [main] INFO  : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-09 14:44:19 [main] ERROR : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-11-09 14:47:03 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 81887 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-09 14:47:03 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-09 14:47:03 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-09 14:47:03 [main] INFO  : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-11-09 14:47:04 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-09 14:47:04 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-09 14:47:04 [main] INFO  : Starting service [Tomcat]
+2023-11-09 14:47:04 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-09 14:47:04 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-09 14:47:04 [main] INFO  : Root WebApplicationContext: initialization completed in 722 ms
+2023-11-09 14:47:04 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-09 14:47:04 [main] INFO  : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-11-09 14:47:04 [main] INFO  : HHH000406: Using bytecode reflection optimizer
+2023-11-09 14:47:04 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-09 14:47:04 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-09 14:47:04 [main] INFO  : HikariPool-1 - Starting...
+2023-11-09 14:47:04 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38848217
+2023-11-09 14:47:04 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-09 14:47:04 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-09 14:47:04 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-09 14:47:05 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-09 14:47:05 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-09 14:47:05 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-09 14:47:05 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-09 14:47:05 [main] INFO  : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a02fca5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b3a1151, org.springframework.security.web.context.SecurityContextHolderFilter@7b6e196e, org.springframework.security.web.header.HeaderWriterFilter@6a94bd69, org.springframework.security.web.authentication.logout.LogoutFilter@38320819, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@137a70f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5472c27a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c9234a0, org.springframework.security.web.access.ExceptionTranslationFilter@76ea1cb5, org.springframework.security.web.access.intercept.AuthorizationFilter@8b727cb]
+2023-11-09 14:47:05 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-09 14:47:05 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-09 14:47:05 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-09 14:47:06 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-09 14:47:06 [main] INFO  : Started VotingMain in 2.613 seconds (process running for 3.309)
+2023-11-09 14:47:06 [RMI TCP Connection(2)-10.54.144.130] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-09 14:47:06 [RMI TCP Connection(2)-10.54.144.130] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-09 14:47:06 [RMI TCP Connection(2)-10.54.144.130] INFO  : Completed initialization in 1 ms
+2023-11-09 14:47:08 [votingapp-streams-28d23b66-acb0-4f0f-ae6f-1e0a7ad17452-StreamThread-3] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-09 14:47:15 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:15 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:17 [http-nio-8080-exec-2] DEBUG : Before request [OPTIONS /api/user/login, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:17 [http-nio-8080-exec-2] DEBUG : After request [OPTIONS /api/user/login, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:20 [http-nio-8080-exec-3] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:20 [http-nio-8080-exec-3] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:20 [http-nio-8080-exec-5] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:20 [http-nio-8080-exec-5] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:21 [http-nio-8080-exec-6] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:21 [http-nio-8080-exec-6] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:21 [http-nio-8080-exec-7] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:21 [http-nio-8080-exec-7] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:21 [http-nio-8080-exec-8] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:21 [http-nio-8080-exec-8] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:21 [http-nio-8080-exec-9] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:21 [http-nio-8080-exec-9] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:35 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:35 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:55 [http-nio-8080-exec-3] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:55 [http-nio-8080-exec-3] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:55 [http-nio-8080-exec-4] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:47:55 [http-nio-8080-exec-4] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:48:43 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-09 14:48:43 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-09 14:48:43 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-09 14:48:45 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 82006 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-09 14:48:45 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-09 14:48:46 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-09 14:48:46 [main] INFO  : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2023-11-09 14:48:46 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-09 14:48:46 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-09 14:48:46 [main] INFO  : Starting service [Tomcat]
+2023-11-09 14:48:46 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-09 14:48:46 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-09 14:48:46 [main] INFO  : Root WebApplicationContext: initialization completed in 1271 ms
+2023-11-09 14:48:46 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-09 14:48:47 [main] INFO  : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-11-09 14:48:47 [main] INFO  : HHH000406: Using bytecode reflection optimizer
+2023-11-09 14:48:47 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-09 14:48:47 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-09 14:48:47 [main] INFO  : HikariPool-1 - Starting...
+2023-11-09 14:48:47 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12266084
+2023-11-09 14:48:47 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-09 14:48:47 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-09 14:48:47 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-09 14:48:47 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-09 14:48:48 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-09 14:48:48 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-09 14:48:48 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-09 14:48:48 [main] INFO  : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@d0456ad, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@12dd3501, org.springframework.security.web.context.SecurityContextHolderFilter@3f3abe67, org.springframework.security.web.header.HeaderWriterFilter@739500b8, org.springframework.security.web.authentication.logout.LogoutFilter@354ff4f6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d3929ba, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@24c7b944, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4cb0e39e, org.springframework.security.web.access.ExceptionTranslationFilter@454f6cc5, org.springframework.security.web.access.intercept.AuthorizationFilter@46374b8]
+2023-11-09 14:48:48 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-09 14:48:48 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-09 14:48:48 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-09 14:48:48 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-09 14:48:48 [main] INFO  : Started VotingMain in 3.534 seconds (process running for 3.792)
+2023-11-09 14:48:49 [RMI TCP Connection(2)-10.54.144.130] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-09 14:48:49 [RMI TCP Connection(2)-10.54.144.130] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-09 14:48:49 [RMI TCP Connection(2)-10.54.144.130] INFO  : Completed initialization in 1 ms
+2023-11-09 14:48:53 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:48:53 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:48:53 [http-nio-8080-exec-2] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:48:53 [http-nio-8080-exec-2] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:49:26 [votingapp-streams-3cacf634-8e6f-45a8-a094-99f1f03aa8b2-StreamThread-1] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-09 14:49:26 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-09 14:49:26 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-09 14:49:26 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-09 14:49:39 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 82083 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-09 14:49:39 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-09 14:49:39 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-09 14:49:39 [main] INFO  : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2023-11-09 14:49:40 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-09 14:49:40 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-09 14:49:40 [main] INFO  : Starting service [Tomcat]
+2023-11-09 14:49:40 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-09 14:49:40 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-09 14:49:40 [main] INFO  : Root WebApplicationContext: initialization completed in 1146 ms
+2023-11-09 14:49:40 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-09 14:49:40 [main] INFO  : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-11-09 14:49:40 [main] INFO  : HHH000406: Using bytecode reflection optimizer
+2023-11-09 14:49:40 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-09 14:49:40 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-09 14:49:40 [main] INFO  : HikariPool-1 - Starting...
+2023-11-09 14:49:40 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3c743d40
+2023-11-09 14:49:40 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-09 14:49:40 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-09 14:49:41 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-09 14:49:41 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-09 14:49:41 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-09 14:49:41 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-09 14:49:41 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-09 14:49:42 [main] INFO  : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@135f760a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@36e9fd4f, org.springframework.security.web.context.SecurityContextHolderFilter@3bd1c7f0, org.springframework.security.web.header.HeaderWriterFilter@7d661205, org.springframework.security.web.authentication.logout.LogoutFilter@14f08a97, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17e2ad13, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7b6e196e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@730611a0, org.springframework.security.web.access.ExceptionTranslationFilter@6888a33, org.springframework.security.web.access.intercept.AuthorizationFilter@1046aaa4]
+2023-11-09 14:49:42 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-09 14:49:42 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-09 14:49:42 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-09 14:49:42 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-09 14:49:42 [main] INFO  : Started VotingMain in 3.409 seconds (process running for 3.761)
+2023-11-09 14:49:42 [RMI TCP Connection(4)-10.54.144.130] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-09 14:49:42 [RMI TCP Connection(4)-10.54.144.130] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-09 14:49:42 [RMI TCP Connection(4)-10.54.144.130] INFO  : Completed initialization in 1 ms
+2023-11-09 14:49:42 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:49:42 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:49:43 [http-nio-8080-exec-2] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:49:43 [http-nio-8080-exec-2] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:49:46 [http-nio-8080-exec-4] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:49:46 [http-nio-8080-exec-4] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:49:47 [http-nio-8080-exec-5] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:49:47 [http-nio-8080-exec-5] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:49:47 [http-nio-8080-exec-6] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:49:47 [http-nio-8080-exec-6] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:49:59 [http-nio-8080-exec-8] DEBUG : Before request [OPTIONS /api/user/login, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:49:59 [http-nio-8080-exec-8] DEBUG : After request [OPTIONS /api/user/login, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:50:10 [http-nio-8080-exec-10] DEBUG : Before request [OPTIONS /api/polls/vote, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:50:10 [http-nio-8080-exec-10] DEBUG : After request [OPTIONS /api/polls/vote, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:50:11 [votingapp-streams-8ac29f39-6e2b-4c28-8400-2fcd5f54ab50-StreamThread-2] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-09 14:50:29 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-09 14:50:29 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-09 14:50:29 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2023-11-09 14:50:52 [main] INFO  : Starting VotingMain using Java 17.0.8 with PID 82178 (/Users/orjanskarnes/Dev/votingapp/build/classes/java/main started by orjanskarnes in /Users/orjanskarnes/Dev/votingapp)
+2023-11-09 14:50:52 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-09 14:50:53 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-09 14:50:53 [main] INFO  : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2023-11-09 14:50:53 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-09 14:50:53 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-09 14:50:53 [main] INFO  : Starting service [Tomcat]
+2023-11-09 14:50:53 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-09 14:50:53 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-09 14:50:53 [main] INFO  : Root WebApplicationContext: initialization completed in 1309 ms
+2023-11-09 14:50:53 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-09 14:50:54 [main] INFO  : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-11-09 14:50:54 [main] INFO  : HHH000406: Using bytecode reflection optimizer
+2023-11-09 14:50:54 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-09 14:50:54 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-09 14:50:54 [main] INFO  : HikariPool-1 - Starting...
+2023-11-09 14:50:54 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@76b05c0
+2023-11-09 14:50:54 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-09 14:50:54 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-09 14:50:54 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-09 14:50:54 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-09 14:50:55 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-09 14:50:55 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-09 14:50:55 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 2 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:55 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 2 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:55 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 2 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:55 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-09 14:50:55 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 2 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [main] INFO  : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@730611a0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8b727cb, org.springframework.security.web.context.SecurityContextHolderFilter@17e2ad13, org.springframework.security.web.header.HeaderWriterFilter@6203f10f, org.springframework.security.web.authentication.logout.LogoutFilter@46ee9cfd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f4f198c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@137a70f1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6030eff1, org.springframework.security.web.access.ExceptionTranslationFilter@7d661205, org.springframework.security.web.access.intercept.AuthorizationFilter@32192a69]
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 5 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 5 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 5 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 5 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 8 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 8 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 8 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 8 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 11 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 11 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 11 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 11 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 14 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 14 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 14 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 14 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 17 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 17 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 17 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 17 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-4-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 20 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-1-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 20 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 20 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3] WARN  : [Consumer clientId=votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-3-consumer, groupId=votingapp-streams] Error while fetching metadata with correlation id 20 : {votingEndTime=UNKNOWN_TOPIC_OR_PARTITION}
+2023-11-09 14:50:56 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-09 14:50:56 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-09 14:50:56 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  : [Consumer clientId=consumer-votingapp-consumer-1, groupId=votingapp-consumer] Error while fetching metadata with correlation id 2 : {pollEndTimesFinished=LEADER_NOT_AVAILABLE}
+2023-11-09 14:50:56 [main] INFO  : Started VotingMain in 4.352 seconds (process running for 4.593)
+2023-11-09 14:50:56 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  : [Consumer clientId=consumer-votingapp-consumer-2, groupId=votingapp-consumer] Error while fetching metadata with correlation id 2 : {pollResults=LEADER_NOT_AVAILABLE}
+2023-11-09 14:50:57 [RMI TCP Connection(2)-10.54.144.130] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-09 14:50:57 [RMI TCP Connection(2)-10.54.144.130] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-09 14:50:57 [RMI TCP Connection(2)-10.54.144.130] INFO  : Completed initialization in 1 ms
+2023-11-09 14:51:01 [http-nio-8080-exec-1] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:51:01 [http-nio-8080-exec-1] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537635850, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:51:02 [votingapp-streams-77002090-6013-4f94-9351-e3cc30083a75-StreamThread-2] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-09 14:52:22 [http-nio-8080-exec-3] DEBUG : Before request [OPTIONS /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:22 [http-nio-8080-exec-3] DEBUG : After request [OPTIONS /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:22 [http-nio-8080-exec-4] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:22 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:22 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:22 [http-nio-8080-exec-4] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:24 [http-nio-8080-exec-6] DEBUG : Before request [OPTIONS /api/user/login, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:24 [http-nio-8080-exec-6] DEBUG : After request [OPTIONS /api/user/login, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:24 [http-nio-8080-exec-7] DEBUG : Before request [POST /api/user/login, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:24 [http-nio-8080-exec-7] INFO  : Attempting to log in user: acro112
+2023-11-09 14:52:25 [http-nio-8080-exec-7] DEBUG : After request [POST /api/user/login, client=0:0:0:0:0:0:0:1, payload={"username":"acro112","password":"wwww12"}]
+2023-11-09 14:52:25 [http-nio-8080-exec-8] DEBUG : Before request [OPTIONS /api/user/register?tempId=1699537945762, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:25 [http-nio-8080-exec-8] DEBUG : After request [OPTIONS /api/user/register?tempId=1699537945762, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:25 [http-nio-8080-exec-10] DEBUG : Before request [POST /api/user/register?tempId=1699537945762, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:25 [http-nio-8080-exec-10] INFO  : Attempting to create user: no.hvl.dat250.voting.models.User@55eeddf4
+2023-11-09 14:52:25 [http-nio-8080-exec-10] INFO  : Created user: no.hvl.dat250.voting.models.User@55eeddf4
+2023-11-09 14:52:25 [http-nio-8080-exec-10] DEBUG : After request [POST /api/user/register?tempId=1699537945762, client=0:0:0:0:0:0:0:1, payload={"username":"acro112","password":"wwww12"}]
+2023-11-09 14:52:26 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:26 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:26 [http-nio-8080-exec-2] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:52:26 [http-nio-8080-exec-2] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:53:26 [http-nio-8080-exec-5] DEBUG : Before request [POST /api/user/register?tempId=1699537945762, client=0:0:0:0:0:0:0:1]
+2023-11-09 14:53:26 [http-nio-8080-exec-5] INFO  : Attempting to create user: no.hvl.dat250.voting.models.User@7e0524b9
+2023-11-09 14:53:26 [http-nio-8080-exec-5] ERROR : User already exists: no.hvl.dat250.voting.models.User@5a67cfb8
+2023-11-09 14:53:26 [http-nio-8080-exec-5] DEBUG : After request [POST /api/user/register?tempId=1699537945762, client=0:0:0:0:0:0:0:1, payload={"username":"acro112","password":"wwww12"}]
+2023-11-09 14:53:59 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-09 14:53:59 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2023-11-09 14:53:59 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.

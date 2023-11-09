@@ -7,8 +7,8 @@ frontend/build/
 
 # Gradle
 .gradle/
+gradle/
 build/
-.gradle/**/
 
 # IntelliJ IDEA
 .idea/
