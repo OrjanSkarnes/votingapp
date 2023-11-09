@@ -1,0 +1,9 @@
+no/hvl/dat250/voting/Poll.class
+no/hvl/dat250/voting/dao/UserDao.class
+no/hvl/dat250/voting/Roles.class
+no/hvl/dat250/voting/driver/VotingMain.class
+no/hvl/dat250/voting/User.class
+no/hvl/dat250/voting/dao/GroupDao.class
+no/hvl/dat250/voting/dao/PollDao.class
+no/hvl/dat250/voting/Group.class
+no/hvl/dat250/voting/Vote.class

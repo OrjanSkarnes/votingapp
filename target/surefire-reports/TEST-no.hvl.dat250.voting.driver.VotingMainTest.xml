@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="no.hvl.dat250.voting.driver.VotingMainTest" time="0.782" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/orjanskarnes/Dev/votingapp/target/test-classes:/Users/orjanskarnes/Dev/votingapp/target/classes:/Users/orjanskarnes/.m2/repository/org/hibernate/orm/hibernate-core/6.2.6.Final/hibernate-core-6.2.6.Final.jar:/Users/orjanskarnes/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/orjanskarnes/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/orjanskarnes/.m2/repository/org/jboss/logging/jboss-logging/3.5.0.Final/jboss-logging-3.5.0.Final.jar:/Users/orjanskarnes/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/Users/orjanskarnes/.m2/repository/io/smallrye/jandex/3.0.5/jandex-3.0.5.jar:/Users/orjanskarnes/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/Users/orjanskarnes/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar:/Users/orjanskarnes/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar:/Users/orjanskarnes/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar:/Users/orjanskarnes/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.2/jaxb-runtime-4.0.2.jar:/Users/orjanskarnes/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.2/jaxb-core-4.0.2.jar:/Users/orjanskarnes/.m2/repository/org/eclipse/angus/angus-activation/2.0.0/angus-activation-2.0.0.jar:/Users/orjanskarnes/.m2/repository/org/glassfish/jaxb/txw2/4.0.2/txw2-4.0.2.jar:/Users/orjanskarnes/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.1/istack-commons-runtime-4.1.1.jar:/Users/orjanskarnes/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/orjanskarnes/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar:/Users/orjanskarnes/.m2/repository/com/h2database/h2/2.2.220/h2-2.2.220.jar:/Users/orjanskarnes/.m2/repository/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar:/Users/orjanskarnes/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/orjanskarnes/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.vm.vendor" value="Amazon.com Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://aws.amazon.com/corretto/"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="NO"/>
+    <property name="sun.boot.library.path" value="/Users/orjanskarnes/Library/Java/JavaVirtualMachines/corretto-17.0.8/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/orjanskarnes/Dev/votingapp/target/surefire/surefirebooter-20230912191451028_3.jar /Users/orjanskarnes/Dev/votingapp/target/surefire 2023-09-12T19-14-50_971-jvmRun1 surefire-20230912191451028_1tmp surefire_0-20230912191451028_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/orjanskarnes/Dev/votingapp/target/test-classes:/Users/orjanskarnes/Dev/votingapp/target/classes:/Users/orjanskarnes/.m2/repository/org/hibernate/orm/hibernate-core/6.2.6.Final/hibernate-core-6.2.6.Final.jar:/Users/orjanskarnes/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/orjanskarnes/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/orjanskarnes/.m2/repository/org/jboss/logging/jboss-logging/3.5.0.Final/jboss-logging-3.5.0.Final.jar:/Users/orjanskarnes/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/Users/orjanskarnes/.m2/repository/io/smallrye/jandex/3.0.5/jandex-3.0.5.jar:/Users/orjanskarnes/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/Users/orjanskarnes/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar:/Users/orjanskarnes/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar:/Users/orjanskarnes/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar:/Users/orjanskarnes/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.2/jaxb-runtime-4.0.2.jar:/Users/orjanskarnes/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.2/jaxb-core-4.0.2.jar:/Users/orjanskarnes/.m2/repository/org/eclipse/angus/angus-activation/2.0.0/angus-activation-2.0.0.jar:/Users/orjanskarnes/.m2/repository/org/glassfish/jaxb/txw2/4.0.2/txw2-4.0.2.jar:/Users/orjanskarnes/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.1/istack-commons-runtime-4.1.1.jar:/Users/orjanskarnes/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/orjanskarnes/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar:/Users/orjanskarnes/.m2/repository/com/h2database/h2/2.2.220/h2-2.2.220.jar:/Users/orjanskarnes/.m2/repository/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar:/Users/orjanskarnes/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/orjanskarnes/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/orjanskarnes"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-07-18"/>
+    <property name="java.home" value="/Users/orjanskarnes/Library/Java/JavaVirtualMachines/corretto-17.0.8/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/orjanskarnes/Dev/votingapp"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/Users/orjanskarnes/Dev/votingapp/target/surefire/surefirebooter-20230912191451028_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.8+7-LTS"/>
+    <property name="user.name" value="orjanskarnes"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="13.5.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Corretto-17.0.8.7.1"/>
+    <property name="localRepository" value="/Users/orjanskarnes/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-17/issues/"/>
+    <property name="java.io.tmpdir" value="/var/folders/_5/w4t0grrs2gj9j8193l946w2m0000gn/T/"/>
+    <property name="idea.version" value="2023.2.1"/>
+    <property name="java.version" value="17.0.8"/>
+    <property name="user.dir" value="/Users/orjanskarnes/Dev/votingapp"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/orjanskarnes/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Amazon.com Inc."/>
+    <property name="java.vm.version" value="17.0.8+7-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testDomainModelPersistence" classname="no.hvl.dat250.voting.driver.VotingMainTest" time="0.76">
+    <system-out><![CDATA[Hibernate: 
+    drop table if exists Groups cascade 
+Hibernate: 
+    drop table if exists Groups_Users cascade 
+Hibernate: 
+    drop table if exists Poll cascade 
+Hibernate: 
+    drop table if exists Poll_Groups cascade 
+Hibernate: 
+    drop table if exists Poll_Users cascade 
+Hibernate: 
+    drop table if exists Users cascade 
+Hibernate: 
+    drop table if exists Vote cascade 
+Hibernate: 
+    create table Groups (
+        groupId bigint generated by default as identity,
+        name varchar(255),
+        primary key (groupId)
+    )
+Hibernate: 
+    create table Groups_Users (
+        groups_groupId bigint not null,
+        members_id bigint not null
+    )
+Hibernate: 
+    create table Poll (
+        active boolean not null,
+        privateAccess boolean not null,
+        creator_id bigint,
+        endTime timestamp(6),
+        id bigint generated by default as identity,
+        startTime timestamp(6),
+        description varchar(255),
+        question varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table Poll_Groups (
+        groups_groupId bigint not null,
+        polls_id bigint not null
+    )
+Hibernate: 
+    create table Poll_Users (
+        participatedPolls_id bigint not null,
+        users_id bigint not null
+    )
+Hibernate: 
+    create table Users (
+        id bigint generated by default as identity,
+        password varchar(255),
+        role varchar(255) check (role in ('ADMIN','USER')),
+        username varchar(255) not null unique,
+        primary key (id)
+    )
+Hibernate: 
+    create table Vote (
+        choice boolean,
+        poll_id bigint,
+        timestamp timestamp(6),
+        user_id bigint,
+        voteId bigint generated by default as identity,
+        primary key (voteId)
+    )
+Hibernate: 
+    alter table if exists Groups_Users 
+       add constraint FK6cwaduc9s1q5626pclx8ggr22 
+       foreign key (members_id) 
+       references Users
+Hibernate: 
+    alter table if exists Groups_Users 
+       add constraint FK5k7c7cfplvyt8yu18j9pe7vv7 
+       foreign key (groups_groupId) 
+       references Groups
+Hibernate: 
+    alter table if exists Poll 
+       add constraint FKe8s6oodbk1pypwtsjl8mra4y0 
+       foreign key (creator_id) 
+       references Users
+Hibernate: 
+    alter table if exists Poll_Groups 
+       add constraint FKf5g740xbd6jyh4gfdsvh4grkh 
+       foreign key (groups_groupId) 
+       references Groups
+Hibernate: 
+    alter table if exists Poll_Groups 
+       add constraint FKg1r1ove8nj5ttg4mwdyjxv79b 
+       foreign key (polls_id) 
+       references Poll
+Hibernate: 
+    alter table if exists Poll_Users 
+       add constraint FK4pl1bkbl363k7xcq5nmfm1ggk 
+       foreign key (users_id) 
+       references Users
+Hibernate: 
+    alter table if exists Poll_Users 
+       add constraint FK11x5av04jhy67g625g9ncoknq 
+       foreign key (participatedPolls_id) 
+       references Poll
+Hibernate: 
+    alter table if exists Vote 
+       add constraint FK34cunlfwlpao9xym0oo0syoox 
+       foreign key (poll_id) 
+       references Poll
+Hibernate: 
+    alter table if exists Vote 
+       add constraint FK70y7l5s7xykrkx96lvfor3a12 
+       foreign key (user_id) 
+       references Users
+]]></system-out>
+    <system-err><![CDATA[Sep 12, 2023 7:14:51 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+INFO: HHH000204: Processing PersistenceUnitInfo [name: voting]
+Sep 12, 2023 7:14:51 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate ORM core version 6.2.6.Final
+Sep 12, 2023 7:14:51 PM org.hibernate.cfg.Environment <clinit>
+INFO: HHH000406: Using bytecode reflection optimizer
+Sep 12, 2023 7:14:51 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using built-in connection pool (not intended for production use)
+Sep 12, 2023 7:14:51 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: Loaded JDBC driver class: org.h2.Driver
+Sep 12, 2023 7:14:51 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001012: Connecting with JDBC URL [jdbc:h2:file:./DB;DB_CLOSE_DELAY=-1]
+Sep 12, 2023 7:14:51 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {}
+Sep 12, 2023 7:14:51 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: false
+Sep 12, 2023 7:14:51 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
+INFO: HHH10001115: Connection pool size: 1 (min=1)
+Sep 12, 2023 7:14:51 PM org.hibernate.bytecode.internal.BytecodeProviderInitiator buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : bytebuddy
+Sep 12, 2023 7:14:51 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Sep 12, 2023 7:14:51 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2c30c81d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Sep 12, 2023 7:14:51 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7af0affa] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+]]></system-err>
+  </testcase>
+</testsuite>
