@@ -118,16 +118,23 @@ public class PollService {
         }
     }
 
-    public void finishPoll(Long id) {
+    @Transactional
+    public PollDTO finishPoll(Long id) {
         Poll poll = pollDao.findPollById(id);
         if(poll != null) {
+            // If the poll end time is in the future, set it to now since the poll is being finished early
+            if (poll.getEndTime() != null && poll.getEndTime().isAfter(LocalDateTime.now())) {
+                poll.setEndTime(LocalDateTime.now());
+            }
             poll.setActive(false);
             pollDao.updatePoll(poll);
             poll.setVotesFor(poll.getVotes().stream().filter(Vote::getChoice).count());
             poll.setVotesAgainst(poll.getVotes().stream().filter(vote -> !vote.getChoice()).count());
             loggerService.log("Sending poll results to kafka");
             kafkaProducer.sendObject("pollResults", poll);
+            return PollDTO.convertToDTO(poll);
         }
+        return null;
     }
 
     @Transactional

@@ -1,7 +1,10 @@
 // fetchWrapper.js
 const fetchWrapper = async (url, method, payload = null, headers = {}) => {
+    const token = localStorage.getItem('jwToken');
+    const authHeader = token ? { Authorization: `Bearer ${token}` } : {};
     const defaultHeaders = {
-      'Content-Type': 'application/json',
+        'Content-Type': 'application/json',
+        ...authHeader,
     };
   
     const requestOptions = {
@@ -17,7 +20,7 @@ const fetchWrapper = async (url, method, payload = null, headers = {}) => {
       const response = await fetch("http://localhost:8080/api" + url, requestOptions)
       
       const contentType = response.headers.get("content-type");
-      
+
       let data;
       if (contentType && contentType.includes("application/json")) {
         data = await response.json();

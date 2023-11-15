@@ -18,4 +18,8 @@ export const getUserById = async (id) => {
     return fetchWrapper(`/user/${id}`, 'GET');
 };
 
+export const isAuthenticated = () => {
+    const token = localStorage.getItem('jwToken');
+    return !!token;
+}
 // ... add other user-related requests as needed

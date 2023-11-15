@@ -21,6 +21,7 @@ function VotingPage() {
         const fetchData = async () => {
             try {
                 const pollData = (await getPollById(pollId));
+                console.log(pollData)
                 const creatorData = await getUserById(pollData.creatorId);
                 setPoll({ ...pollData, creator: creatorData });
             } catch (error) {
@@ -82,6 +83,7 @@ function VotingPage() {
             {mustBeLoggedIn && <button onClick={() => navigate('/login')}>Login / Register</button>}
             {!poll.active && <p>This poll is not active.</p>}
             {isClosed && <p>This poll is closed.</p>}
+
             {(isClosed || !poll.active) && <button onClick={() => navigate(`/result?pollId=${poll.id}`)}>View Results</button>}
 
             

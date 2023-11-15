@@ -7,6 +7,7 @@ const HOURS_IN_DAY = 24;
 
 export const useCountdown = (endTime) => {
     const [timeLeft, setTimeLeft] = useState("");
+    const [ended, setEnded] = useState(false);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -33,7 +34,8 @@ export const useCountdown = (endTime) => {
                 // Format to day and time
                 const formattedDate = end.toLocaleDateString();
                 const formattedTime = end.toLocaleTimeString();
-                setTimeLeft(`Ended on ${formattedDate} at ${formattedTime}`);
+                setTimeLeft(`${formattedDate} at ${formattedTime}`);
+                setEnded(true);
                 clearInterval(intervalId);
             }
         }, MILLISECONDS_IN_SECOND);
@@ -41,5 +43,5 @@ export const useCountdown = (endTime) => {
         return () => clearInterval(intervalId); // cleanup on component unmount
     }, [endTime]);
 
-    return timeLeft;
+    return {timeLeft, ended};
 }   

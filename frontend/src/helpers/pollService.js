@@ -29,6 +29,10 @@ const deletePoll = async (id) => {
     return fetchWrapper(`/polls/${id}`, 'DELETE');
 };
 
+const finishPoll = async (id) => {
+    return fetchWrapper(`/polls/${id}/finish`, 'PUT');
+};
+
 const editPoll = async (id, poll) => {
     return fetchWrapper(`/polls/${id}`, 'PUT', poll);
 };
@@ -52,4 +56,5 @@ export {
     editPoll,
     getPollVotes,
     getPollResults,
+    finishPoll
 };

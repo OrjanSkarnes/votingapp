@@ -16,6 +16,7 @@ import org.apache.kafka.streams.processor.api.ProcessorContext;
 import org.apache.kafka.streams.processor.api.Record;
 import org.apache.kafka.streams.state.KeyValueIterator;
 import org.apache.kafka.streams.state.KeyValueStore;
+import org.apache.kafka.streams.state.StoreBuilder;
 import org.apache.kafka.streams.state.Stores;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +32,8 @@ import java.util.Properties;
 // This code is part of a configuration class for a Kafka Streams application in a Spring Boot project.
 @Configuration
 public class KafkaStreamsConfig {
+    private static final String POLL_END_TIMES_STORE = "poll-end-times";
+    private static final String FINISH_POLL_TOPIC = "pollEndTimesFinished";
 
     // These values are taken from the application's properties file.
     @Value("${spring.kafka.bootstrap-servers}")
@@ -44,31 +47,38 @@ public class KafkaStreamsConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(LoggerService.class);
 
-    // Create a bean thar starts a topic the first time the application is run.
-    @Bean
-    public NewTopic pollEndTimeTopic() {
-        return new NewTopic(pollEndTimeTopic, 1, (short) 1);
-    }
-
-    @Bean
-    public KafkaStreams kafkaStreams() {
-        final String finishPollTopic = "pollEndTimesFinished";
-
-        // Properties for the Kafka Streams application.
+    // Settings:
+    private Properties buildKafkaProperties() {
         Properties props = new Properties();
         props.put(StreamsConfig.APPLICATION_ID_CONFIG, applicationId);
         props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
-
         props.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, 4);
         props.put(StreamsConfig.NUM_STANDBY_REPLICAS_CONFIG, 1);
-
         props.put(StreamsConfig.STATE_CLEANUP_DELAY_MS_CONFIG, "60000");
+        return props;
+    }
 
-        Properties config = new Properties();
-        config.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-        AdminClient admin = AdminClient.create(config);
+    private StoreBuilder<KeyValueStore<String, Long>> buildStateStore() {
+        return Stores.keyValueStoreBuilder(
+                Stores.inMemoryKeyValueStore(POLL_END_TIMES_STORE),
+                Serdes.String(),
+                Serdes.Long());
+    }
+
+    // Create a bean thar starts a topic the first time the application is run.
+    @Bean
+    public NewTopic createPollEndTimeTopic() {
+        return new NewTopic(pollEndTimeTopic, 1, (short) 1);
+    }
+
+    @Bean
+    public KafkaStreams kafkaStreams() {
+        // Properties for the Kafka Streams application.
+        Properties props = buildKafkaProperties();
+        props.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+        AdminClient admin = AdminClient.create(props);
 
         NewTopic newTopic = new NewTopic("pollEndTimeTopic", 1, (short) 1); //new NewTopic(topicName, numPartitions, replicationFactor)
         admin.createTopics(Collections.singletonList(newTopic));
@@ -77,12 +87,8 @@ public class KafkaStreamsConfig {
 
         // StreamsBuilder is used to build the topology (flow) of the Kafka Streams application.
         StreamsBuilder builder = new StreamsBuilder();
-
         // A state store is used to keep track of the end times for polls.
-        builder.addStateStore(Stores.keyValueStoreBuilder(
-                Stores.inMemoryKeyValueStore("poll-end-times"),
-                Serdes.String(),
-                Serdes.Long()));
+        builder.addStateStore(buildStateStore());
 
         // Define a stream that reads from the poll end times topic.
         KStream<String, String> endTimes = builder.stream(
@@ -91,9 +97,9 @@ public class KafkaStreamsConfig {
         );
 
         // Process the stream using a custom processor and then publish the results to another topic.
-        endTimes.process(PollEndTimeProcessor::new, "poll-end-times")
+        endTimes.process(PollEndTimeProcessor::new, POLL_END_TIMES_STORE)
                 // This is the last step in the topology, so the results are published to a topic.
-                .to(finishPollTopic, Produced.with(Serdes.String(), Serdes.String()));
+                .to(FINISH_POLL_TOPIC, Produced.with(Serdes.String(), Serdes.String()));
 
         // Building the final topology that defines the flow of data through the Kafka Streams application.
         final Topology topology = builder.build();
@@ -115,7 +121,7 @@ public class KafkaStreamsConfig {
 
         @Override
         public void init(ProcessorContext context) {
-            this.store = context.getStateStore("poll-end-times");
+            this.store = context.getStateStore(POLL_END_TIMES_STORE);
             this.context = context;
             // This sets up a recurring task that checks the poll end times every second.
             // Can be changed to a different interval or to a different type of punctuation.
@@ -130,6 +136,7 @@ public class KafkaStreamsConfig {
                 EndTimeInfo endTimeInfo = EndTimeInfo.fromJsonString(record.value());
                 store.put(String.valueOf(endTimeInfo.pollId), endTimeInfo.getEndTime().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
             } catch (IOException e) {
+                logger.error("Failed to deserialize JSON: " + e.getMessage());
                 throw new RuntimeException("Failed to deserialize JSON", e);
             }
         }

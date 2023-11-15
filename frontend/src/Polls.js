@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getUserId } from './helpers/sessionStorage';
 import { useCountdown } from './helpers/countdown';
-import { deletePoll, getPollsByUser, getPollsVotedOnByUser } from './helpers/pollService';
+import { deletePoll, getPollsByUser, getPollsVotedOnByUser, finishPoll } from './helpers/pollService';
 
 export const PollsPage = () => {
     const navigate = useNavigate();
@@ -21,18 +21,25 @@ export const PollsPage = () => {
     }, [userId]);
 
     const handleDelete = async(poll) => {
+        console.log(poll)
         deletePoll(poll.id)
             .then(data => setPolls(polls.filter(p => p.id !== poll.id)))
             .catch((error) => console.error(error?.data));
-    }    
-;
+    }
+
+    const handleFinish = async(poll) => {
+        finishPoll(poll.id)
+            .then(data => setPolls(polls.map(p => p.id === poll.id ? data : p)))
+            .catch((error) => console.error(error?.data));
+    }
 
     return (
         <div className='polls-container'>
             <h1>Polls</h1>
+            <MyVotes polls={pollsVotedOnByUser} />
+
             <div className='poll-sections'>
-                <MyVotes polls={pollsVotedOnByUser} />
-                {userId && <ManagePolls polls={polls} handleDelete={handleDelete}/>}
+                {userId && <ManagePolls polls={polls} handleDelete={handleDelete} handleFinish={handleFinish}/>}
             </div>
             {userId && <button onClick={() => navigate('/poll?create=true')}>Create poll</button> }
         </div>
@@ -74,18 +81,20 @@ const MyVotes = ({ polls }) => {
     )
 }
 
-const ManagePolls = ({ polls, handleDelete }) => {
+const ManagePolls = ({ polls, handleDelete, handleFinish }) => {
     return (
         <div className='manage-polls'>
             <h2>Manage polls</h2>
-            {polls.map(poll => (
-                <PollCard key={poll.id} poll={poll} handleDelete={handleDelete} />
-            ))}
+            <div className='grid'>
+                {polls.map(poll => (
+                    <PollCard key={poll.id} poll={poll} handleDelete={handleDelete} handleFinish={handleFinish} />
+                ))}
+            </div>
         </div>
     );
 }
 
-export const PollCard = ({poll, handleDelete}) => {
+export const PollCard = ({poll, handleDelete, onDashboard, handleFinish}) => {
     const navigate = useNavigate();
     const isCreator = poll.creatorId === getUserId();
 
@@ -97,26 +106,29 @@ export const PollCard = ({poll, handleDelete}) => {
             </div>
             <div className='poll-info'>
                 <p><strong>Active:</strong> {poll.active ? 'Yes' : 'No'}</p>
-                <p><strong>Time Left:</strong> <Countdown endTime={poll.endTime}/></p>
-                <p><strong>Votes:</strong>{poll.votes?.length}</p>
+                <Countdown endTime={poll.endTime}/>
+                <p><strong>Votes:</strong> {poll.votes?.length}</p>
             </div>
 
             <div className='poll-actions'>
-                {isCreator && 
+                {isCreator && !onDashboard && poll.active &&
                         <>
                             <button onClick={() => navigate(`/poll?pollId=${poll.id}`)}>Edit</button>
-                            <button className='delete-button' onClick={() => handleDelete(poll)}>Delete</button>
+                            {poll.active && handleFinish && <button onClick={() => handleFinish(poll)}>Finish</button>}
                         </>
                 }
+                {onDashboard && poll.active && <button onClick={() => navigate(`/vote/${poll.id}`)}>Vote</button>}
                 <button className='results-button' onClick={() => navigate(`/result?pollId=${poll.id}`)}>Results</button>
+                {isCreator && !onDashboard &&<button className='delete-button' onClick={() => handleDelete(poll)}>Delete</button>}
             </div>
         </div>
     );
 }
 
 export const Countdown = ({ endTime }) => {
-    const timeLeft = useCountdown(endTime)
+    const {timeLeft, ended} = useCountdown(endTime)
+    const title = ended ? <strong>Ended:</strong> : <strong>Time Left:</strong>;
     return (
-        <span>{timeLeft}</span>
+        <p>{title} {timeLeft}</p>
     );
 }

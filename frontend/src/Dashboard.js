@@ -61,25 +61,19 @@ export const Dashboard = (props) => {
 
             </div>
             <div>
-                {publicPolls && <ManagePublicPolls polls={publicPolls} />}
+                {publicPolls && <PublicPolls polls={publicPolls} />}
             </div>
         </>
     );
 }
 
-const ManagePublicPolls = ({ polls }) => {
-    const navigate = useNavigate();
-
+const PublicPolls = ({ polls }) => {
     return (
         <div className="container">
             <h2>Pubic polls</h2>
-            {polls.map(poll => (
-                <>
-                    <PollCard key={poll.id} poll={poll} />
-                    {/*TODO: Fix the positioning of this button!*/}
-                    {/*<button onClick={() => navigate(`/vote/${poll.id}`)}>Vote on Poll</button>*/}
-                </>
-            ))}
+            <div className='grid'>
+                {polls.map(poll => <PollCard key={poll.id} poll={poll} onDashboard={true} />)}
+            </div>
         </div>
     );
 }

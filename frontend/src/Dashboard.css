@@ -6,8 +6,9 @@
     gap: 12px;
     border-radius: 10px;
     font-size: 1.2rem;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
-
 
 .search-field {
     display:flex;
@@ -22,7 +23,7 @@
 }
 
 .search-field input {
-    flex: 4;
+    flex: 3;
 }
 
 .search-field button {
@@ -35,8 +36,4 @@
     flex-direction: column;
     gap: 10px;
     margin-top: 40px;
-
-    > button {
-        width: 100%;
-    }
 }

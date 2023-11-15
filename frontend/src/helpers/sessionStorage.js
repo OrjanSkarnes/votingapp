@@ -26,6 +26,7 @@ export const sessionStorageService = {
     },
     logout: () => {
         sessionStorageService.clear();
+        localStorage.removeItem('jwtToken');
         window.location.reload();
         window.location.href = '/';
     },

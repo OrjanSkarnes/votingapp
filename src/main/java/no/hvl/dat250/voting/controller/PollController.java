@@ -56,6 +56,12 @@ public class PollController {
         return pollService.updatePoll(id, newPoll);
     }
 
+    // finish poll
+    @PutMapping("/{id}/finish")
+    public PollDTO finishPoll(@PathVariable Long id) {
+        return pollService.finishPoll(id);
+    }
+
     @GetMapping("/user/{userId}")
     public List<PollDTO> getPollsByUser(@PathVariable Long userId) {
         return pollService.getPollsByUser(userId);

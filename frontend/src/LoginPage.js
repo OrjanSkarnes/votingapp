@@ -12,6 +12,7 @@ export const LoginPage = () => {
 
     const handleSuccess = (data) => {
         sessionStorageService.login(true);
+        localStorage.setItem('jwToken', data.token);
         sessionStorageService.setUser(JSON.stringify(data.user));
         navigate('/')
         window.location.reload();
