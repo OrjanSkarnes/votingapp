@@ -1,9 +1,19 @@
 // fetchWrapper.js
+import { sessionStorageService } from './sessionStorage';
+
 const fetchWrapper = async (url, method, payload = null, headers = {}) => {
     const defaultHeaders = {
       'Content-Type': 'application/json',
     };
-  
+
+    // Get the JWT token from sessionStorage
+    const token = sessionStorageService.getToken();
+
+    // If the token exists, include it in the Authorization header
+    if (token) {
+        defaultHeaders['Authorization'] = `Bearer ${token}`;
+    }
+
     const requestOptions = {
       method,
       headers: { ...defaultHeaders, ...headers },
@@ -36,8 +46,7 @@ const fetchWrapper = async (url, method, payload = null, headers = {}) => {
     } catch (error) {
       return Promise.reject(error);
     }
-  };
-  
+};
 
 export default fetchWrapper;
 

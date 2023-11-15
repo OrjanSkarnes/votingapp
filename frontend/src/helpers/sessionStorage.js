@@ -39,6 +39,13 @@ export const sessionStorageService = {
             sessionStorageService.setUserId(user.id);
         }
     },
+    getToken: function() {
+        return this.getItem('token');
+    },
+
+    setToken: function(token) {
+        this.setItem('token', token);
+    },
     getTempId: () => {
         const tempId = sessionStorageService.getItem('tempId');
         if (!tempId) {
@@ -51,7 +58,9 @@ export const sessionStorageService = {
 };
 
 export const isUserLoggedIn = () => {
-    return !!getUser();
+    const user = sessionStorageService.getUser();
+    const token = sessionStorageService.getToken();
+    return !!user && !!token;
 }
 
 export const getUserId = () => {

@@ -13,18 +13,18 @@ export const LoginPage = () => {
     const handleSuccess = (data) => {
         sessionStorageService.login(true);
         sessionStorageService.setUser(JSON.stringify(data.user));
+        sessionStorageService.setToken(data.token); // Save the JWT token
         navigate('/')
         window.location.reload();
     }
 
-    // Call your Spring REST API to authenticate the user
-    // On success, you can redirect to another page or provide feedback to the user
     const handleLogin = async () => {
         setErrorMessage('');
 
         login(username, password).then(data => {
             handleSuccess(data)
         }).catch((error) => {
+            console.error(error); // Log the error details
             switch (error?.status) {
                 case 404:
                     setErrorMessage('User not found')
@@ -44,9 +44,8 @@ export const LoginPage = () => {
         register({username, password}).then(data => {
             handleSuccess(data)
         }).catch((error) => {
-            console.error(error.status);
+            console.error(error); // Log the error details
             if (error?.status === 409) {
-                // Handle 409 error
                 setErrorMessage('User already exists')
             }
         });

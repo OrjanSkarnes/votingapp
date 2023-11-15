@@ -28,8 +28,8 @@ import java.util.ArrayList;
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    private  final JwtUtils jwtUtils ;
-    private final UserDetailsServiceImpl userDetailsService ;
+    private final JwtUtils jwtUtils;
+    private final UserDetailsServiceImpl userDetailsService;
 
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request,
@@ -37,22 +37,23 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     @NonNull FilterChain filterChain)
             throws ServletException, IOException {
 
-        String token = jwtUtils.getToken(request) ;
+        String token = jwtUtils.getToken(request);
 
-        if (token!=null && jwtUtils.validateToken(token))
-        {
+        if (token != null && jwtUtils.validateToken(token)) {
             String username = jwtUtils.extractUsername(token);
 
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
             if (userDetails != null) {
                 UsernamePasswordAuthenticationToken authentication =
-                        new UsernamePasswordAuthenticationToken(userDetails.getUsername() ,null , userDetails.getAuthorities());
+                        new UsernamePasswordAuthenticationToken(userDetails.getUsername(), null, userDetails.getAuthorities());
                 log.info("authenticated user with username :{}", username);
                 SecurityContextHolder.getContext().setAuthentication(authentication);
-
+            } else {
+                log.warn("User not found: {}", username);
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                return;
             }
         }
-        filterChain.doFilter(request,response);
+        filterChain.doFilter(request, response);
     }
-
 }

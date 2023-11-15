@@ -58,7 +58,6 @@ public class UserController {
         UserDTO createdUserDto = (UserDTO) userCreationResponse.getBody();
 
         // Generate the token with the username and role from UserDTO
-        // Assuming that the role is stored as a String in UserDTO
         String token = jwtUtils.generateToken(createdUserDto.getUsername(), createdUserDto.getRole().name());
 
         log.info("JWT Token generated: {}", token);
@@ -69,68 +68,25 @@ public class UserController {
         // Return the AuthResponse
         return ResponseEntity.ok(authResponse);
     }
-    /*@PostMapping("/login")
-    public ResponseEntity<?> loginUser(@RequestBody LoginDTO loginDto) {
-        log.info("Attempting to log in user: {}", loginDto.getUsername());
-        try {
-            // Perform authentication
-            Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(
-                            loginDto.getUsername(),
-                            loginDto.getPassword()
-                    )
-            );
-            log.debug("Authentication token created: {}", authentication);
 
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-            log.debug("Authentication successful for user: {}", authentication.getName());
-
-            // Assuming the user has only one role, extract that single role
-            String role = authentication.getAuthorities().iterator().next().getAuthority();
-            log.debug("Granted authorities: {}", role);
-
-            // Generate the token with the username and role
-            String token = jwtUtils.generateToken(loginDto.getUsername(), role);
-            log.info("JWT Token generated: {}", token);
-
-            // Fetch the user details to return with the token
-            UserDTO userDetails = userService.findUserByUsername(loginDto.getUsername());
-            log.debug("User details loaded: {}", userDetails);
-
-            return ResponseEntity.ok(new AuthResponse(token, userDetails));
-
-        } catch (AuthenticationException e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Authentication failed: " + e.getMessage());
-        }
-    }*/
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody UserDTO loginDto) {
-        log.info("Attempting to log in user: {}", loginDto.getUsername());
         // Perform authentication
         Authentication requestToken = new UsernamePasswordAuthenticationToken(
                 loginDto.getUsername(),
                 loginDto.getPassword()
         );
-
-        log.debug("Authentication request token created: {}", requestToken);
         Authentication authentication = authenticationManager.authenticate(requestToken);
-
-        log.info("Authentication token created: {}", authentication);
-
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        log.info("Authentication successful for user: {}", authentication.getName());
 
-        // Assuming the user has only one role, extract that single role
+        // Extract that single role
         String role = authentication.getAuthorities().iterator().next().getAuthority();
-        log.info("Granted authorities: {}", role);
 
         // Generate the token with the username and role
         String token = jwtUtils.generateToken(loginDto.getUsername(), role);
-        log.error("JWT Token generated: {}", token);
 
         // Fetch the user details to return with the token
         UserDTO userDetails = userService.findUserByUsername(loginDto.getUsername());
-        log.debug("User details loaded: {}", userDetails);
 
         return ResponseEntity.ok(new AuthResponse(token, userDetails));
 

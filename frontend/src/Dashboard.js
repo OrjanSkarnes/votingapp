@@ -77,7 +77,7 @@ const ManagePublicPolls = ({ polls }) => {
                 <>
                     <PollCard key={poll.id} poll={poll} />
                     {/*TODO: Fix the positioning of this button!*/}
-                    {/*<button onClick={() => navigate(`/vote/${poll.id}`)}>Vote on Poll</button>*/}
+                    <button onClick={() => navigate(`/vote/${poll.id}`)}>Vote on Poll</button>
                 </>
             ))}
         </div>
