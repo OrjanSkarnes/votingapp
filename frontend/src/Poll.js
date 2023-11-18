@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {getUser, getUserId} from './helpers/sessionStorage';
 import { createPoll, deletePoll, editPoll, getPollById } from './helpers/pollService';
+import analyticsService from './helpers/analyticsService';
 
 const PollPage = () => {
     const location = useLocation();
@@ -11,7 +12,7 @@ const PollPage = () => {
     const pollId = queryParams.get('pollId');
     const create = queryParams.get('create');
 
-    const [errorMessage, setErrorMessage] = useState(null); 
+    const [errorMessage, setErrorMessage] = useState(null);
     const [isCreator, setIsCrator] = useState(false);
 
     const user = getUser();
@@ -24,6 +25,22 @@ const PollPage = () => {
         active: false,
         privateAccess: false
     });
+
+    const trackAnalyticsEvent = (eventType, pollData) => {
+        // Structure the analytics event data
+        const analyticsEventData = {
+            eventName: `Poll ${eventType}`, // E.g., 'Poll create', 'Poll edit', 'Poll delete'
+            eventData: {
+                pollId: pollData.id,
+                creatorId: pollData.creatorId,
+                question: pollData.question,
+                // ... any other relevant data ...
+            },
+        };
+
+        // Track the event
+        analyticsService.trackEvent(analyticsEventData);
+    }
 
     useEffect(() => {
         if (pollId) {
@@ -46,34 +63,37 @@ const PollPage = () => {
 
 
 
-  const handleSubmit = async() => {
-     const reqPoll = {
-        ...poll,
-        creatorId: user.id
-    }
-    console.log(getUserId())
-    createPoll(reqPoll)
-        .then((data) => navigate("/polls"))
-        .catch((error) => console.error(error?.data))
-  };
+    const handleSubmit = async () => {
+        const reqPoll = {
+            ...poll,
+            creatorId: user.id
+        };
+        trackAnalyticsEvent('create', reqPoll);
+        createPoll(reqPoll)
+            .then((data) => navigate("/polls"))
+            .catch((error) => console.error(error?.data));
+    };
 
-    const handleEdit = async() => { 
+    const handleEdit = async () => {
         if (!isCreator) return;
         const reqPoll = {
             ...poll,
             creatorId: user.id
-        }
-        editPoll(poll.id,reqPoll)
+        };
+        trackAnalyticsEvent('edit', reqPoll);
+        editPoll(poll.id, reqPoll)
             .then(() => navigate("/polls"))
-            .catch((error) => console.error(error?.data))
+            .catch((error) => console.error(error?.data));
     }
 
-    const handleDelete = async() => {
+    const handleDelete = async () => {
         if (!isCreator) return;
+        trackAnalyticsEvent('delete', poll); // Note that we use the existing poll object here
         deletePoll(poll.id)
-        .then(data => navigate("/polls"))
-        .catch((error) => console.error(error?.data));
-}
+            .then(data => navigate("/polls"))
+            .catch((error) => console.error(error?.data));
+    }
+
 
     return (
         <div className='container poll-container'>
@@ -95,12 +115,12 @@ const PollPage = () => {
                     <input type="checkbox" id="pollPrivateAccessInput" checked={poll.privateAccess} onChange={e => setPoll({...poll, privateAccess: e.target.checked})}/>
                     <span className='checkmark'></span>
                 </div>
-                { create ? 
-                <button onClick={() => handleSubmit()}>Create poll</button> : 
-                (<>
-                    <button onClick={() => handleEdit()} disabled={!isCreator}>Save changes</button>
-                    <button className='delete-button' onClick={() => handleDelete()} disabled={!isCreator}>Delete poll</button>
-                </>)
+                { create ?
+                    <button onClick={() => handleSubmit()}>Create poll</button> :
+                    (<>
+                        <button onClick={() => handleEdit()} disabled={!isCreator}>Save changes</button>
+                        <button className='delete-button' onClick={() => handleDelete()} disabled={!isCreator}>Delete poll</button>
+                    </>)
                 }
                 {errorMessage && <div className="error">{errorMessage}</div>}
             </div>

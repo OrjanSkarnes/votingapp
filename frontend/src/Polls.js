@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { getUserId } from './helpers/sessionStorage';
 import { useCountdown } from './helpers/countdown';
 import { deletePoll, getPollsByUser, getPollsVotedOnByUser, finishPoll } from './helpers/pollService';
+import analyticsService from './helpers/analyticsService';
+
 
 export const PollsPage = () => {
     const navigate = useNavigate();
@@ -20,12 +22,33 @@ export const PollsPage = () => {
             .catch((error) => console.error(error?.data));
     }, [userId]);
 
-    const handleDelete = async(poll) => {
-        console.log(poll)
-        deletePoll(poll.id)
-            .then(data => setPolls(polls.filter(p => p.id !== poll.id)))
-            .catch((error) => console.error(error?.data));
-    }
+    const handleDelete = async (poll) => {
+        try {
+            console.log(poll)
+
+            await deletePoll(poll.id);
+            setPolls(polls.filter(p => p.id !== poll.id));
+
+            // Structure the analytics event data
+            const analyticsEventData = {
+                eventName: 'Poll Deleted',
+                eventData: {
+                    pollId: poll.id,
+                    creatorId: poll.creatorId,
+                    question: poll.question,
+                    // ... any other relevant data ...
+                },
+                // timestamp can be omitted, server can handle it
+            };
+
+            // Track poll deletion event
+            analyticsService.trackEvent(analyticsEventData);
+        } catch (error) {
+            console.error(error?.data);
+        }
+    };
+
+
 
     const handleFinish = async(poll) => {
         finishPoll(poll.id)
@@ -50,34 +73,34 @@ const MyVotes = ({ polls }) => {
     const navigate = useNavigate();
 
     return (
-    <div className='my-votes'>
-        <h2>My Votes</h2>
-        {polls.length === 0 && <p>You have not voted on any polls</p>}
-        {polls.length > 0 && (
-        <table>
-            <thead>
-                <tr>
-                    <th>Question</th>
-                    <th>Your Vote</th>
-                    <th>Time Left</th>
-                    <th>Total Votes</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {polls.map(poll => (
-                    <tr key={poll.id}>
-                        <td>{poll.question}</td>
-                        <td>{poll.vote ? 'For' : 'Against'}</td>
-                        <td><Countdown endTime={poll.endTime}></Countdown></td>
-                        <td>{poll.votes.length}</td>
-                        <td><button className='results-button' onClick={() => navigate(`/result?pollId=${poll.id}`)}>Results</button></td>
+        <div className='my-votes'>
+            <h2>My Votes</h2>
+            {polls.length === 0 && <p>You have not voted on any polls</p>}
+            {polls.length > 0 && (
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Your Vote</th>
+                        <th>Time Left</th>
+                        <th>Total Votes</th>
+                        <th></th>
                     </tr>
-                ))}
-            </tbody>
-        </table>
-        )}
-    </div>
+                    </thead>
+                    <tbody>
+                    {polls.map(poll => (
+                        <tr key={poll.id}>
+                            <td>{poll.question}</td>
+                            <td>{poll.vote ? 'For' : 'Against'}</td>
+                            <td><Countdown endTime={poll.endTime}></Countdown></td>
+                            <td>{poll.votes.length}</td>
+                            <td><button className='results-button' onClick={() => navigate(`/result?pollId=${poll.id}`)}>Results</button></td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+            )}
+        </div>
     )
 }
 
@@ -112,10 +135,10 @@ export const PollCard = ({poll, handleDelete, onDashboard, handleFinish}) => {
 
             <div className='poll-actions'>
                 {isCreator && !onDashboard && poll.active &&
-                        <>
-                            <button onClick={() => navigate(`/poll?pollId=${poll.id}`)}>Edit</button>
-                            {poll.active && handleFinish && <button onClick={() => handleFinish(poll)}>Finish</button>}
-                        </>
+                    <>
+                        <button onClick={() => navigate(`/poll?pollId=${poll.id}`)}>Edit</button>
+                        {poll.active && handleFinish && <button onClick={() => handleFinish(poll)}>Finish</button>}
+                    </>
                 }
                 {onDashboard && poll.active && <button onClick={() => navigate(`/vote/${poll.id}`)}>Vote</button>}
                 <button className='results-button' onClick={() => navigate(`/result?pollId=${poll.id}`)}>Results</button>

@@ -4983,3 +4983,66 @@ jakarta.persistence.TransactionRequiredException: No EntityManager with actual t
 2023-11-15 20:49:48 [http-nio-8080-exec-9] INFO  : Expired JWT token.
 2023-11-15 20:49:48 [http-nio-8080-exec-9] DEBUG : Before request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
 2023-11-15 20:49:48 [http-nio-8080-exec-9] DEBUG : After request [GET /api/polls/public, client=0:0:0:0:0:0:0:1]
+2023-11-18 21:45:05 [main] INFO  : Starting VotingMain using Java 17.0.8.1 with PID 54612 (/Users/palvindenes/Documents/EMNER/DAT250/votingapp/build/classes/java/main started by palvindenes in /Users/palvindenes/Documents/EMNER/DAT250/votingapp)
+2023-11-18 21:45:05 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2023-11-18 21:45:05 [main] INFO  : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-18 21:45:05 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-18 21:45:05 [main] INFO  : Spring Data JPA - Could not safely identify store assignment for repository candidate interface no.hvl.dat250.voting.repositories.AnalyticsEventRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2023-11-18 21:45:05 [main] INFO  : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2023-11-18 21:45:05 [main] INFO  : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-18 21:45:05 [main] INFO  : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2023-11-18 21:45:05 [main] INFO  : Finished Spring Data repository scanning in 13 ms. Found 1 MongoDB repository interfaces.
+2023-11-18 21:45:05 [main] INFO  : Tomcat initialized with port(s): 8080 (http)
+2023-11-18 21:45:05 [main] INFO  : Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-18 21:45:05 [main] INFO  : Starting service [Tomcat]
+2023-11-18 21:45:05 [main] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-11-18 21:45:05 [main] INFO  : Initializing Spring embedded WebApplicationContext
+2023-11-18 21:45:05 [main] INFO  : Root WebApplicationContext: initialization completed in 687 ms
+2023-11-18 21:45:05 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-18 21:45:05 [main] INFO  : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-11-18 21:45:05 [main] INFO  : HHH000406: Using bytecode reflection optimizer
+2023-11-18 21:45:06 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-18 21:45:06 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-18 21:45:06 [main] INFO  : HikariPool-1 - Starting...
+2023-11-18 21:45:06 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c9151c1
+2023-11-18 21:45:06 [main] INFO  : HikariPool-1 - Start completed.
+2023-11-18 21:45:06 [main] INFO  : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.1
+2023-11-18 21:45:06 [main] INFO  : HHH000021: Bytecode provider name : bytebuddy
+2023-11-18 21:45:06 [main] INFO  : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-18 21:45:06 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-18 21:45:06 [main] DEBUG : Filter 'requestLoggingFilter' configured for use
+2023-11-18 21:45:06 [main] INFO  : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.9.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "aarch64", "version": "13.3"}, "platform": "Java/Amazon.com Inc./17.0.8.1+8-LTS"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@5e781b4f, com.mongodb.Jep395RecordCodecProvider@1b89debc]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-11-18 21:45:06 [cluster-ClusterId{value='6559225260af612e2f2a9479', description='null'}-localhost:27017] INFO  : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=16770500}
+2023-11-18 21:45:07 [main] WARN  : These configurations '[num.standby.replicas, state.cleanup.delay.ms, default.value.serde, num.stream.threads, application.id, default.key.serde]' were supplied but are not used yet.
+2023-11-18 21:45:07 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-18 21:45:07 [main] INFO  : Adding welcome page: class path resource [static/index.html]
+2023-11-18 21:45:07 [main] INFO  : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-18 21:45:07 [main] INFO  : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4951c45f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@488ae823, org.springframework.security.web.context.SecurityContextHolderFilter@3426d8e2, org.springframework.security.web.header.HeaderWriterFilter@17e427b6, org.springframework.web.filter.CorsFilter@19b6b7e7, org.springframework.security.web.authentication.logout.LogoutFilter@519b726a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3c67b7a9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f31e47a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39e75e88, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c332922, org.springframework.security.web.session.SessionManagementFilter@1548dc37, org.springframework.security.web.access.ExceptionTranslationFilter@642270ad, org.springframework.security.web.access.intercept.AuthorizationFilter@2715b3ea]
+2023-11-18 21:45:07 [main] INFO  : Starting ProtocolHandler ["http-nio-8080"]
+2023-11-18 21:45:07 [main] INFO  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-18 21:45:07 [main] INFO  : Started VotingMain in 2.681 seconds (process running for 2.932)
+2023-11-18 21:45:08 [RMI TCP Connection(2)-192.168.86.247] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-18 21:45:08 [RMI TCP Connection(2)-192.168.86.247] INFO  : Initializing Servlet 'dispatcherServlet'
+2023-11-18 21:45:08 [RMI TCP Connection(2)-192.168.86.247] INFO  : Completed initialization in 1 ms
+2023-11-18 21:45:10 [votingapp-streams-29ad2dfe-3797-4faf-bd91-7c19b515e6cc-StreamThread-3] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
+2023-11-18 21:45:13 [http-nio-8080-exec-2] INFO  : authenticated user with username :q
+2023-11-18 21:45:13 [http-nio-8080-exec-2] DEBUG : Before request [GET /api/polls/public, client=127.0.0.1, user=q]
+2023-11-18 21:45:13 [http-nio-8080-exec-2] DEBUG : After request [GET /api/polls/public, client=127.0.0.1, user=q]
+2023-11-18 21:45:15 [http-nio-8080-exec-3] INFO  : authenticated user with username :q
+2023-11-18 21:45:15 [http-nio-8080-exec-3] DEBUG : Before request [GET /api/polls/public, client=127.0.0.1, user=q]
+2023-11-18 21:45:15 [http-nio-8080-exec-3] DEBUG : After request [GET /api/polls/public, client=127.0.0.1, user=q]
+2023-11-18 21:45:24 [http-nio-8080-exec-4] INFO  : authenticated user with username :q
+2023-11-18 21:45:24 [http-nio-8080-exec-4] DEBUG : Before request [GET /api/polls/public, client=127.0.0.1, user=q]
+2023-11-18 21:45:24 [http-nio-8080-exec-4] DEBUG : After request [GET /api/polls/public, client=127.0.0.1, user=q]
+2023-11-18 21:46:18 [http-nio-8080-exec-5] INFO  : authenticated user with username :q
+2023-11-18 21:46:18 [http-nio-8080-exec-5] DEBUG : Before request [POST /api/user/login, client=127.0.0.1, user=q]
+2023-11-18 21:46:18 [http-nio-8080-exec-5] INFO  : Attempting to log in user: q
+2023-11-18 21:46:18 [http-nio-8080-exec-5] INFO  : Authentication token created: UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=q, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+2023-11-18 21:46:18 [http-nio-8080-exec-5] INFO  : Authentication successful for user: q
+2023-11-18 21:46:18 [http-nio-8080-exec-5] INFO  : Granted authorities: ROLE_USER
+2023-11-18 21:46:19 [http-nio-8080-exec-5] INFO  : JWT Token generated for user q: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJxIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTcwMDM0MDM3OCwiZXhwIjoxNzAwMzQzOTc4fQ.O7AVqz7SO9wmE3_DMxlRZsJBWb45pIqPG_-qaztIUejtNzrsbBtfMoUgPSBTuW1SkFOwRoJSAmSTybCZffq8VQ
+2023-11-18 21:46:19 [http-nio-8080-exec-5] ERROR : JWT Token generated: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJxIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTcwMDM0MDM3OCwiZXhwIjoxNzAwMzQzOTc4fQ.O7AVqz7SO9wmE3_DMxlRZsJBWb45pIqPG_-qaztIUejtNzrsbBtfMoUgPSBTuW1SkFOwRoJSAmSTybCZffq8VQ
+2023-11-18 21:46:19 [http-nio-8080-exec-5] DEBUG : After request [POST /api/user/login, client=127.0.0.1, user=q, payload={"username":"q","password":"q"}]
+2023-11-18 21:46:19 [http-nio-8080-exec-7] INFO  : authenticated user with username :q
+2023-11-18 21:46:19 [http-nio-8080-exec-7] DEBUG : Before request [GET /api/polls/public, client=127.0.0.1, user=q]
+2023-11-18 21:46:19 [http-nio-8080-exec-7] DEBUG : After request [GET /api/polls/public, client=127.0.0.1, user=q]
