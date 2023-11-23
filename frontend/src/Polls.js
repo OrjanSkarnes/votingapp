@@ -28,21 +28,6 @@ export const PollsPage = () => {
 
             await deletePoll(poll.id);
             setPolls(polls.filter(p => p.id !== poll.id));
-
-            // Structure the analytics event data
-            const analyticsEventData = {
-                eventName: 'Poll Deleted',
-                eventData: {
-                    pollId: poll.id,
-                    creatorId: poll.creatorId,
-                    question: poll.question,
-                    // ... any other relevant data ...
-                },
-                // timestamp can be omitted, server can handle it
-            };
-
-            // Track poll deletion event
-            analyticsService.trackEvent(analyticsEventData);
         } catch (error) {
             console.error(error?.data);
         }

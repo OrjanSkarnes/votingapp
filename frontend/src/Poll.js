@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {getUser, getUserId} from './helpers/sessionStorage';
 import { createPoll, deletePoll, editPoll, getPollById } from './helpers/pollService';
-import analyticsService from './helpers/analyticsService';
 
 const PollPage = () => {
     const location = useLocation();
@@ -25,22 +24,6 @@ const PollPage = () => {
         active: false,
         privateAccess: false
     });
-
-    const trackAnalyticsEvent = (eventType, pollData) => {
-        // Structure the analytics event data
-        const analyticsEventData = {
-            eventName: `Poll ${eventType}`, // E.g., 'Poll create', 'Poll edit', 'Poll delete'
-            eventData: {
-                pollId: pollData.id,
-                creatorId: pollData.creatorId,
-                question: pollData.question,
-                // ... any other relevant data ...
-            },
-        };
-
-        // Track the event
-        analyticsService.trackEvent(analyticsEventData);
-    }
 
     useEffect(() => {
         if (pollId) {
@@ -68,7 +51,6 @@ const PollPage = () => {
             ...poll,
             creatorId: user.id
         };
-        trackAnalyticsEvent('create', reqPoll);
         createPoll(reqPoll)
             .then((data) => navigate("/polls"))
             .catch((error) => console.error(error?.data));
@@ -80,7 +62,6 @@ const PollPage = () => {
             ...poll,
             creatorId: user.id
         };
-        trackAnalyticsEvent('edit', reqPoll);
         editPoll(poll.id, reqPoll)
             .then(() => navigate("/polls"))
             .catch((error) => console.error(error?.data));
@@ -88,7 +69,6 @@ const PollPage = () => {
 
     const handleDelete = async () => {
         if (!isCreator) return;
-        trackAnalyticsEvent('delete', poll); // Note that we use the existing poll object here
         deletePoll(poll.id)
             .then(data => navigate("/polls"))
             .catch((error) => console.error(error?.data));

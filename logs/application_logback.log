@@ -8183,3 +8183,24 @@ java.lang.StackOverflowError: null
 2023-11-23 17:12:23 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/user/12/created, client=127.0.0.1, user=q]
 2023-11-23 17:12:59 [votingapp-streams-7a0cf726-9c5f-4cf9-a1ea-1bba6e77c4c7-StreamThread-4] WARN  : Unable to assign 1 of 1 standby tasks for task [0_0]. There is not enough available capacity. You should increase the number of application instances to maintain the requested number of standby replicas.
 2023-11-23 17:12:59 [votingapp-streams-7a0cf726-9c5f-4cf9-a1ea-1bba6e77c4c7-StreamThread-1] INFO  : Received record: {"pollId":32,"endTime":"2111-10-10T10:10:00"}
+2023-11-23 17:15:41 [http-nio-8080-exec-9] INFO  : authenticated user with username :q
+2023-11-23 17:15:41 [http-nio-8080-exec-10] INFO  : authenticated user with username :q
+2023-11-23 17:15:41 [http-nio-8080-exec-10] DEBUG : Before request [GET /api/polls/user/12/created, client=127.0.0.1, user=q]
+2023-11-23 17:15:41 [http-nio-8080-exec-9] DEBUG : Before request [GET /api/polls/user/12/votes, client=127.0.0.1, user=q]
+2023-11-23 17:15:41 [http-nio-8080-exec-9] DEBUG : After request [GET /api/polls/user/12/votes, client=127.0.0.1, user=q]
+2023-11-23 17:15:41 [http-nio-8080-exec-10] DEBUG : After request [GET /api/polls/user/12/created, client=127.0.0.1, user=q]
+2023-11-23 17:16:08 [http-nio-8080-exec-2] INFO  : authenticated user with username :q
+2023-11-23 17:16:08 [http-nio-8080-exec-1] INFO  : authenticated user with username :q
+2023-11-23 17:16:08 [http-nio-8080-exec-1] DEBUG : Before request [GET /api/polls/user/12/created, client=127.0.0.1, user=q]
+2023-11-23 17:16:08 [http-nio-8080-exec-2] DEBUG : Before request [GET /api/polls/user/12/votes, client=127.0.0.1, user=q]
+2023-11-23 17:16:08 [http-nio-8080-exec-2] DEBUG : After request [GET /api/polls/user/12/votes, client=127.0.0.1, user=q]
+2023-11-23 17:16:08 [http-nio-8080-exec-1] DEBUG : After request [GET /api/polls/user/12/created, client=127.0.0.1, user=q]
+2023-11-23 17:17:14 [http-nio-8080-exec-6] INFO  : authenticated user with username :q
+2023-11-23 17:17:14 [http-nio-8080-exec-5] INFO  : authenticated user with username :q
+2023-11-23 17:17:14 [http-nio-8080-exec-6] DEBUG : Before request [GET /api/polls/user/12/created, client=127.0.0.1, user=q]
+2023-11-23 17:17:14 [http-nio-8080-exec-5] DEBUG : Before request [GET /api/polls/user/12/votes, client=127.0.0.1, user=q]
+2023-11-23 17:17:14 [http-nio-8080-exec-5] DEBUG : After request [GET /api/polls/user/12/votes, client=127.0.0.1, user=q]
+2023-11-23 17:17:14 [http-nio-8080-exec-6] DEBUG : After request [GET /api/polls/user/12/created, client=127.0.0.1, user=q]
+2023-11-23 17:17:16 [http-nio-8080-exec-8] INFO  : authenticated user with username :q
+2023-11-23 17:17:16 [http-nio-8080-exec-8] DEBUG : Before request [GET /api/polls/public, client=127.0.0.1, user=q]
+2023-11-23 17:17:16 [http-nio-8080-exec-8] DEBUG : After request [GET /api/polls/public, client=127.0.0.1, user=q]
