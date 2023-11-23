@@ -60,8 +60,9 @@ public class VoteService {
             vote.setPoll(poll);
             vote.setTimestamp(LocalDateTime.now());
             vote.setChoice(voteDTO.getChoice() != null ? voteDTO.getChoice() : false);
-            analyticsEventRepository.save(new AnalyticsEvent("voteCreated",vote));
-            return new ResponseEntity<>(VoteDTO.convertToDTO(voteDao.createVote(vote)), HttpStatus.OK);
+            VoteDTO storedVote = VoteDTO.convertToDTO(voteDao.createVote(vote));
+            analyticsEventRepository.save(new AnalyticsEvent("voteCreated",storedVote));
+            return new ResponseEntity<>(storedVote, HttpStatus.OK);
         }
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
@@ -80,7 +81,6 @@ public class VoteService {
     public void deleteVote(@PathVariable Long id) {
         Vote vote = voteDao.findVoteById(id);
         if(vote != null) {
-            analyticsEventRepository.save(new AnalyticsEvent("deleteVote",vote));
             voteDao.deleteVote(vote);
         }
     }

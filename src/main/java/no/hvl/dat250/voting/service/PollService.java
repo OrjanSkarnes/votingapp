@@ -43,8 +43,9 @@ public class PollService {
         setDefaultStartTime(poll);
         Poll savedPoll = pollDao.createPoll(poll);
         schedulePollEndTimeIfNecessary(savedPoll);
-        analyticsEventRepository.save(new AnalyticsEvent("pollCreated",poll));
-        return PollDTO.convertToDTO(savedPoll);
+        PollDTO storedPoll = PollDTO.convertToDTO(savedPoll);
+        analyticsEventRepository.save(new AnalyticsEvent("pollCreated", storedPoll));
+        return storedPoll;
     }
 
     @Transactional(readOnly = true)
@@ -114,7 +115,7 @@ public class PollService {
         poll.setEndTime(pollDTO.getEndTime());
         poll.setActive(pollDTO.isActive());
         poll.setPrivateAccess(pollDTO.isPrivateAccess());
-        analyticsEventRepository.save(new AnalyticsEvent("pollUpdated",poll));
+        analyticsEventRepository.save(new AnalyticsEvent("pollUpdated",pollDTO));
     }
 
     private void schedulePollEndTimeIfNecessary(Poll poll) {
@@ -138,8 +139,9 @@ public class PollService {
             poll.setVotesAgainst(poll.getVotes().stream().filter(vote -> !vote.getChoice()).count());
             loggerService.log("Sending poll results to kafka");
             kafkaProducer.sendObject("pollResults", poll);
-            analyticsEventRepository.save(new AnalyticsEvent("pollFinished",poll));
-            return PollDTO.convertToDTO(poll);
+            PollDTO storedPoll = PollDTO.convertToDTO(poll);
+            analyticsEventRepository.save(new AnalyticsEvent("pollFinished", storedPoll));
+            return storedPoll;
         }
         return null;
     }

@@ -14,7 +14,7 @@ import java.util.Map;
 @Document
 public class AnalyticsEvent {
     @Id
-    private Long id;
+    private String id;
     private String eventName;
     private Object eventData;
     private Instant timestamp;
