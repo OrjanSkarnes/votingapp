@@ -5,6 +5,7 @@ import no.hvl.dat250.voting.DTO.VoteDTO;
 import no.hvl.dat250.voting.models.*;
 import no.hvl.dat250.voting.dao.PollDao;
 import no.hvl.dat250.voting.dao.UserDao;
+import no.hvl.dat250.voting.repositories.AnalyticsEventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -32,6 +33,9 @@ public class PollService {
     @Autowired
     private LoggerService loggerService;
 
+    @Autowired
+    private AnalyticsEventRepository analyticsEventRepository;
+
     @Transactional
     public PollDTO createPoll(PollDTO pollDTO) {
         Poll poll = convertToEntity(pollDTO);
@@ -39,6 +43,7 @@ public class PollService {
         setDefaultStartTime(poll);
         Poll savedPoll = pollDao.createPoll(poll);
         schedulePollEndTimeIfNecessary(savedPoll);
+        analyticsEventRepository.save(new AnalyticsEvent("pollCreated",poll));
         return PollDTO.convertToDTO(savedPoll);
     }
 
@@ -109,6 +114,7 @@ public class PollService {
         poll.setEndTime(pollDTO.getEndTime());
         poll.setActive(pollDTO.isActive());
         poll.setPrivateAccess(pollDTO.isPrivateAccess());
+        analyticsEventRepository.save(new AnalyticsEvent("pollUpdated",poll));
     }
 
     private void schedulePollEndTimeIfNecessary(Poll poll) {
@@ -132,6 +138,7 @@ public class PollService {
             poll.setVotesAgainst(poll.getVotes().stream().filter(vote -> !vote.getChoice()).count());
             loggerService.log("Sending poll results to kafka");
             kafkaProducer.sendObject("pollResults", poll);
+            analyticsEventRepository.save(new AnalyticsEvent("pollFinished",poll));
             return PollDTO.convertToDTO(poll);
         }
         return null;
